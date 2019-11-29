@@ -351,15 +351,10 @@
 									class="mandatory">*</span></label> <select ng-model="trip.truckno"
 									class="form-control col-12" tabindex="8"
 									ng-options="b.vehicleNo as b.vehicleNo for b in vehlistdataJson"
-									ng-change="changeBasedNumber(trip.truckno)">
+									ng-change="changeBasedNumber(trip.truckno);calculateDate(trip.gatein,trip.gateout)">
 									<option value="">Select TruckNo</option>
 								</select>
-								<!-- <input type="text" min="0" ng-model="trip.truckno" class="form-control col-12" placeholder="TruckTo" list="dataListTruckNo"/>
-            <datalist id="dataListTruckNo">
-		      <option ng-repeat="b in getTruckType" value="{{b}}"></option>
-		    </datalist>   -->
 							</div>
-
 							<div class='col-md-3'>
 								<label class="col-12"><b>TruckType </b></label>
 								<!-- ng-change="getTruckNo(trip.truckType)" -->
@@ -369,6 +364,33 @@
 									<option ng-repeat="v in vehlistdataJson"
 										value="{{v.vehicleType}}">{{v.vehicleType}}</option>
 								</select>
+							</div>
+						</div>
+						
+						<div class="row" style="margin-top: 1%;">
+							<div class='col-md-3'>
+								<label class="col-12"><b>Customer Rate </b><span class="mandatory">*</span></label> 
+								<input type="text" ng-model="trip.customerrate" class="form-control col-12"
+									placeholder="Customer Rate" ng-blur="changeBasedNumber(trip.truckno)" numeric-regex/>
+							</div>
+							<div class='col-md-3'>
+								<label class="col-12"><b>Vendor Rate </b><span
+									class="mandatory">*</span></label>
+								<input type="text"  ng-model="trip.vendorrate"  class="form-control col-12"
+									placeholder="Vendor Rate" ng-blur="changeBasedNumber(trip.truckno)" numeric-regex/>
+							</div>
+
+							<div class='col-md-3'>
+								<label class="col-12"><b>Customer PerKM </b><span
+									class="mandatory">*</span></label> 
+								<input type="text"  ng-model="trip.customerperkm" ng-disabled="checkDisabled" class="form-control col-12"
+									placeholder="Customer PerKM" ng-blur="changeBasedNumber(trip.truckno)"numeric-regex/>
+							</div>
+
+							<div class='col-md-3'>
+								<label class="col-12"><b>Vendor PerKM </b></label>
+								<input type="text"  ng-model="trip.vendorperkm" ng-disabled="checkDisabled" class="form-control col-12"
+									placeholder="Vendor PerKM" ng-blur="changeBasedNumber(trip.truckno)" numeric-regex/>
 							</div>
 
 						</div>
@@ -387,19 +409,19 @@
 								<label class="col-12"><b>No Of Case </b><span
 									class="mandatory">*</span></label> <input type="text" min="0"
 									ng-model="trip.noOfCase" class="form-control col-12"
-									placeholder="No Of Case" />
+									placeholder="No Of Case"  numeric-regex/>
 							</div>
 							<div class='col-md-3'>
 								<label class="col-12"><b>Open KMs </b><span
 									class="mandatory">*</span></label> 
 									<input type="text" min="0" ng-model="trip.opkm" class="form-control col-12" 
-									placeholder="Open KMs" ng-disabled="checkDisabled"/>
+									placeholder="Open KMs" ng-disabled="checkDisabled" numeric-regex/>
 							</div>
 							<div class='col-md-3'>
 								<label class="col-12"><b>Close KMs </b><span
 									class="mandatory">*</span></label> 
 									<input type="text" min="0" ng-model="trip.clskm" class="form-control col-12"
-									placeholder="Close KMs"  ng-disabled="checkDisabled" ng-blur="calculateKm(trip.opkm,trip.clskm)" />
+									placeholder="Close KMs"  ng-disabled="checkDisabled" ng-blur="calculateKm(trip.opkm,trip.clskm)" numeric-regex/>
 							</div>
 
 						</div>
@@ -413,7 +435,7 @@
 								<label class="col-12"><b>Advance </b><span
 									class="mandatory">*</span></label> <input type="text" min="0"
 									ng-model="trip.advance" class="form-control col-12"
-									placeholder="Advance" />
+									placeholder="Advance"  ng-blur="addAmtoFrieght()" numeric-regex/>
 							</div>
 
 							<div class='col-md-3'>
@@ -457,7 +479,7 @@
 								<label class="col-12"><b>Halted Time </b><span
 									class="mandatory">*</span></label> <input type="text" min="0"
 									ng-model="trip.haltedTime" class="form-control col-12"
-									placeholder="Halted Time" /><!-- ng-blur="addAmtoFrieght()"  -->
+									placeholder="Halted Time" numeric-regex/><!-- ng-blur="addAmtoFrieght()"  -->
 							</div> 
 
 							<div class='col-md-3'>
@@ -479,19 +501,19 @@
 								<label class="col-12"><b>TollBill</b><span
 									class="mandatory">*</span></label> <input type="text" min="0"
 									ng-model="trip.tollBill" class="form-control col-12"
-									placeholder="Toll Bill" ng-blur="addAmtoFrieght()" />
+									placeholder="Toll Bill" ng-blur="addAmtoFrieght()" numeric-regex/>
 							</div>
 							<div class='col-md-3'>
 								<label class="col-12"><b>Police Bill </b><span
 									class="mandatory">*</span></label> <input type="text" min="0"
 									ng-model="trip.policeBill" class="form-control col-12"
-									placeholder="Police Bill Charge" ng-blur="addAmtoFrieght()" />
+									placeholder="Police Bill Charge" ng-blur="addAmtoFrieght()" numeric-regex/>
 							</div>
 							<div class='col-md-3'>
 								<label class="col-12"><b>Discount </b><span
 									class="mandatory">*</span></label> <input type="text" min="0"
 									ng-model="trip.discount" class="form-control col-12"
-									placeholder="Discount" />
+									placeholder="Discount" numeric-regex/>
 							</div>
 						</div>
 						
