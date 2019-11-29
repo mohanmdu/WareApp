@@ -71,10 +71,10 @@ public class CustomerCrudRestApi {
 		return customerList;
 	}
 
-	@GetMapping("/combinenameslist")
-	public List<Object> getListOfCombineName() {
+	@GetMapping("/customercodelist")
+	public List<String> getListOfCustomerCode() {
 
-		List<Object> combinelists = customerService.getListOfCombineName();
+		List<String> combinelists = customerService.getListOfCustomerCode();
 		return combinelists;
 
 	}

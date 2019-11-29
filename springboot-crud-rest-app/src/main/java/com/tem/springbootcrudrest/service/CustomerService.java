@@ -20,7 +20,7 @@ public interface CustomerService {
 	
 	public List<String> getCustomerListByName();
 	
-	public List<Object> getListOfCombineName();
+	public List<String> getListOfCustomerCode();
 	
 	public List<Customer> findCustomerByName(String name);
 }

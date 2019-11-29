@@ -51,33 +51,31 @@ public class Customer {
 	@Column(name = "Created_by")
 	private String createdby;
 
-	@Column(name = "fixedamttrs")
-	private String fixedamttrs;
-	@Column(name = "fixedamtlc2")
-	private String fixedamtlc2;
-	@Column(name = "fixedamtlc4")
-	private String fixedamtlc4;
-	@Column(name = "fixedamtcan6")
-	private String fixedamtcan6;
-	@Column(name = "fixedamthcv9")
-	private String fixedamthcv9;
-	@Column(name = "fixedamttrailer")
-	private String fixedamttrailer;
-
-	@Column(name = "perkmtrs")
-	private String perkmtrs;
-	@Column(name = "perkmlc2")
-	private String perkmlc2;
-	@Column(name = "perkmlc4")
-	private String perkmlc4;
-
-	@Column(name = "perkmcan6")
-	private String perkmcan6;
-
-	@Column(name = "perkmhcv9")
-	private String perkmhcv9;
-	@Column(name = "perkmtrailer")
-	private String perkmtrailer;
+	/*
+	 * @Column(name = "fixedamttrs") private String fixedamttrs;
+	 * 
+	 * @Column(name = "fixedamtlc2") private String fixedamtlc2;
+	 * 
+	 * @Column(name = "fixedamtlc4") private String fixedamtlc4;
+	 * 
+	 * @Column(name = "fixedamtcan6") private String fixedamtcan6;
+	 * 
+	 * @Column(name = "fixedamthcv9") private String fixedamthcv9;
+	 * 
+	 * @Column(name = "fixedamttrailer") private String fixedamttrailer;
+	 * 
+	 * @Column(name = "perkmtrs") private String perkmtrs;
+	 * 
+	 * @Column(name = "perkmlc2") private String perkmlc2;
+	 * 
+	 * @Column(name = "perkmlc4") private String perkmlc4;
+	 * 
+	 * @Column(name = "perkmcan6") private String perkmcan6;
+	 * 
+	 * @Column(name = "perkmhcv9") private String perkmhcv9;
+	 * 
+	 * @Column(name = "perkmtrailer") private String perkmtrailer;
+	 */
 	
 	@Column(name = "bankName")
 	private String bankName;
@@ -104,101 +102,62 @@ public class Customer {
 	// CustomerDetails = customerDetails;
 	// }
 	//
-	public String getPerkmcan6() {
-		return perkmcan6;
-	}
-
-	public void setPerkmcan6(String perkmcan6) {
-		this.perkmcan6 = perkmcan6;
-	}
-
-	public String getPerkmhcv9() {
-		return perkmhcv9;
-	}
-
-	public void setPerkmhcv9(String perkmhcv9) {
-		this.perkmhcv9 = perkmhcv9;
-	}
-
-	public String getPerkmtrailer() {
-		return perkmtrailer;
-	}
-
-	public void setPerkmtrailer(String perkmtrailer) {
-		this.perkmtrailer = perkmtrailer;
-	}
-
-	public String getFixedamttrs() {
-		return fixedamttrs;
-	}
-
-	public void setFixedamttrs(String fixedamttrs) {
-		this.fixedamttrs = fixedamttrs;
-	}
-
-	public String getFixedamtlc2() {
-		return fixedamtlc2;
-	}
-
-	public void setFixedamtlc2(String fixedamtlc2) {
-		this.fixedamtlc2 = fixedamtlc2;
-	}
-
-	public String getFixedamtlc4() {
-		return fixedamtlc4;
-	}
-
-	public void setFixedamtlc4(String fixedamtlc4) {
-		this.fixedamtlc4 = fixedamtlc4;
-	}
-
-	public String getFixedamtcan6() {
-		return fixedamtcan6;
-	}
-
-	public void setFixedamtcan6(String fixedamtcan6) {
-		this.fixedamtcan6 = fixedamtcan6;
-	}
-
-	public String getFixedamthcv9() {
-		return fixedamthcv9;
-	}
-
-	public void setFixedamthcv9(String fixedamthcv9) {
-		this.fixedamthcv9 = fixedamthcv9;
-	}
-
-	public String getFixedamttrailer() {
-		return fixedamttrailer;
-	}
-
-	public void setFixedamttrailer(String fixedamttrailer) {
-		this.fixedamttrailer = fixedamttrailer;
-	}
-
-	public String getPerkmtrs() {
-		return perkmtrs;
-	}
-
-	public void setPerkmtrs(String perkmtrs) {
-		this.perkmtrs = perkmtrs;
-	}
-
-	public String getPerkmlc2() {
-		return perkmlc2;
-	}
-
-	public void setPerkmlc2(String perkmlc2) {
-		this.perkmlc2 = perkmlc2;
-	}
-
-	public String getPerkmlc4() {
-		return perkmlc4;
-	}
-
-	public void setPerkmlc4(String perkmlc4) {
-		this.perkmlc4 = perkmlc4;
-	}
+	/*
+	 * public String getPerkmcan6() { return perkmcan6; }
+	 * 
+	 * public void setPerkmcan6(String perkmcan6) { this.perkmcan6 = perkmcan6; }
+	 * 
+	 * public String getPerkmhcv9() { return perkmhcv9; }
+	 * 
+	 * public void setPerkmhcv9(String perkmhcv9) { this.perkmhcv9 = perkmhcv9; }
+	 * 
+	 * public String getPerkmtrailer() { return perkmtrailer; }
+	 * 
+	 * public void setPerkmtrailer(String perkmtrailer) { this.perkmtrailer =
+	 * perkmtrailer; }
+	 * 
+	 * public String getFixedamttrs() { return fixedamttrs; }
+	 * 
+	 * public void setFixedamttrs(String fixedamttrs) { this.fixedamttrs =
+	 * fixedamttrs; }
+	 * 
+	 * public String getFixedamtlc2() { return fixedamtlc2; }
+	 * 
+	 * public void setFixedamtlc2(String fixedamtlc2) { this.fixedamtlc2 =
+	 * fixedamtlc2; }
+	 * 
+	 * public String getFixedamtlc4() { return fixedamtlc4; }
+	 * 
+	 * public void setFixedamtlc4(String fixedamtlc4) { this.fixedamtlc4 =
+	 * fixedamtlc4; }
+	 * 
+	 * public String getFixedamtcan6() { return fixedamtcan6; }
+	 * 
+	 * public void setFixedamtcan6(String fixedamtcan6) { this.fixedamtcan6 =
+	 * fixedamtcan6; }
+	 * 
+	 * public String getFixedamthcv9() { return fixedamthcv9; }
+	 * 
+	 * public void setFixedamthcv9(String fixedamthcv9) { this.fixedamthcv9 =
+	 * fixedamthcv9; }
+	 * 
+	 * public String getFixedamttrailer() { return fixedamttrailer; }
+	 * 
+	 * public void setFixedamttrailer(String fixedamttrailer) { this.fixedamttrailer
+	 * = fixedamttrailer; }
+	 * 
+	 * public String getPerkmtrs() { return perkmtrs; }
+	 * 
+	 * public void setPerkmtrs(String perkmtrs) { this.perkmtrs = perkmtrs; }
+	 * 
+	 * public String getPerkmlc2() { return perkmlc2; }
+	 * 
+	 * public void setPerkmlc2(String perkmlc2) { this.perkmlc2 = perkmlc2; }
+	 * 
+	 * public String getPerkmlc4() { return perkmlc4; }
+	 * 
+	 * public void setPerkmlc4(String perkmlc4) { this.perkmlc4 = perkmlc4; }
+	 */
 
 	public List<CustomerDetails> getCustomerDetails() {
 		return customerDetails;

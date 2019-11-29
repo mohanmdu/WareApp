@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.tem.springbootcrudrest.model.Customer;
+import com.tem.springbootcrudrest.repository.CustomerDetailsRepository;
 import com.tem.springbootcrudrest.repository.CustomerRepository;
 import com.tem.springbootcrudrest.repository.VendorRepository;
 
@@ -18,6 +19,9 @@ public class CustomerServiceImpl implements CustomerService {
 	
 	@Autowired
 	VendorRepository vendorRepository;
+	
+	@Autowired
+	CustomerDetailsRepository customerDetailsRepository;
 
 	@Override
 	public Customer createCustomer(Customer customer) {
@@ -48,40 +52,36 @@ public class CustomerServiceImpl implements CustomerService {
 		return customerRepository.getCustomersListByName();
 	}
 
-	@Override
-	public List<Object> getListOfCombineName() {
+	/*
+	 * @Override public List<Object> getListOfCombineName() {
+	 * 
+	 * List<Object> allobjects = new ArrayList<Object>();
+	 * 
+	 * try {
+	 * 
+	 * List<String>commonnamelist = customerRepository.getListOfCombineNames();
+	 * 
+	 * 
+	 * for(String commanname : commonnamelist) { List<Object>
+	 * customervendorobject=null; customervendorobject =
+	 * customerRepository.findCustomerByNameObject(commanname); Customer customer
+	 * =null; for(Object obj : customervendorobject) { customer = (Customer) obj; }
+	 * 
+	 * 
+	 * if(customer==null) { customervendorobject =
+	 * vendorRepository.findVendorNameObject(commanname);
+	 * 
+	 * } allobjects.addAll(customervendorobject); }
+	 * 
+	 * } catch (NullPointerException e) {
+	 * 
+	 * } return allobjects;
+	 * 
+	 * 
+	 * 
+	 * }
+	 */
 
-		List<Object> allobjects = new ArrayList<Object>();
-		
-		try {
-
-		List<String>commonnamelist =	customerRepository.getListOfCombineNames();
-			
-		
-		for(String commanname : commonnamelist) {
-			List<Object> customervendorobject=null;
-			customervendorobject = customerRepository.findCustomerByNameObject(commanname);
-			Customer customer =null;
-			for(Object obj : customervendorobject) {
-				 customer = (Customer) obj;
-			}
-			
-			
-			if(customer==null) {
-				customervendorobject = vendorRepository.findVendorNameObject(commanname);
-				
-			}
-			allobjects.addAll(customervendorobject);
-		}
-			
-		} catch (NullPointerException e) {
-
-		}
-		return allobjects;
-		
-		
-		
-	}
 
 	@Override
 	public List<Customer> findCustomerByName(String name) {
@@ -90,6 +90,12 @@ public class CustomerServiceImpl implements CustomerService {
 		
 			return	customerRepository.findCustomerByNames(name);
 				
+	}
+
+	@Override
+	public List<String> getListOfCustomerCode() {
+		
+		return customerDetailsRepository.findCustomerDetailsByCustomerCode();
 	}
 
 }

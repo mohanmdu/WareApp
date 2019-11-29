@@ -10,7 +10,6 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,8 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.tem.springbootcrudrest.model.CustomerInvoice;
 import com.tem.springbootcrudrest.model.CustomerPaymentUpdateInCustomerInvoice;
-import com.tem.springbootcrudrest.model.ManPower;
-import com.tem.springbootcrudrest.model.VendorInvoice;
 import com.tem.springbootcrudrest.service.CustomerInvoiceService;
 import com.tem.util.UTCDateTime;
 

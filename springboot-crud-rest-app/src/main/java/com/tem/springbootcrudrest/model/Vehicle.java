@@ -72,11 +72,11 @@ public class Vehicle {
 	@Column(name = "Createdby", nullable = true)
 	private String createdby;
 	
-	@Column(name = "fixedamt")
-	private String fixedamt;
-	
-	@Column(name = "perkmamt")
-	private String perkmamt;
+	/*
+	 * @Column(name = "fixedamt") private String fixedamt;
+	 * 
+	 * @Column(name = "perkmamt") private String perkmamt;
+	 */
 	
 	@JsonBackReference
 	@ManyToOne(fetch=FetchType.EAGER)
@@ -100,22 +100,15 @@ public class Vehicle {
 		this.insurancedate = insurancedate;
 	}
 
-	public String getFixedamt() {
-		return fixedamt;
-	}
-
-	public void setFixedamt(String fixedamt) {
-		this.fixedamt = fixedamt;
-	}
-
-	public String getPerkmamt() {
-		return perkmamt;
-	}
-
-	public void setPerkmamt(String perkmamt) {
-		this.perkmamt = perkmamt;
-	}
-
+	/*
+	 * public String getFixedamt() { return fixedamt; }
+	 * 
+	 * public void setFixedamt(String fixedamt) { this.fixedamt = fixedamt; }
+	 * 
+	 * public String getPerkmamt() { return perkmamt; }
+	 * 
+	 * public void setPerkmamt(String perkmamt) { this.perkmamt = perkmamt; }
+	 */
 	public long getVehicleid() {
 		return vehicleid;
 	}
