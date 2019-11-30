@@ -135,6 +135,18 @@ public class TripSheet implements Serializable {
 	@Column(name = "trailerequipmenttype")
 	private String trailerequipmenttype;
 	
+	@Column(name = "customerrate")
+	private String customerrate;
+	
+	@Column(name = "vendorrate")
+	private String vendorrate;
+	
+	@Column(name = "customerperkm")
+	private String customerperkm;
+	
+	@Column(name = "vendorperkm")
+	private String vendorperkm;
+	
 		
 	public String getDiscount() {
 		return discount;
@@ -444,5 +456,37 @@ public class TripSheet implements Serializable {
 	@Override
 	public int hashCode() {
 		return Integer.valueOf(this.loadno);
+	}
+
+	public String getCustomerrate() {
+		return customerrate;
+	}
+
+	public void setCustomerrate(String customerrate) {
+		this.customerrate = customerrate;
+	}
+
+	public String getVendorrate() {
+		return vendorrate;
+	}
+
+	public void setVendorrate(String vendorrate) {
+		this.vendorrate = vendorrate;
+	}
+
+	public String getCustomerperkm() {
+		return customerperkm;
+	}
+
+	public void setCustomerperkm(String customerperkm) {
+		this.customerperkm = customerperkm;
+	}
+
+	public String getVendorperkm() {
+		return vendorperkm;
+	}
+
+	public void setVendorperkm(String vendorperkm) {
+		this.vendorperkm = vendorperkm;
 	}
 }
