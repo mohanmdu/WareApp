@@ -84,6 +84,15 @@ public class VendorCrudRestApi {
 
 		return vendorlist;
 	}
+	
+	@RequestMapping(path = "/vendornamebytruckno", method = RequestMethod.GET)
+
+	public List<String> getVendorNameByTruckno(@RequestParam String truckno) {
+
+		List<String> vendornamelist = vendorService.getVendorNameByTruckno(truckno);
+
+		return vendornamelist;
+	}
 
 
 }

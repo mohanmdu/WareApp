@@ -47,4 +47,9 @@ public class VendorServiceImpl implements VendorService {
 		return vendorRepository.findVendorNames(name);
 	}
 
+	@Override
+	public List<String> getVendorNameByTruckno(String truckno) {
+		return vendorRepository.getVendorNameByTruckno(truckno);
+	}
+
 }

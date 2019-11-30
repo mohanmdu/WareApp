@@ -20,4 +20,6 @@ public interface VendorService {
 	public List<String> getVendorListByName();
 	
 	public List<Vendor> findVendorByName(String name);
+	
+	public List<String> getVendorNameByTruckno(String truckno);
 }
