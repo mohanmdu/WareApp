@@ -19,8 +19,6 @@ $scope.loginSubmit = function (username,password){
 }); */
 	if (username) {  
 		$window.location.href='http://localhost:8086/';
-//$location.href='http://localhost:8086/';
-//$scope.$digest();
 	}
 	else{
 		alert('Login incorrect');
