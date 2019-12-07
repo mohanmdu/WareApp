@@ -1,0 +1,478 @@
+html,body,.homeDiv{
+  width:100% !important;
+  height:100% !important;
+}
+.card{
+transition: transform .2s;
+}
+.card:hover{
+	
+	transform: scale(1.1);
+}
+
+@media (min-width:480px)  {
+ .container{
+    margin-left: 15%;
+}
+}
+@media (min-width:320px)  {
+ .container{
+    width: 100%;
+    height: 100%;
+}
+}
+
+input[name=username] {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid #e2d9d9;
+  box-shadow: none;
+  color: #111;
+}
+input[type=password] {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid #e2d9d9;
+  box-shadow: none;
+  color: #111;
+}
+.input-field {
+  position: relative;
+  width: 250px;
+  height: 44px;
+  line-height: 44px;
+}
+
+.textspan {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #d3d3d3;
+  transition: 0.2s all;
+  cursor: text;
+}
+.passSpan {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #d3d3d3;
+  transition: 0.2s all;
+  cursor: text;
+}
+input[name=username] :invalid {
+  outline: 0;
+
+}
+input[name=username]:focus,
+input[name=username]:valid {
+  border-color: #e2d9d9;
+}
+input[name=username]:focus~.textspan,
+input[name=username]:valid~.textspan {
+  font-size: 14px;
+  top: -24px;
+  color: #e2d9d9;
+}
+
+input[name=password] :invalid {
+  outline: 0;
+  
+}
+input[name=password]:focus,
+input[name=password]:valid {
+  border-color: #e2d9d9;
+}
+input[name=password]:focus~.passSpan,
+input[name=password]:valid~.passSpan {
+  font-size: 14px;
+  top: -24px;
+  color: #e2d9d9;
+}
+
+
+
+/*login css end*/
+
+
+
+
+html,body{
+width:100% !important;
+height:100% !important;
+overflow: hidden;
+font-family: Arial !important;
+font-size:12px;
+}
+.card {
+  width: 300px;
+}
+
+
+#wrapper {
+    padding-left: 70px;
+    transition: all .4s ease 0s;
+    height: 100%
+}
+
+#sidebar-wrapperMain {
+    margin-left: -150px;
+    left: 50px;
+    width: 150px;
+    background: #222;
+    position: fixed;
+    height: 100%;
+    z-index: 10000;
+    transition: all .4s ease 0s;
+}
+.sidebar-nav {
+    display: block;
+    float: left;
+    width: 150px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#page-content-wrapper {
+    padding-left: 0;
+    margin-left: 0;
+    width: 100%;
+    height: auto;
+}
+#wrapper.active {
+    padding-left: 150px;
+}
+#wrapper.active #sidebar-wrapperMain {
+    left: 150px;
+}
+
+#page-content-wrapper {
+  width: 100%;
+}
+
+#sidebar_menu li a, .sidebar-nav li a {
+    color: #999;
+    display: block;
+    float: left;
+    text-decoration: none;
+    width: 150px;
+    background: #252525;
+    border-top: 1px solid #373737;
+    border-bottom: 1px solid #1A1A1A;
+    -webkit-transition: background .5s;
+    -moz-transition: background .5s;
+    -o-transition: background .5s;
+    -ms-transition: background .5s;
+    transition: background .5s;
+}
+.sidebar_name {
+    padding-top: 25px;
+    color: #fff;
+    opacity: .7;
+}
+
+.sidebar-nav li {
+  line-height: 40px;
+  text-indent: 20px;
+}
+
+.sidebar-nav li a {
+  color: #999999;
+  display: block;
+  text-decoration: none;
+}
+
+.sidebar-nav li a:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.2);
+  text-decoration: none;
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+	height: 43px;
+    line-height: 43px;
+    font-size: 15px;;
+}
+
+.sidebar-nav > .sidebar-brand a {
+  color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+#main_icon
+{
+    float:right;
+   padding-right: 35px;
+   padding-top:20px;
+}
+.sub_icon
+{
+    float: right;
+    padding-right: 21px;
+    padding-top: 15px;
+    color: orange;
+}
+.content-header {
+  height: 65px;
+  line-height: 65px;
+}
+
+.content-header h1 {
+  margin: 0;
+  margin-left: 20px;
+  line-height: 65px;
+  display: inline-block;
+}
+
+@media (max-width:767px) {
+    #wrapper {
+    padding-left: 70px;
+    transition: all .4s ease 0s;
+}
+#sidebar-wrapperMain {
+    left: 70px;
+}
+#wrapper.active {
+    padding-left: 150px;
+}
+#wrapper.active #sidebar-wrapperMain {
+    left: 150px;
+    width: 150px;
+    transition: all .4s ease 0s;
+}
+}
+.labelfont{
+    font-weight: bold;
+}
+div.dt-buttons{
+    margin-left: 5% !important;
+}
+.filterDiv{
+    border: 1px solid #c1bebe;
+    border-radius: 10px;
+    padding: 1%;
+    margin-top: 1%;
+    background-image: linear-gradient(to right top, #2c64b7, #008fce, #00b2bc, #41cf94, #c0e176);
+}
+/*
+.tab-content{
+overflow:auto;  
+height: calc(100vh - 42px); 
+height: -webkit-calc(100vh - 42px);
+height: -moz-calc(100vh - 42px);
+}*/
+.tab-content>.tab-pane {
+    overflow: auto;
+    height: calc(100vh - 80px);
+    height: -webkit-calc(100vh - 80px);
+    height: -moz-calc(100vh - 80px);
+}
+/* file upload */
+
+.files{ 
+    position:relative;
+    border: 3px dashed #0142fe;
+    text-align: center;
+    margin: 0;
+    width: 100% !important;
+    height:170px;
+    overflow:hidden;
+    background-color: white;
+}
+
+.files input {
+    width: 100% !important;
+    height:130px;
+    border:none;
+    padding:0;
+    background:transparent;
+    text-align:center;
+}
+
+.files{ position:relative}
+
+.files:after {
+    pointer-events: none;
+    position: absolute;
+    top: 36px;
+    left: 0;
+    width: 70px;
+    right: 0;
+    height: 70px;
+    content: "";
+    background-image: url(https://image.flaticon.com/icons/svg/130/130993.svg);
+    display: block;
+    margin: 0 auto;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.files:before {
+  content:"Browse or Drag file here";
+  position:absolute;
+  bottom:36px;
+  left:0;
+  right:0;
+  display:block;
+  text-align:center;
+  color:#0142fe;
+  font-weight:bold;
+}
+
+/* file upload css end */
+.labeltext{
+    text-align: center;
+    font-weight: bold
+}
+
+.textCenter{
+text-align: center;
+}
+
+fieldset {
+	/* background-color: rgba(111, 66, 193, 0.3); */
+	background-image: linear-gradient(to right top, #2c64b7, #008fce, #00b2bc, #41cf94, #c0e176);
+	border-radius: 4px;
+}
+
+legend {
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	color: var(--purple);
+	font-size: 17px;
+	font-weight: bold;
+	padding: 3px 5px 3px 7px;
+	width: auto;
+}
+#manage-billing-table th,
+  #manage-billing-table td {
+      white-space: nowrap;
+  }
+  #manage-billing-table_wrapper.dataTables_wrapper {
+      width: 90%;
+      margin: 0 auto;
+      overflow:auto;
+  }
+ 
+ #manage-vendor-table th,
+  #manage-vendor-table td {
+      white-space: nowrap;
+  }
+  #manage-vendor-table_wrapper.dataTables_wrapper {
+      width: 90%;
+      margin: 0 auto;
+      overflow:auto;
+  }
+
+ #manage-custPayment-table th,
+  #manage-custPayment-table td {
+      white-space: nowrap;
+  }
+  #manage-custPayment-table_wrapper.dataTables_wrapper {
+      width: 90%;
+      margin: 0 auto;
+      overflow:auto;
+  }
+ 
+  #manage-venPayment-table th,
+  #manage-venPayment-table td {
+      white-space: nowrap;
+  }
+  #manage-venPayment-table_wrapper.dataTables_wrapper {
+      width: 90%;
+      margin: 0 auto;
+      overflow:auto;
+  }
+  #manage-custCheque-table_wrapper.dataTables_wrapper {
+      width: 90%;
+      margin: 0 auto;
+      overflow:auto;
+  }
+  #manage-venCheque-table_wrapper.dataTables_wrapper {
+      width: 90%;
+      margin: 0 auto;
+      overflow:auto;
+  }
+  
+  #manage-manpowerpay-table th,
+  #manage-manpowerpay-table td {
+      white-space: nowrap;
+  }
+  #manage-manpowerpay-table_wrapper.dataTables_wrapper {
+      width: 90%;
+      margin: 0 auto;
+      overflow:auto;
+  }
+   #manage-ledger-table th,
+  #manage-ledger-table td {
+      white-space: nowrap;
+  }
+  #manage-ledger-table_wrapper.dataTables_wrapper {
+      width: 90%;
+      margin: 0 auto;
+      overflow:auto;
+  }
+  
+  #manage-custPaymentView-table th,
+  #manage-custPaymentView-table td {
+      white-space: nowrap;
+  }
+  #manage-custPaymentView-table_wrapper.dataTables_wrapper {
+      width: 90%;
+      margin: 0 auto;
+      overflow:auto;
+  }
+  
+  #manage-venPaymentView-table th,
+  #manage-venPaymentView-table td {
+      white-space: nowrap;
+  }
+  #manage-venPaymentView-table_wrapper.dataTables_wrapper {
+      width: 90%;
+      margin: 0 auto;
+      overflow:auto;
+  }
+  
+ .mandatory{
+ color:red;
+ font-weight: bold;
+ font-size: large;
+ }
+ .borderDiv{
+ -webkit-box-shadow:  0 9px 7px -6px #777;
+ -moz-box-shadow:  0 9px 7px -6px #777;
+  box-shadow: 0 9px 7px -6px #777;
+background: #f1eded;
+padding-bottom: 1%;
+border-radius:20px;
+ }
+ .border-rad{
+border-top-left-radius: 20px;
+border-top-right-radius: 20px;
+}
+.inputbox{
+border-radius: 5px;
+    width: 34%;
+    height: 32px;
+}
+.pad1{
+    margin-top: 1%;
+}
+#manage-vehicle-table_wrapper{
+line-height: 15px;
+}

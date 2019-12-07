@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html ng-app="LoginApp" lang="en" xmlns:th="http://www.thymeleaf.org">
+  <title>Login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+   <link rel="stylesheet" href="/css/angular-toastr.css" />
+  <link rel="stylesheet" type="text/css" href="/css/Login.css"/>
+    <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+<script src="/js/angular.min.js"></script>
+<script src="/js/angular-resource.js"></script>
+ <script src="/js/angular-route.js"></script> 
+ <script src="/js/angular-filter.min.js"></script>
+<!-- <script src="/js/angular-ui-router.min.js"></script> -->
+<script src="/js/angular-animate.js"></script>
+<script src="/js/angular-toastr.tpls.js"></script>
+ <script src="/js/Login.js"></script> 
+<body ng-controller="LoginController">
+<!-- <div style=" background-image: linear-gradient(to bottom right,#182f4c,#33ccff)!important;margin-left: -6%;">
+<div style="width: 100%; height: 100%;padding-bottom: 19%;" id="Div44" name="Div44" class="div_DD">
+<div style="height: auto;" id="Div2" name="Div2" class="container div_DD">
+<div style="width: 100%;height: 100%;" id="Div3" name="Div3"  class="row pt-5 div_DD">
+<div style="width: 100%;height: 100%;" id="Div4" name="Div4" class="col-md-7 col-lg-5 mx-auto pt-5 div_DD">
+<div style="width: 100%;height: 90%;border-radius: 3%;box-shadow: currentcolor 0px 0px 35px !important;display: block;margin-left: 0 !important;" id="Div5" name="Div5"  class="card my-3 p-3 shadow-lg div_DD">
+<div style="width: 100%; height: 100%;" id="Div6" name="Div6"  class="card-body div_DD selectedComp">
+<div style="
+    width: 100%;
+    height: 20%;
+" class="div_DD selectedComp">
+
+</div>
+ <h3 id="Heading33" name="Heading33" value="Title33" style="width: 20%;font-weight: bold;font-size: large;margin-left: 43%;font-family: cursive;" size="h3" onclick="" class="h3_DD" draggable="true" ondragstart="dragIn(event)">SSE</h3> <hr class="hr_DD">
+<div style="width: 100%;height: 10%;margin-bottom: 10%;" id="Div9" name="Div9"  class="div_DD wrap-input100 validate-input">
+<input type="text" id="TextBox11" name="username" ng-model="user.username" style="width: 100%;font-family: calibri !important;" class="input_DD input-field" placeholder="UserName"> 
+</div>
+<div style="width: 100%;height: 10%;margin-bottom: 10%;" id="Div10" name="Div10"  onclick="" class="div_DD">
+<input type="password" id="TextBox13" name="password" ng-model="user.password" style="
+    width: 100%;" class="input_DD" placeholder="Password" typr="password" value="">
+</div>
+<div class="amaran-wrapper bottom right"><div class="amaran-wrapper-inner"></div></div><button id="Button15" type="button"  name="Button15" style="font-family: calibri!important;"  class="btn btn-lg btn-primary btn-block text-uppercase button_DD" value="Sign in" ng-click="loginSubmit(user.username,user.password);">Sign in</button>
+<div style="width: 100%;" id="Errors" name="Errors" class="errorMessage div_DD"></div>
+
+
+</div></div>
+
+</div>
+
+</div></div>
+</div>
+</div> -->
+
+
+<div class="mainDiv">
+
+<div class="imageDiv">
+  <!-- <img src = "img/truckmin.jpg" style="width: 100%;height: 100%;" alt = ""> -->
+</div>
+<div class="loginDiv">
+<div class="logincontainer">
+
+<div class="wrapper" style="margin-top: -20px;">
+				<div class="login selectedComp" style="margin-left: auto;margin-right: auto;">
+						<div>
+							<input type="text" placeholder="Enter Username" name="username" ng-model="user.username" id="username" style="" autocomplete="off">
+						</div>
+						<div style="padding-top: 10px;" class="selectedComp">
+							<input type="password" placeholder="Enter Password"  ng-model="user.password" name="password" id="password" style="">
+						</div>
+                    <div style="padding-top: 10px;">
+							<button type="submit" id="loginID" ng-click="loginSubmit(user.username,user.password);" class="" style="">Login</button>
+						</div>
+                    
+						<!-- <div style="padding-top: 0px;font-size: 14px;font-weight: bold;margin-left: 56px;">
+						</div>
+						
+						<div style="padding-top: 10px;" class="">
+						</div>
+						
+						<div id="Errors" style="color: red;" class="errorMessage">
+						</div> -->
+            <div style="padding-top: 5px;" class="">
+							<div id="orDiv" style="width:40%;border-bottom: 1px solid #000;line-height:0.1em;margin:10px 0 20px;float:left;"></div>
+							<div id="orDiv" style="width:20%;text-align:center;line-height:0.1em;margin:10px 0 20px;display:inline-block;color: #000;">OR</div>
+							<div id="orDiv" style="width:40%;border-bottom: 1px solid #000;line-height:0.1em;margin:10px 0 20px;float:right;"></div>
+						</div>
+						<div><button id="newUserAdd" title="Register Here" type="button" class="newuseradd" style="width: 200px;height: 25px;cursor: not-allowed;">New User? Register Here</button></div>
+<div style="padding-top: 20px;font-size: 12px;font-weight: bold;margin-left: 70px;" class="selectedComp">
+						<a href="" id="ForgotUsernamePwdLink" style="color:black;margin-left: -11%;cursor: not-allowed;">Forgot Password?</a>
+						</div>
+			</div>
+	</div>
+
+
+</div>
+
+</div>
+
+</div>
+</body></html>
