@@ -1,3 +1,5 @@
+var localurl ="http://localhost:8086/";
+//var deployurl ="http://localhost:8086/team";
 var app = angular.module("LoginApp", ["angular.filter","ngRoute","ngResource","ngAnimate", "toastr"]);
 
 
@@ -18,7 +20,7 @@ $scope.loginSubmit = function (username,password){
 	console.log('error: ' + data);
 }); */
 	if (username) {  
-		$window.location.href='http://localhost:8086/';
+		$window.location.href=localurl;
 	}
 	else{
 		alert('Login incorrect');

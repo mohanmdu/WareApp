@@ -1,6 +1,12 @@
-html,body,.homeDiv{
+ html,body,.homeDiv{
   width:100% !important;
   height:100% !important;
+} 
+.modal{
+  font-family: Calibri !important;
+}
+#page-content-wrapper{
+  font-family: Calibri !important;
 }
 .card{
 transition: transform .2s;
@@ -447,11 +453,13 @@ legend {
       margin: 0 auto;
       overflow:auto;
   }
-  
+  #tripModal{
+    overflow-y: hidden !important;
+  }
  .mandatory{
  color:red;
- font-weight: bold;
- font-size: large;
+ /* font-weight: bold; */
+ font-size: small;
  }
  .borderDiv{
  -webkit-box-shadow:  0 9px 7px -6px #777;

@@ -2,35 +2,29 @@
 <html ng-app="homeApp" lang="en" xmlns:th="http://www.thymeleaf.org">
   <title>Home</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
- <link rel="stylesheet" href="/css/jquery.dataTables.min.css">
- <link rel="stylesheet" href="/css/buttons.dataTables.min.css"> 
-<!-- datetimepicker plugin -->
- <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.css"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--Local setup-->
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="/css/buttons.dataTables.min.css"> 
 <link rel="stylesheet" href="/css/tempusdominus-bootstrap-4.min.css" />
- <link rel="stylesheet" href="/css/font-awesome.min.css"> 
- <link rel="stylesheet" href="/css/angular-toastr.css" />
+<link rel="stylesheet" href="/css/font-awesome.min.css"> 
+<link rel="stylesheet" href="/css/angular-toastr.css" />
 <link rel="stylesheet" type="text/css" href="/css/fixedColumns.dataTables.css"/>
 <link rel="stylesheet" type="text/css" href="/css/fixedHeader.dataTables.css"/>
 <link rel="stylesheet" type="text/css" href="/css/select.dataTables.css"/>
 <link rel="stylesheet" type="text/css" href="/css/index.css"/>
-  <script src="/js/jquery.min.js"></script>
-  <script src = "/js/jquery.dataTables.min.js"></script>
-  
-  <script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src = "/js/jquery.dataTables.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 <script src="/js/angular.min.js"></script>
 <script src="/js/angular-resource.js"></script>
 <script type="text/javascript" src="/js/angular-datatables.min.js"></script>
- <script src="/js/angular-route.js"></script> 
- <script src="/js/angular-filter.min.js"></script>
-<!-- <script src="/js/angular-ui-router.min.js"></script> -->
-
+<script src="/js/angular-route.js"></script> 
+<script src="/js/angular-filter.min.js"></script>
 <script src="/js/angular-animate.js"></script>
-
 <script src="/js/moment.js"></script>
 <script type="text/javascript" src="/js/tempusdominus-bootstrap-4.min.js"></script>
-
 
 <script src="/js/dataTables.buttons.min.js"></script>
 <script src="/js/buttons.colVis.min.js"></script>
@@ -44,22 +38,52 @@
 <script type="text/javascript" src="/js/dataTables.fixedColumns.js"></script> 
 <script type="text/javascript" src="/js/dataTables.fixedHeader.js"></script>
 <script type="text/javascript" src="/js/dataTables.lightColumnFilter.min.js"></script>
-
 <script type="text/javascript"src="/js/angular-datatables.select.min.js"></script>
 <script src="/js/angular-datatables.fixedcolumns.js"></script>
 <script src="/js/angular-datatables.buttons.min.js"></script>
- <script type="text/javascript" src="/js/angular-datatables.light-columnfilter.min.js"></script> 
-
-
-
-
+<script type="text/javascript" src="/js/angular-datatables.light-columnfilter.min.js"></script> 
 <script src="/js/angular-toastr.tpls.js"></script>
 
+<!-- For Deployed war-->
+<!--   <link rel="stylesheet" href="/team/css/bootstrap.min.css">
+ <link rel="stylesheet" href="/team/css/jquery.dataTables.min.css">
+ <link rel="stylesheet" href="/team/css/buttons.dataTables.min.css"> 
+<link rel="stylesheet" href="/team/css/tempusdominus-bootstrap-4.min.css" />
+ <link rel="stylesheet" href="/team/css/font-awesome.min.css"> 
+ <link rel="stylesheet" href="/team/css/angular-toastr.css" />
+<link rel="stylesheet" type="text/css" href="/team/css/fixedColumns.dataTables.css"/>
+<link rel="stylesheet" type="text/css" href="/team/css/fixedHeader.dataTables.css"/>
+<link rel="stylesheet" type="text/css" href="/team/css/select.dataTables.css"/>
+<link rel="stylesheet" type="text/css" href="/team/css/index.css"/>
+<script src="/team/js/jquery.min.js"></script>
+<script src="/team/js/jquery.dataTables.min.js"></script>
+<script src="/team/js/bootstrap.min.js"></script>
+<script src="/team/js/angular.min.js"></script>
+<script src="/team/js/angular-resource.js"></script>
+<script type="text/javascript" src="/team/js/angular-datatables.min.js"></script>
+<script src="/team/js/angular-route.js"></script> 
+<script src="/team/js/angular-filter.min.js"></script>
+<script src="/team/js/angular-animate.js"></script>
+<script src="/team/js/moment.js"></script>
+<script type="text/javascript" src="/team/js/tempusdominus-bootstrap-4.min.js"></script>
+<script src="/team/js/dataTables.buttons.min.js"></script>
+<script src="/team/js/buttons.colVis.min.js"></script>
+<script src="/team/js/buttons.flash.min.js"></script>
+<script src="/team/js/jszip.min.js"></script>
+<script src="/team/js/pdfmake.min.js"></script>
+<script src="/team/js/vfs_fonts.js"></script>
+<script src="/team/js/buttons.html5.min.js"></script>
+<script src="/team/js/buttons.print.min.js"></script>
+<script src="/team/js/dataTables.select.js"></script>
+<script type="text/javascript" src="/team/js/dataTables.fixedColumns.js"></script> 
+<script type="text/javascript" src="/team/js/dataTables.fixedHeader.js"></script>
+<script type="text/javascript" src="/team/js/dataTables.lightColumnFilter.min.js"></script>
+<script type="text/javascript"src="/team/js/angular-datatables.select.min.js"></script>
+<script src="/team/js/angular-datatables.fixedcolumns.js"></script>
+<script src="/team/js/angular-datatables.buttons.min.js"></script>
+<script type="text/javascript" src="/team/js/angular-datatables.light-columnfilter.min.js"></script> 
+<script src="/team/js/angular-toastr.tpls.js"></script> -->
 
-
-<style>
-
-</style>
 <body >
 
 <div ng-controller="indexController" style="width: 100%;height: 100%;">
@@ -126,6 +150,8 @@
 <!-- <div ng-view style="width: 100%;height: 90%;"></div> -->
 </div>
 <script>
+		var localurl ="http://localhost:8086/";
+//var deployurl ="http://localhost:8086/team";
 var app = angular.module("homeApp", ["angular.filter","ngRoute","ngResource","datatables","datatables.buttons","ngAnimate", "toastr","datatables.fixedcolumns","datatables.light-columnfilter","datatables.select"]);
 app.config(['$routeProvider',function($routeProvider) {
     $routeProvider
@@ -419,7 +445,7 @@ $scope.addItem = function(item) {
 			return;
 	}else{
 	
-	var url = location.origin +"/api/v1/createcustomer";
+	var url = localurl +"/api/v1/createcustomer";
 	//$scope.listCustomerJson.push(angular.copy(item));
 	    $http({
 	        method : 'POST',
@@ -449,7 +475,7 @@ $scope.updateItem = function(item) {
          } */
          
          
-	var url = location.origin +"/api/v1/customerupdate";
+	var url = localurl +"/api/v1/customerupdate";
 	//$scope.listCustomerJson.push(angular.copy(item));
 	console.log($scope.item);
 	    $http({
@@ -473,7 +499,7 @@ $scope.updateItem = function(item) {
 $scope.removeItem = function(item){
 //$scope.listCustomerJson.splice(index,1);
 	console.log(item.id);
-	var url=location.origin +"/api/v1/customer/"+item.id;
+	var url=localurl +"/api/v1/customer/"+item.id;
 	 $http({
 		    method : 'DELETE',
 		    url : url,
@@ -499,7 +525,7 @@ for(i in $scope.listCustomerJson) {
  
  $scope.initcust =function(){
 	 
-	 var url=location.origin +"/api/v1/customerlist";
+	 var url=localurl +"/api/v1/customerlist";
 	 $http({
 		    method : 'GET',
 		    url : url,
@@ -511,7 +537,7 @@ for(i in $scope.listCustomerJson) {
  }
 $scope.initcustState =function(){
 	 
-	 var url=location.origin +"/api/v1/statestaticdata";
+	 var url=localurl +"/api/v1/statestaticdata";
 	 $http({
 		    method : 'GET',
 		    url : url,
@@ -629,7 +655,7 @@ $scope.addItem = function(item) {
 			return;
 	}else{
 		//$scope.listVendorJson.push(angular.copy(item));
-		var url = location.origin +"/api/v1/createvendor";
+		var url = localurl +"/api/v1/createvendor";
 			//$scope.listCustomerJson.push(angular.copy(item));
 			    $http({
 			        method : 'POST',
@@ -658,7 +684,7 @@ $scope.updateItem = function(item) {
                   $scope.listVendorJson[i] = $scope.item;
               }
        } */
-	var url = location.origin +"/api/v1/vendorrupdate";
+	var url = localurl +"/api/v1/vendorrupdate";
 	//$scope.listCustomerJson.push(angular.copy(item));
 	console.log($scope.item);
 	    $http({
@@ -681,7 +707,7 @@ $scope.removeItem = function(item){
 //$scope.listVendorJson.splice(index,1);
 
 	console.log(item.id);
-	var url=location.origin +"/api/v1/vendor/"+item.id;
+	var url=localurl +"/api/v1/vendor/"+item.id;
 	 $http({
 		    method : 'DELETE',
 		    url : url,
@@ -707,7 +733,7 @@ for(i in $scope.listVendorJson) {
 	
 $scope.initven =function(){
 	
-	 var url=location.origin +"/api/v1/vendorlist";
+	 var url=localurl +"/api/v1/vendorlist";
 	 $http({
 		    method : 'GET',
 		    url : url,
@@ -719,7 +745,7 @@ $scope.initven =function(){
 }
 $scope.initvenState =function(){
 	 
-	 var url=location.origin +"/api/v1/statestaticdata";
+	 var url=localurl +"/api/v1/statestaticdata";
 	 $http({
 		    method : 'GET',
 		    url : url,
@@ -775,7 +801,7 @@ $scope.item = {};
 }
 $scope.addItem = function(item) {
 	
-	var url = location.origin +"/api/v1/employees";
+	var url = localurl +"/api/v1/employees";
 	//$scope.listCustomerJson.push(angular.copy(item));
 	    $http({
 	        method : 'POST',
@@ -803,7 +829,7 @@ $scope.updateItem = function(item) {
                 }
          } */
          
-	var url = location.origin +"/api/v1/employeeupdate";
+	var url = localurl +"/api/v1/employeeupdate";
 	//$scope.listCustomerJson.push(angular.copy(item));
 	console.log($scope.item);
 	    $http({
@@ -825,7 +851,7 @@ $scope.updateItem = function(item) {
 $scope.removeItem = function(item){
 //$scope.listEmployeeJson.splice(index,1);
 	console.log(item.id);
-	var url=location.origin +"/api/v1/employee/"+item.id;
+	var url=localurl +"/api/v1/employee/"+item.id;
 	 $http({
 		    method : 'DELETE',
 		    url : url,
@@ -855,7 +881,7 @@ for(i in $scope.listEmployeeJson) {
 	    });
 	 
 	 
-	 var url=location.origin +"/api/v1/employeelist";
+	 var url=localurl +"/api/v1/employeelist";
 	 $http({
 		    method : 'GET',
 		    url : url,
@@ -907,7 +933,7 @@ $(".updateProd").css("display","none");
 $scope.item = {};
 }
 $scope.addItem = function(item) {
-	var url = location.origin +"/api/v1/createproduct";
+	var url = localurl +"/api/v1/createproduct";
 	//$scope.listCustomerJson.push(angular.copy(item));
 	    $http({
 	        method : 'POST',
@@ -935,7 +961,7 @@ $scope.updateItem = function(item) {
                }
         } */
         
-	var url = location.origin +"/api/v1/productupdate";
+	var url = localurl +"/api/v1/productupdate";
 	//$scope.listCustomerJson.push(angular.copy(item));
 	console.log($scope.item);
 	    $http({
@@ -957,7 +983,7 @@ $scope.updateItem = function(item) {
 $scope.removeItem = function(item){
 //$scope.listProductJson.splice(index,1);
 	console.log(item.id);
-	var url=location.origin +"/api/v1/product/"+item.id;
+	var url=localurl +"/api/v1/product/"+item.id;
 	 $http({
 		    method : 'DELETE',
 		    url : url,
@@ -982,7 +1008,7 @@ for(i in $scope.listProductJson) {
    }
 }	
 $scope.initProduct = function(){
-	 var url=location.origin +"/api/v1/productlist";
+	 var url=localurl +"/api/v1/productlist";
 	 $http({
 		    method : 'GET',
 		    url : url,
@@ -1052,7 +1078,7 @@ app.controller('VehicleController', function ($scope, $timeout,$window ,$filter,
 	$scope.getCommonDetails =function(item){
 		
 		if(item){
-		var url=location.origin +"/api/v1/customervendorobjectfromtripsheet";
+		var url=localurl +"/api/v1/customervendorobjectfromtripsheet";
 		 $http({
 			    method : 'GET',
 			    url : url,
@@ -1326,7 +1352,7 @@ $scope.addTripItem = function(item) {
 	}
 	else{
 //$scope.listVehicleJson.push(item);
-var url = location.origin +"/api/v1/createtripsheet";
+var url = localurl +"/api/v1/createtripsheet";
 	//$scope.listCustomerJson.push(angular.copy(item));
 	    $http({
 	        method : 'POST',
@@ -1410,7 +1436,7 @@ $scope.updateItem = function(item) {
                    $scope.listVehicleJson[i] = $scope.item;
                }
         } */
-	var url = location.origin +"/api/v1/updatetripsheet";
+	var url = localurl +"/api/v1/updatetripsheet";
 	//$scope.listCustomerJson.push(angular.copy(item));
 	console.log($scope.item);
 	    $http({
@@ -1432,7 +1458,7 @@ $scope.updateItem = function(item) {
 }
 $scope.removeItem = function(item){
 //$scope.listVehicleJson.splice(index,1);
-	var url=location.origin +"/api/v1/tripsheet/"+item.tripid;
+	var url=localurl +"/api/v1/tripsheet/"+item.tripid;
 	 $http({
 		    method : 'DELETE',
 		    url : url,
@@ -1491,7 +1517,7 @@ $scope.initVeh =function(){
 	 $('#datetimepicker_gateOut').datetimepicker({
 		        format: 'DD/MM/YYYY'
 		    }); */
-	 var url=location.origin +"/api/v1/triplist";
+	 var url=localurl +"/api/v1/triplist";
 	 $http({
 		    method : 'GET',
 		    url : url,
@@ -1502,7 +1528,7 @@ $scope.initVeh =function(){
 		   });
 }
 $scope.getCustVenList =function(){
-	 var url=location.origin +"/api/v1/combinenameslist";
+	 var url=localurl +"/api/v1/combinenameslist";
 	 $http({
 		    method : 'GET',
 		    url : url,
@@ -1519,7 +1545,7 @@ $scope.getCustVenList =function(){
 		   });
 }
 $scope.getTruckList =function(){
-	 var url=location.origin +"/api/v1/vehiclelist";
+	 var url=localurl +"/api/v1/vehiclelist";
 	 $http({
 		    method : 'GET',
 		    url : url,
@@ -1638,7 +1664,7 @@ $scope.item = {};
 }
 $scope.addItem = function(item) {
 //$scope.listUserJson.push(item);
-var url = location.origin +"/api/v1/createuser";
+var url = localurl +"/api/v1/createuser";
 	//$scope.listCustomerJson.push(angular.copy(item));
 	    $http({
 	        method : 'POST',
@@ -1664,7 +1690,7 @@ $scope.updateItem = function(item) {
                 $scope.listUserJson[i] = $scope.item;
             }
      } */
-	var url = location.origin +"/api/v1/userupdate";
+	var url = localurl +"/api/v1/userupdate";
 	//$scope.listCustomerJson.push(angular.copy(item));
 	console.log($scope.item);
 	    $http({
@@ -1685,7 +1711,7 @@ $scope.updateItem = function(item) {
 }
 $scope.removeItem = function(item){
 //$scope.listUserJson.splice(index,1);
-	var url=location.origin +"/api/v1/user/"+item.id;
+	var url=localurl +"/api/v1/user/"+item.id;
 	 $http({
 		    method : 'DELETE',
 		    url : url,
@@ -1711,7 +1737,7 @@ for(i in $scope.listUserJson) {
 }
 $scope.initUser =function(){
 	
-	 var url=location.origin +"/api/v1/userlist";
+	 var url=localurl +"/api/v1/userlist";
 	 $http({
 		    method : 'GET',
 		    url : url,
@@ -1949,7 +1975,7 @@ angular.forEach($scope.customerInvoiceJson, function(value, key) {
 			 toastr.error('Please enter To date');
 			return;
 		}else{
-			var url=location.origin +"/api/v1/customerinvoicelist";
+			var url=localurl +"/api/v1/customerinvoicelist";
 			 $http({
 				    method : 'GET',
 				    url : url,
@@ -1975,7 +2001,7 @@ angular.forEach($scope.customerInvoiceJson, function(value, key) {
 			 toastr.error('Please enter Truck No');
 			return;
 		}else{
-			var url=location.origin +"/api/v1/vendorinvoicelistintripsheet";
+			var url=localurl +"/api/v1/vendorinvoicelistintripsheet";
 			 $http({
 				    method : 'GET',
 				    url : url,
@@ -2001,7 +2027,7 @@ angular.forEach($scope.customerInvoiceJson, function(value, key) {
 			 toastr.error('Please enter CustomerName');
 			return;
 		}else{
-			var url=location.origin +"/api/v1/invoicelistincustomer";
+			var url=localurl +"/api/v1/invoicelistincustomer";
 			 $http({
 				    method : 'GET',
 				    url : url,
@@ -2026,7 +2052,7 @@ angular.forEach($scope.customerInvoiceJson, function(value, key) {
 			 toastr.error('Please enter CustomerName');
 			return;
 		}else{
-			var url=location.origin +"/api/v1/vendorinvoicelistinvendor";
+			var url=localurl +"/api/v1/vendorinvoicelistinvendor";
 			 $http({
 				    method : 'GET',
 				    url : url,
@@ -2262,7 +2288,7 @@ angular.forEach($scope.customerInvoiceJson, function(value, key) {
 		else if($scope.grandTotalList.custinvoicedate =="" || $scope.grandTotalList.custinvoicedate == undefined){
 			toastr.error('Invoice Date mandatory to proceed save');
 		}else{
-			var url = location.origin +"/api/v1/createcustomerinvoice";
+			var url = localurl +"/api/v1/createcustomerinvoice";
 		    $http({
 		        method : 'POST',
 		        url : url,
@@ -2290,7 +2316,7 @@ angular.forEach($scope.customerInvoiceJson, function(value, key) {
 	$scope.getCustDetails =function(data){
 		
 	 	//$scope.custDetailResp=[];
-		var url=location.origin +"/api/v1/customerlistbycusname?name="+data;
+		var url=localurl +"/api/v1/customerlistbycusname?name="+data;
 		 $http({
 			    method : 'GET',
 			    url : url
@@ -2307,7 +2333,7 @@ angular.forEach($scope.customerInvoiceJson, function(value, key) {
 	$scope.getVenDetails =function(data){
 		
 	 	//$scope.custDetailResp=[];
-		var url=location.origin +"/api/v1/vendoristbyvendname?name="+data;
+		var url=localurl +"/api/v1/vendoristbyvendname?name="+data;
 		 $http({
 			    method : 'GET',
 			    url : url
@@ -2322,7 +2348,7 @@ angular.forEach($scope.customerInvoiceJson, function(value, key) {
 	}
 	
 	$scope.updateBilledTrip =function(data){
-		var url = location.origin +"/api/v1/updatecustomerinvoice";
+		var url = localurl +"/api/v1/updatecustomerinvoice";
 		$http({
 	        method : 'PUT',
 	        url : url,
@@ -2358,7 +2384,7 @@ $scope.saveVendorInvoice =function(){
 	}else if($scope.grandTotalVendorList.veninvoicedate =="" ||$scope.grandTotalVendorList.veninvoicedate ==undefined){
 		toastr.error('Invoice Date mandatory to proceed save');
 	}else{
-		var url = location.origin +"/api/v1/createvendorinvoice";
+		var url = localurl +"/api/v1/createvendorinvoice";
 		    $http({
 		        method : 'POST',
 		        url : url,
@@ -2384,7 +2410,7 @@ $scope.saveVendorInvoice =function(){
 	}
 	
 $scope.updateVenBilledTrip =function(data){
-	var url = location.origin +"/api/v1/updatevendorinvoice";
+	var url = localurl +"/api/v1/updatevendorinvoice";
 	$http({
         method : 'PUT',
         url : url,
@@ -2415,7 +2441,7 @@ $scope.updateVenBilledTrip =function(data){
 	$scope.showCustDetails =function(customer,data,amt,date){
 		 $scope.custviewdetail={custviewAmt:"",custviewDateAmt:"",custname:""};
 		 $scope.customerViewDetails=[];
-		var url=location.origin +"/api/v1/findtriprecordbycustomerinvoiceid?customerinvoiceid="+data;
+		var url=localurl +"/api/v1/findtriprecordbycustomerinvoiceid?customerinvoiceid="+data;
 		 $http({
 			    method : 'GET',
 			    url : url
@@ -2434,7 +2460,7 @@ $scope.updateVenBilledTrip =function(data){
 	$scope.showVenDetails =function(customer,data,amt,date){
 		 $scope.venviewdetail={venviewAmt:"",venviewDateAmt:"",venname:""};
 		 $scope.vendorViewDetails=[];
-		var url=location.origin +"/api/v1/findtriprecordbyvendorinvoiceid?vendorinvoiceid="+data;
+		var url=localurl +"/api/v1/findtriprecordbyvendorinvoiceid?vendorinvoiceid="+data;
 		 $http({
 			    method : 'GET',
 			    url : url
@@ -2467,7 +2493,7 @@ $scope.updateVenBilledTrip =function(data){
 	};
 	
 	$scope.initView =function(){
-		var url=location.origin +"/api/v1/listcustomerinvoice";
+		var url=localurl +"/api/v1/listcustomerinvoice";
 		 $http({
 			    method : 'GET',
 			    url : url
@@ -2478,7 +2504,7 @@ $scope.updateVenBilledTrip =function(data){
 			   });
 	};
 	$scope.initvenView =function(){
-		var url=location.origin +"/api/v1/listvendorinvoice";
+		var url=localurl +"/api/v1/listvendorinvoice";
 		 $http({
 			    method : 'GET',
 			    url : url
@@ -2496,7 +2522,7 @@ $scope.updateVenBilledTrip =function(data){
 	
 	$scope.getTotalTruckNo =function(){
 		 $scope.trucknoJson = []; 
-		 var url=location.origin +"/api/v1/vehiclelist";
+		 var url=localurl +"/api/v1/vehiclelist";
 		 $http({
 			    method : 'GET',
 			    url : url,
@@ -2554,7 +2580,7 @@ $scope.updateVenBilledTrip =function(data){
 		$scope.grandTotal=0;
 		$scope.manpower=[{item:"",description:"",hsn:"",quantity:0,unitprice:0,taxpercentage:"",total:0,withoutTax:0,igst:0,cgst:0,sgst:0}];
 		 $scope.itemJson = []; 
-		 var url=location.origin +"/api/v1/manpowerinvoicestaticfeild";
+		 var url=localurl +"/api/v1/manpowerinvoicestaticfeild";
 		 $http({
 			    method : 'GET',
 			    url : url,
@@ -2568,7 +2594,7 @@ $scope.updateVenBilledTrip =function(data){
 		//$scope.custlistJson=[{name:"",branch:""}];
 		$scope.custlistJson=[];
 		 $scope.users={name:"",code:"",address:""};
-		 var url=location.origin +"/api/v1/combinenameslist";
+		 var url=localurl +"/api/v1/combinenameslist";
 		 $http({
 			    method : 'GET',
 			    url : url,
@@ -2642,7 +2668,7 @@ $scope.updateVenBilledTrip =function(data){
 			 toastr.error('Please fill the required fields');
 				return;
 		}else{
-			  var url=location.origin +"/api/v1/manpowercreate";
+			  var url=localurl +"/api/v1/manpowercreate";
 			   $http({
 			        method : 'POST',
 			        url : url,
@@ -2870,7 +2896,7 @@ app.controller('ReceiptController', function ($scope,$timeout,$http,toastr,DTOpt
 			 toastr.error('Please enter CustomerName');
 			return;
 		}else{
-			var url=location.origin +"/api/v1/invoicelistincustomer";
+			var url=localurl +"/api/v1/invoicelistincustomer";
 			 $http({
 				    method : 'GET',
 				    url : url,
@@ -2895,7 +2921,7 @@ app.controller('ReceiptController', function ($scope,$timeout,$http,toastr,DTOpt
 				 toastr.error('Please enter CustomerName');
 				return;
 			}else{
-				var url=location.origin +"/api/v1/vendorinvoicelistinvendor";
+				var url=localurl +"/api/v1/vendorinvoicelistinvendor";
 				 $http({
 					    method : 'GET',
 					    url : url,
@@ -2920,7 +2946,7 @@ app.controller('ReceiptController', function ($scope,$timeout,$http,toastr,DTOpt
 					 toastr.error('Please enter CustomerName');
 					return;
 				}else{
-					var url=location.origin +"/api/v1/customerinvoicebydatename";
+					var url=localurl +"/api/v1/customerinvoicebydatename";
 					 $http({
 						    method : 'GET',
 						    url : url,
@@ -2945,7 +2971,7 @@ app.controller('ReceiptController', function ($scope,$timeout,$http,toastr,DTOpt
 					 toastr.error('Please enter CustomerName');
 					return;
 				}else{
-					var url=location.origin +"/api/v1/vendorinvoicelistinvendor";
+					var url=localurl +"/api/v1/vendorinvoicelistinvendor";
 					 $http({
 						    method : 'GET',
 						    url : url,
@@ -2970,7 +2996,7 @@ app.controller('ReceiptController', function ($scope,$timeout,$http,toastr,DTOpt
 					 toastr.error('Please enter CustomerName');
 					return;
 				}else{ */
-					var url=location.origin +"/api/v1/listcustomerbydatenamecompletestatus";
+					var url=localurl +"/api/v1/listcustomerbydatenamecompletestatus";
 					 $http({
 						    method : 'GET',
 						    url : url,
@@ -2987,7 +3013,7 @@ app.controller('ReceiptController', function ($scope,$timeout,$http,toastr,DTOpt
 		$scope.custPaymentcallBackdata={paymentid:"",invoiceid:[]};
 		$scope.custPaymentsubmitData={customerreceiptdate:$scope.commoncustList.custreceiptDate,customerpayment:[]};
 		$scope.custPaymentsubmitData.customerpayment=$scope.paymentJson;
-		var url = location.origin +"/api/v1/createcustomerpayment";
+		var url = localurl +"/api/v1/createcustomerpayment";
 		$scope.checkCredit=false;
 		$scope.checkamt=0;
 		angular.forEach($scope.paymentJson, function(value, key) {
@@ -3068,7 +3094,7 @@ app.controller('ReceiptController', function ($scope,$timeout,$http,toastr,DTOpt
 	}
 	
 	$scope.updatecustomerInvoice=function(){
-		var url = location.origin +"/api/v1/updatecustomerpaymentid";
+		var url = localurl +"/api/v1/updatecustomerpaymentid";
 		$http({
 	        method : 'PUT',
 	        url : url,
@@ -3093,7 +3119,7 @@ app.controller('ReceiptController', function ($scope,$timeout,$http,toastr,DTOpt
 		$scope.venPaymentcallBackdata={paymentid:"",invoiceid:[]};
 		$scope.venPaymentsubmitData={vendorreceiptdate:$scope.commonvenList.venreceiptDate,vendorpayment:[]};
 		$scope.venPaymentsubmitData.vendorpayment=$scope.paymentvenJson;
-		var url = location.origin +"/api/v1/createvendorpayment";
+		var url = localurl +"/api/v1/createvendorpayment";
 		$scope.checkvenCredit=false;
 		$scope.checkvenamt=0;
 		angular.forEach($scope.paymentvenJson, function(value, key) {
@@ -3171,7 +3197,7 @@ app.controller('ReceiptController', function ($scope,$timeout,$http,toastr,DTOpt
 	}
 	
 	$scope.updatevendorInvoice=function(){
-		var url = location.origin +"/api/v1/updatevendorpaymentid";
+		var url = localurl +"/api/v1/updatevendorpaymentid";
 		$http({
 	        method : 'PUT',
 	        url : url,
@@ -3257,7 +3283,7 @@ app.controller('ReceiptController', function ($scope,$timeout,$http,toastr,DTOpt
 	    	$scope.checkedcustPaymentValue=[];
 	    	$scope.commoncustList={custreceiptDate:"",totalamount:0};
 	    	$scope.customerpaymentList=[];
-			var url=location.origin +"/api/v1/listcustomerinvoice";
+			var url=localurl +"/api/v1/listcustomerinvoice";
 			 $http({
 				    method : 'GET',
 				    url : url
@@ -3275,7 +3301,7 @@ app.controller('ReceiptController', function ($scope,$timeout,$http,toastr,DTOpt
 		 $scope.checkedvenPaymentValue=[];
 		 $scope.vendorpaymentList=[];
 		 $scope.commonvenList={venreceiptDate:"",totalamount:0};
-			var url=location.origin +"/api/v1/listvendorinvoice";
+			var url=localurl +"/api/v1/listvendorinvoice";
 			 $http({
 				    method : 'GET',
 				    url : url
@@ -3297,7 +3323,7 @@ app.controller('ReceiptController', function ($scope,$timeout,$http,toastr,DTOpt
 					 toastr.error('Please enter CustomerName');
 					return;
 				}else{
-					var url=location.origin +"/api/v1/listcustomerbydatename";
+					var url=localurl +"/api/v1/listcustomerbydatename";
 					 $http({
 						    method : 'GET',
 						    url : url,
@@ -3316,7 +3342,7 @@ app.controller('ReceiptController', function ($scope,$timeout,$http,toastr,DTOpt
     	$scope.checkedmanpowerPaymentValue=[];
     	$scope.commonmpList={custreceiptDate:"",totalamount:0};
 		 $scope.customervendorpayList=[];
-		 var url=location.origin +"/api/v1/combinenameslist";
+		 var url=localurl +"/api/v1/combinenameslist";
 		 $http({
 			    method : 'GET',
 			    url : url,
@@ -3370,7 +3396,7 @@ app.controller('ReceiptController', function ($scope,$timeout,$http,toastr,DTOpt
 		$scope.mpPaymentcallBackdata={paymentid:"",invoiceid:[]};
 		$scope.mpPaymentsubmitData={customerreceiptdate:$scope.commonmpList.custreceiptDate,customerpayment:[]};
 		$scope.mpPaymentsubmitData.customerpayment=$scope.mppaymentJson;
-		var url = location.origin +"/api/v1/createmanpowerpayment";
+		var url = localurl +"/api/v1/createmanpowerpayment";
 		$scope.checkCredit=false;
 		$scope.checkmpamt=0;
 		angular.forEach($scope.mppaymentJson, function(value, key) {
@@ -3450,7 +3476,7 @@ app.controller('ReceiptController', function ($scope,$timeout,$http,toastr,DTOpt
 		}
 	}
 	$scope.updatempInvoice=function(){
-		var url = location.origin +"/api/v1/updatemanpowerpaymentid";
+		var url = localurl +"/api/v1/updatemanpowerpaymentid";
 		$http({
 	        method : 'PUT',
 	        url : url,
@@ -3603,7 +3629,7 @@ app.controller('VoucherController', function ($scope,$timeout,$http,toastr,DTOpt
 	 $scope.searchcustCreditItem =function(custName){
 		 $scope.commoncustMatches={totalcreditamount:0,totalotheramount:0};
 			if(custName !="" || custName != undefined){
-				var url=location.origin +"/api/v1/findcustomer/"+custName;
+				var url=localurl +"/api/v1/findcustomer/"+custName;
 				 $http({
 					    method : 'GET',
 					    url : url/* ,
@@ -3659,7 +3685,7 @@ app.controller('VoucherController', function ($scope,$timeout,$http,toastr,DTOpt
 		$scope.searchvenCreditItem =function(venName){
 			 $scope.commonvenMatches={totalcreditamount:0,totalotheramount:0};
 			if(venName !="" || venName != undefined){
-				var url=location.origin +"/api/v1/vendorname/"+venName;
+				var url=localurl +"/api/v1/vendorname/"+venName;
 				 $http({
 					    method : 'GET',
 					    url : url
@@ -3815,7 +3841,7 @@ $scope.checkvenVoucherInArray =function(index,item){
 			});
 	 		
 	 		//$scope.updatecustVoucher.push($scope.checkedcustvoucher);
-	 		var url = location.origin +"/api/v1/updatecustomerpaymentchild";
+	 		var url = localurl +"/api/v1/updatecustomerpaymentchild";
 		    $http({
 		        method : 'PUT',
 		        url : url,
@@ -3865,7 +3891,7 @@ $scope.checkvenVoucherInArray =function(index,item){
 			});
 	 		
 	 		
-	 		var url = location.origin +"/api/v1/updatevendorpaymentchild";
+	 		var url = localurl +"/api/v1/updatevendorpaymentchild";
 		    $http({
 		        method : 'PUT',
 		        url : url,
@@ -3889,7 +3915,7 @@ $scope.checkvenVoucherInArray =function(index,item){
 	 
 	 $scope.submitcustCheque =function(){
 		 if($scope.checkedcustcheque.length != 0){
-			 var url=location.origin +"/api/v1/updatecutomercheques";
+			 var url=localurl +"/api/v1/updatecutomercheques";
 			 $http({
 				    method : 'PUT',
 				    url : url,
@@ -3911,7 +3937,7 @@ $scope.checkvenVoucherInArray =function(index,item){
 		
 		$scope.submitvenCheque =function(){
 			 if($scope.checkedvencheque.length != 0){
-				 var url=location.origin +"/api/v1/updatevendorchequelist";
+				 var url=localurl +"/api/v1/updatevendorchequelist";
 				 $http({
 					    method : 'PUT',
 					    url : url,
@@ -3932,7 +3958,7 @@ $scope.checkvenVoucherInArray =function(index,item){
 			};
 	$scope.init_custChequeStatus =function(){
 		 $scope.custChequeList =[];
-			var url=location.origin +"/api/v1/customerchequelist";
+			var url=localurl +"/api/v1/customerchequelist";
 			 $http({
 				    method : 'GET',
 				    url : url
@@ -3947,7 +3973,7 @@ $scope.checkvenVoucherInArray =function(index,item){
 		
 		/* $scope.init_venCredit =function(){
 			 $scope.venCreditList =[];
-				var url=location.origin +"/api/v1/vendorpaymentbystatusamount";
+				var url=localurl +"/api/v1/vendorpaymentbystatusamount";
 				 $http({
 					    method : 'GET',
 					    url : url
@@ -3959,7 +3985,7 @@ $scope.checkvenVoucherInArray =function(index,item){
 			}; */
 		$scope.init_venChequeStatus =function(){
 			 $scope.venChequeList =[];
-				var url=location.origin +"/api/v1/vendorchequelist";
+				var url=localurl +"/api/v1/vendorchequelist";
 				 $http({
 					    method : 'GET',
 					    url : url
@@ -3972,7 +3998,7 @@ $scope.checkvenVoucherInArray =function(index,item){
 			};
 		 $scope.initcustList =function(){
 			 
-			 var url=location.origin +"/api/v1/customerlist";
+			 var url=localurl +"/api/v1/customerlist";
 			 $http({
 				    method : 'GET',
 				    url : url,
@@ -3984,7 +4010,7 @@ $scope.checkvenVoucherInArray =function(index,item){
 				   });
 		 }
 		 $scope.initvenList =function(){
-			 var url=location.origin +"/api/v1/vendorlist";
+			 var url=localurl +"/api/v1/vendorlist";
 			 $http({
 				    method : 'GET',
 				    url : url,
@@ -4017,7 +4043,7 @@ app.controller('LedgerController', function ($scope,$timeout,$http,toastr,DTOpti
     	$scope.ledgerListitem=[];
     	//$scope.commonmpList={custreceiptDate:"",totalamount:0};
 		 //$scope.customervendorpayList=[];
-		 var url=location.origin +"/api/v1/combinenameslist";
+		 var url=localurl +"/api/v1/combinenameslist";
 		 $http({
 			    method : 'GET',
 			    url : url,
@@ -4044,7 +4070,7 @@ app.controller('LedgerController', function ($scope,$timeout,$http,toastr,DTOpti
 			 toastr.error('Please enter CustomerName');
 			return;
 		}else{
-			var url=location.origin +"/api/v1/ledgerreportform";
+			var url=localurl +"/api/v1/ledgerreportform";
 			 $http({
 				    method : 'GET',
 				    url : url,
@@ -4070,6 +4096,7 @@ app.controller('LedgerController', function ($scope,$timeout,$http,toastr,DTOpti
 	  scope=$scope;
 });
 $(document).ready(function(){
+
 	$(".menu-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("active");
