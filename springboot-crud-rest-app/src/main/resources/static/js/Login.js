@@ -1,5 +1,5 @@
-var localurl ="http://localhost:8086/";
-//var deployurl ="http://localhost:8086/team";
+//var localurl ="http://localhost:8086/";
+var localurl ="http://localhost:8086/team";
 var app = angular.module("LoginApp", ["angular.filter","ngRoute","ngResource","ngAnimate", "toastr"]);
 
 

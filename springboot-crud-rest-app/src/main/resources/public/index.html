@@ -4,7 +4,7 @@
   <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--Local setup-->
-<link rel="stylesheet" href="/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="/css/buttons.dataTables.min.css"> 
 <link rel="stylesheet" href="/css/tempusdominus-bootstrap-4.min.css" />
@@ -42,10 +42,10 @@
 <script src="/js/angular-datatables.fixedcolumns.js"></script>
 <script src="/js/angular-datatables.buttons.min.js"></script>
 <script type="text/javascript" src="/js/angular-datatables.light-columnfilter.min.js"></script> 
-<script src="/js/angular-toastr.tpls.js"></script>
+<script src="/js/angular-toastr.tpls.js"></script> -->
 
 <!-- For Deployed war-->
-<!--   <link rel="stylesheet" href="/team/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/team/css/bootstrap.min.css">
  <link rel="stylesheet" href="/team/css/jquery.dataTables.min.css">
  <link rel="stylesheet" href="/team/css/buttons.dataTables.min.css"> 
 <link rel="stylesheet" href="/team/css/tempusdominus-bootstrap-4.min.css" />
@@ -78,11 +78,11 @@
 <script type="text/javascript" src="/team/js/dataTables.fixedColumns.js"></script> 
 <script type="text/javascript" src="/team/js/dataTables.fixedHeader.js"></script>
 <script type="text/javascript" src="/team/js/dataTables.lightColumnFilter.min.js"></script>
-<script type="text/javascript"src="/team/js/angular-datatables.select.min.js"></script>
+<script type="text/javascript" src="/team/js/angular-datatables.select.min.js"></script>
 <script src="/team/js/angular-datatables.fixedcolumns.js"></script>
 <script src="/team/js/angular-datatables.buttons.min.js"></script>
 <script type="text/javascript" src="/team/js/angular-datatables.light-columnfilter.min.js"></script> 
-<script src="/team/js/angular-toastr.tpls.js"></script> -->
+<script src="/team/js/angular-toastr.tpls.js"></script>
 
 <body >
 
@@ -118,18 +118,18 @@
            <li class="sidebar-brand"><a class="menu-toggle" id="home" ng-click="redirectUrl($event)" href="#">Dashboard<i class="fa fa-bars sub_icon" aria-hidden="true"></i></a></li>
       </ul>
       <ul  class="sidebar-nav">  
-	  <li class="sidebar-brand"><a id="customer_master"  ng-click="redirectUrl($event)">Customer<i class="fa fa-user sub_icon" aria-hidden="true"></i></a></li>
-      <li class='sidebar-brand'><a id="vendor_master"   ng-click="redirectUrl($event)">Vendor<i class="fa fa-user-circle sub_icon"></i></a></li> 
-      <li class='sidebar-brand' ><a id="employee_master" ng-click="redirectUrl($event)">Employee<i class="fa fa-users sub_icon" aria-hidden="true"></i></a></li> 
-      <!-- <li class='sidebar-brand' ><a id="product_master"  ng-click="redirectUrl($event)">Product<i class="fa fa-product-hunt sub_icon" aria-hidden="true"></i></a></li> --> 
-      <li class='sidebar-brand'><a id="vehicle_master"  ng-click="redirectUrl($event)">TripSheet<i class="fa fa-truck sub_icon" aria-hidden="true"></i></a></li>
-      <li class='sidebar-brand' ><a id="user_master"  ng-click="redirectUrl($event)">User<i class="fa fa-user sub_icon" aria-hidden="true"></i></a></li>
-      <li class='sidebar-brand'><a id="userAccess_master"  ng-click="redirectUrl($event)">Access<i class="fa fa-check-square-o sub_icon" aria-hidden="true"></i></a></li>
-      <li class='sidebar-brand'><a id="billing_master"  ng-click="redirectUrl($event)">Billing<i class="fa fa-money sub_icon" aria-hidden="true"></i></a></li>
-      <li class='sidebar-brand' ><a id="receipt_master"  ng-click="redirectUrl($event)">Receipt<i class="fa fa-address-book sub_icon" aria-hidden="true"></i></a></li>
-	  <li class='sidebar-brand' ><a id="voucher_master"  ng-click="redirectUrl($event)">Voucher<i class="fa fa-address-book sub_icon" aria-hidden="true"></i></a></li>
-	 <li class='sidebar-brand' ><a id="ledger_master"  ng-click="redirectUrl($event)">Ledger<i class="fa fa-address-book sub_icon" aria-hidden="true"></i></a></li>
-	  <li class='sidebar-brand' ><a id="logout"  ng-click="redirectUrl($event)">Logout<i class="fa fa-sign-out sub_icon" aria-hidden="true"></i></a></li>
+<li class="sidebar-brand"><a id="customer_master"  ng-click="redirectUrl($event)">Customer<i class="fa fa-user sub_icon" aria-hidden="true"></i></a></li>
+	<li class="sidebar-brand"><a id="vendor_master"   ng-click="redirectUrl($event)">Vendor<i class="fa fa-user-circle sub_icon"></i></a></li> 
+	<li class="sidebar-brand" ><a id="employee_master" ng-click="redirectUrl($event)">Employee<i class="fa fa-users sub_icon" aria-hidden="true"></i></a></li> 
+	<!-- <li class='sidebar-brand' ><a id="product_master"  ng-click="redirectUrl($event)">Product<i class="fa fa-product-hunt sub_icon" aria-hidden="true"></i></a></li> --> 
+	<li class="sidebar-brand"><a id="vehicle_master"  ng-click="redirectUrl($event)">TripSheet<i class="fa fa-truck sub_icon" aria-hidden="true"></i></a></li>
+	<li class="sidebar-brand" ><a id="user_master"  ng-click="redirectUrl($event)">User<i class="fa fa-user sub_icon" aria-hidden="true"></i></a></li>
+	<li class="sidebar-brand"><a id="userAccess_master"  ng-click="redirectUrl($event)">Access<i class="fa fa-check-square-o sub_icon" aria-hidden="true"></i></a></li>
+	<li class="sidebar-brand"><a id="billing_master"  ng-click="redirectUrl($event)">Billing<i class="fa fa-money sub_icon" aria-hidden="true"></i></a></li>
+	<li class="sidebar-brand" ><a id="receipt_master"  ng-click="redirectUrl($event)">Receipt<i class="fa fa-address-book sub_icon" aria-hidden="true"></i></a></li>
+<li class="sidebar-brand"><a id="voucher_master"  ng-click="redirectUrl($event)">Voucher<i class="fa fa-address-book sub_icon" aria-hidden="true"></i></a></li>
+<li class="sidebar-brand" ><a id="ledger_master"  ng-click="redirectUrl($event)">Ledger<i class="fa fa-address-book sub_icon" aria-hidden="true"></i></a></li>
+ <li class="sidebar-brand"><a id="logout"  ng-click="redirectUrl($event)">Logout<i class="fa fa-sign-out sub_icon" aria-hidden="true"></i></a></li>
       </ul>
         
       </div>
@@ -150,8 +150,8 @@
 <!-- <div ng-view style="width: 100%;height: 90%;"></div> -->
 </div>
 <script>
-		var localurl ="http://localhost:8086/";
-//var deployurl ="http://localhost:8086/team";
+	//	var localurl ="http://localhost:8086/";
+var localurl ="http://localhost:8086/team";
 var app = angular.module("homeApp", ["angular.filter","ngRoute","ngResource","datatables","datatables.buttons","ngAnimate", "toastr","datatables.fixedcolumns","datatables.light-columnfilter","datatables.select"]);
 app.config(['$routeProvider',function($routeProvider) {
     $routeProvider
