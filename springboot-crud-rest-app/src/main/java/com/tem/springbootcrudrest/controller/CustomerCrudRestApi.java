@@ -79,7 +79,7 @@ public class CustomerCrudRestApi {
 
 	}
 	
-	@GetMapping("/customervendorcombinelist")
+	@GetMapping("/combinenameslist")
 	public List<Object> getListOfCombineName() {
 
 		List<Object> combinelists = customerService.getListOfCombineName();
