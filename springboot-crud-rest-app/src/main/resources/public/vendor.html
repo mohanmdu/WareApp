@@ -1,7 +1,13 @@
 <div>
-<div>
-<input name="" type="button"  style="float: right;margin: 1%; " class="btn btn-primary" id="" value="Create" ng-click="createVendor()" >
-<table id="manage-vendor-table" class="vendorTable table table-bordered" datatable="ng" dt-options="vm.dtVendor" dt-column-defs="vm.dtColumnDefs"  style="width: 90%;">
+<div class="row">
+<div class="col-md-6" style="text-align: right;"><h4>Vendor</h4></div>
+<div class="col-md-6">
+<input name="" type="button"  style="float: right;margin: 1% 21% 2% 0%; " class="btn btn-primary" id="" value="Create" ng-click="createVendor()" >
+</div>
+</div>
+
+<div class="tableDiv">
+<table id="manage-vendor-table" class="vendorTable table table-bordered" datatable="ng" dt-options="vm.dtVendor" dt-column-defs="vm.dtColumnDefs"  style="width: 98%;">
 					<thead>
 						<tr>
 							 <!-- <th scope="col">
@@ -60,8 +66,8 @@
 				</table>
 </div>
 <!-- The Modal -->
-  <div class="modal fade" id="venModal">
-    <div class="modal-dialog modal-dialog-centered modal-lg" style="max-width: 77%;">
+  <div class="modal fade" id="venModal" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg" style="max-width: 77%;" >
       <div class="modal-content">
       
         <!-- Modal Header  -->

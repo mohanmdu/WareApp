@@ -2,12 +2,13 @@
 
 <div>
 <div class="row">
-<div class="col-md-6"><h4>Customer</h4></div>
+<div class="col-md-6" style="text-align: right;"><h4>Customer</h4></div>
 <div class="col-md-6">
-<input name="" type="button"  style="float: right;margin: 1%; " class="btn btn-primary" id="" value="Create" ng-click="createCust()" >
+<input name="" type="button"  style="float: right;margin: 1% 12% 2% 0%;" class="btn btn-primary" id="" value="Create" ng-click="createCust()" >
 </div>
 </div>
-<table id="manage-customer-table" class="custTable table table-bordered" datatable="ng" dt-options="cm.dtCustomer" dt-column-defs="cm.dtColumnDefs" style="width: 90%;">
+<div class="tableDiv">
+<table id="manage-customer-table" class="custTable table table-bordered" datatable="ng" dt-options="cm.dtCustomer" dt-column-defs="cm.dtColumnDefs" style="width: 98%;">
 					<thead>
 						<tr>
 							 <!-- <th scope="col">
@@ -63,10 +64,11 @@
 								</td>
 							</tr>
 					</tbody>
-				</table>
+        </table>
+        </div>
 </div>
 <!-- The Modal -->
-   <div class="modal fade" id="custModal">
+   <div class="modal fade" id="custModal" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-lg" style="max-width: 75%;">
       <div class="modal-content">
       

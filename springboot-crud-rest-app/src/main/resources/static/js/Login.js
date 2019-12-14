@@ -1,6 +1,6 @@
 //var localurl ="http://localhost:8086/";
-var localurl ="http://localhost:8086/team";
-var app = angular.module("LoginApp", ["angular.filter","ngRoute","ngResource","ngAnimate", "toastr"]);
+var localurl =location.origin;
+var app = angular.module("LoginApp", ["angular.filter","ngResource","ngAnimate", "toastr"]);
 
 
 app.controller('LoginController',function ($scope,$http,$location,$window,toastr) {

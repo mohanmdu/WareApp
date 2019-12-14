@@ -1,7 +1,11 @@
- html,body,.homeDiv{
+/* html,body,.homeDiv{
   width:100% !important;
   height:100% !important;
-} 
+} */
+.tableDiv{
+    width: 90%;
+    margin: 0 auto;
+}
 .modal{
   font-family: Calibri !important;
 }
@@ -114,6 +118,7 @@ height:100% !important;
 overflow: hidden;
 font-family: Arial !important;
 font-size:12px;
+background-color: #f3f3f3;
 }
 .card {
   width: 300px;
@@ -265,7 +270,13 @@ font-size:12px;
     font-weight: bold;
 }
 div.dt-buttons{
-    margin-left: 5% !important;
+    margin-left: 1% !important;
+}
+.dataTables_info{
+  margin-left: 1% !important;
+}
+.dataTables_filter{
+  margin-right: 1% !important;
 }
 .filterDiv{
     border: 1px solid #c1bebe;
