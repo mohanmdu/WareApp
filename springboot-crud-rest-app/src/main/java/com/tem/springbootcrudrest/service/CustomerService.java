@@ -23,4 +23,6 @@ public interface CustomerService {
 	public List<String> getListOfCustomerCode();
 	
 	public List<Customer> findCustomerByName(String name);
+	
+	public List<Object> getListOfCombineName();
 }

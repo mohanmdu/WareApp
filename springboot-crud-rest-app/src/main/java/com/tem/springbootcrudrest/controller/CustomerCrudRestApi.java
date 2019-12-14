@@ -78,6 +78,15 @@ public class CustomerCrudRestApi {
 		return combinelists;
 
 	}
+	
+	@GetMapping("/customervendorcombinelist")
+	public List<Object> getListOfCombineName() {
+
+		List<Object> combinelists = customerService.getListOfCombineName();
+		
+		return combinelists;
+
+	}
 
 	@RequestMapping(path = "/customerlistbycusname", method = RequestMethod.GET)
 

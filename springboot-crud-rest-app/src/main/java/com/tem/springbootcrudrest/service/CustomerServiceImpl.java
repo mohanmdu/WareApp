@@ -16,10 +16,10 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Autowired
 	CustomerRepository customerRepository;
-	
+
 	@Autowired
 	VendorRepository vendorRepository;
-	
+
 	@Autowired
 	CustomerDetailsRepository customerDetailsRepository;
 
@@ -52,49 +52,47 @@ public class CustomerServiceImpl implements CustomerService {
 		return customerRepository.getCustomersListByName();
 	}
 
-	/*
-	 * @Override public List<Object> getListOfCombineName() {
-	 * 
-	 * List<Object> allobjects = new ArrayList<Object>();
-	 * 
-	 * try {
-	 * 
-	 * List<String>commonnamelist = customerRepository.getListOfCombineNames();
-	 * 
-	 * 
-	 * for(String commanname : commonnamelist) { List<Object>
-	 * customervendorobject=null; customervendorobject =
-	 * customerRepository.findCustomerByNameObject(commanname); Customer customer
-	 * =null; for(Object obj : customervendorobject) { customer = (Customer) obj; }
-	 * 
-	 * 
-	 * if(customer==null) { customervendorobject =
-	 * vendorRepository.findVendorNameObject(commanname);
-	 * 
-	 * } allobjects.addAll(customervendorobject); }
-	 * 
-	 * } catch (NullPointerException e) {
-	 * 
-	 * } return allobjects;
-	 * 
-	 * 
-	 * 
-	 * }
-	 */
+	@Override
+	public List<Object> getListOfCombineName() {
 
+		List<Object> allobjects = new ArrayList<Object>();
+
+		try {
+
+			List<String> commonnamelist = customerRepository.getListOfCombineNames();
+
+			for (String commanname : commonnamelist) {
+				List<Object> customervendorobject = null;
+				customervendorobject = customerRepository.findCustomerByNameObject(commanname);
+				Customer customer = null;
+				for (Object obj : customervendorobject) {
+					customer = (Customer) obj;
+				}
+
+				if (customer == null) {
+					customervendorobject = vendorRepository.findVendorNameObject(commanname);
+
+				}
+				allobjects.addAll(customervendorobject);
+			}
+
+		} catch (NullPointerException e) {
+
+		}
+		return allobjects;
+
+	}
 
 	@Override
 	public List<Customer> findCustomerByName(String name) {
-		
-			
-		
-			return	customerRepository.findCustomerByNames(name);
-				
+
+		return customerRepository.findCustomerByNames(name);
+
 	}
 
 	@Override
 	public List<String> getListOfCustomerCode() {
-		
+
 		return customerDetailsRepository.findCustomerDetailsByCustomerCode();
 	}
 
