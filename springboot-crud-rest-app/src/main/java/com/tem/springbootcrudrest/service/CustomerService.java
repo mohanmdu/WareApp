@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.tem.springbootcrudrest.model.Customer;
+import com.tem.springbootcrudrest.model.CustomerDetails;
 import com.tem.springbootcrudrest.model.Product;
 
 @Service
@@ -22,7 +23,7 @@ public interface CustomerService {
 	
 	public List<String> getListOfCustomerCode();
 	
-	public List<Customer> findCustomerByName(String name);
+	public List<String> findCustomerByName(String name);
 	
 	public List<Object> getListOfCombineName();
 }

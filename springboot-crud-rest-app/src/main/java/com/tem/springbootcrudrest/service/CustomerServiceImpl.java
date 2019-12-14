@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.tem.springbootcrudrest.model.Customer;
+import com.tem.springbootcrudrest.model.CustomerDetails;
 import com.tem.springbootcrudrest.repository.CustomerDetailsRepository;
 import com.tem.springbootcrudrest.repository.CustomerRepository;
 import com.tem.springbootcrudrest.repository.VendorRepository;
@@ -84,9 +85,9 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public List<Customer> findCustomerByName(String name) {
+	public List<String> findCustomerByName(String name) {
 
-		return customerRepository.findCustomerByNames(name);
+		return customerRepository.findCustomerByCustomerCode(name);
 
 	}
 

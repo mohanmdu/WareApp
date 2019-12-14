@@ -90,11 +90,9 @@ public class CustomerCrudRestApi {
 
 	@RequestMapping(path = "/customerlistbycusname", method = RequestMethod.GET)
 
-	public List<Customer> getCustomerList(@RequestParam String name) {
+	public List<String> getCustomerList(@RequestParam String name) {
 
-		List<Customer> tripSheetList = customerService.findCustomerByName(name);
-
-		return tripSheetList;
+		return customerService.findCustomerByName(name);
 	}
 
 }

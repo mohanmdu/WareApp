@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.tem.springbootcrudrest.model.Customer;
+import com.tem.springbootcrudrest.model.CustomerDetails;
 import com.tem.springbootcrudrest.model.TripSheet;
 
 @Repository
@@ -24,6 +25,9 @@ public interface CustomerRepository extends JpaRepository<Customer, Long>{
 	
 	@Query(value = "select t From Customer t where t.customername=:name")
 	public List<Customer> findCustomerByNames(@Param("name") String name);
+	
+	@Query(value = "select customercode From CustomerDetails t where t.customercode=:customercode")
+	public List<String> findCustomerByCustomerCode(@Param("customercode") String customercode);
 	
 	@Query(value = "select t From Customer t where t.customername=:name")
 	public List<Object> findCustomerByNameObject(@Param("name") String name);
