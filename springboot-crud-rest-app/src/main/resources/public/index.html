@@ -115,7 +115,7 @@
       <!-- Sidebar -->
       <div id="sidebar-wrapperMain" >
       <ul id="sidebar_menu" class="sidebar-nav">
-           <li class="sidebar-brand"  id="home" ng-click="redirectUrl($event)"><a class="menu-toggle" href="#">Dashboard<i class="fa fa-bars sub_icon" aria-hidden="true"></i></a></li>
+          <li class="sidebar-brand" ><a class="" href="#" id="home" ng-click="redirectUrl($event)">Dashboard</a><i class="fa fa-bars sub_icon menu-toggle" aria-hidden="true" style="position: absolute;left: 65%;"></i></li>
       </ul>
       <ul  class="sidebar-nav">  
 	<li class="sidebar-brand" id="customer_master" ng-click="redirectUrl($event)"><a>Customer<i class="fa fa-user sub_icon" aria-hidden="true"></i></a></li>
@@ -317,9 +317,8 @@ app.controller('indexController',['$scope','$location', "$timeout", function ($s
 				//angular.element('#menuToggle').css('z-index',"0");
 	        }, 500);
 		}
-		
+		$("#wrapper").toggleClass("active");
 	} 
-	//alert("dsfds")
 }]);
 app.controller("myCtrl", ['$scope', '$window','$location','$rootScope', function($scope, $window, $location,$rootScope){
 	//$scope.loggedIn = true;    
@@ -1174,7 +1173,16 @@ app.controller('VehicleController', function ($scope, $timeout,$window ,$filter,
 						 //  $scope.tempperkmchargecustomer=tempcustVen.perkmtrailer;
 						 //  $scope.tempfreightAmtCust=tempcustVen.fixedamttrailer;
 						  
-					   } 
+						 } 
+						 if($scope.checkDisabled){
+								 $scope.trip.customerperkm=0;
+								 $scope.trip.vendorperkm=0;
+								 $scope.trip.opkm=0;
+								 $scope.trip.clskm=0;
+								 $scope.trip.diffKM=0;
+								 $scope.trip.perkmchargecustomer=0;
+								 $scope.trip.perkmchargevendor=0;
+						 }
 				   }else{
 					   toastr.error('Origin and Destination are mandatory to proceed further');
 				   } 	 
