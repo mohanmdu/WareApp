@@ -2340,8 +2340,9 @@ angular.forEach($scope.customerInvoiceJson, function(value, key) {
 			    //params: data,
 			   }).then(function successCallback(response) {
 			  // $scope.custDetailResp = response.data[0];
-			  $scope.custPrintData.custAddr = response.data[0].customerDetails[0].customerAddr ?  response.data[0].customerDetails[0].customerAddr :"";
-			   $scope.updateBilledTrip($scope.custcallBackdata);
+				//$scope.custPrintData.custAddr = response.data[0].customerDetails[0].customerAddr ?  response.data[0].customerDetails[0].customerAddr :"";
+				$scope.custPrintData.custAddr = response.data[0] ?  response.data[0] :"";
+				$scope.updateBilledTrip($scope.custcallBackdata);
 			   }, function errorCallback(response) {
 			    console.log(response.statusText);
 			   }); 
@@ -2357,7 +2358,7 @@ angular.forEach($scope.customerInvoiceJson, function(value, key) {
 			    //params: data,
 			   }).then(function successCallback(response) {
 			  // $scope.custDetailResp = response.data[0];
-			  $scope.venPrintData.venAddr = response.data[0].vendorAddress[0].vendoraddr ?  response.data[0].vendorAddress[0].vendoraddr :"";
+			  $scope.venPrintData.venAddr = response.data[1] ?  response.data[1] :"";
 			   $scope.updateVenBilledTrip($scope.vencallBackdata);
 			   }, function errorCallback(response) {
 			    console.log(response.statusText);
@@ -2416,7 +2417,7 @@ $scope.saveVendorInvoice =function(){
 		        	$scope.venPrintData.tripRate =(parseInt($scope.venPrintData.totalkmpercharge) ? parseInt($scope.venPrintData.totalkmpercharge): 0) + (parseInt($scope.venPrintData.totalfreightamt) ? parseInt($scope.venPrintData.totalfreightamt): 0);
 		        	$scope.venPrintData.advLeak =(parseInt($scope.venPrintData.totaladvance) ? parseInt($scope.venPrintData.totaladvance): 0) + (parseInt($scope.venPrintData.leakage) ? parseInt($scope.venPrintData.leakage): 0);
 		        	$scope.venPrintData.totalAmountInWords = inWords(parseInt($scope.venPrintData.netamount));
-		        	$scope.getVenDetails($scope.venPrintData.vendorname);
+		        	$scope.getVenDetails($scope.venPrintData.truckno);
 		        	//$scope.updateVenBilledTrip($scope.vencallBackdata);
 		            //toastr.success('Data added successfully');
 		        }, function error(response) {
