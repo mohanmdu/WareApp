@@ -43,8 +43,8 @@ public class VendorServiceImpl implements VendorService {
 	}
 
 	@Override
-	public List<String> findVendorByName(String name) {
-		return vendorRepository.getVendorNameAddressByTruckno(name);
+	public List<Object> findVendorByName(String truckno) {
+		return vendorRepository.getVendorNameAddressByTruckno(truckno);
 	}
 
 	@Override

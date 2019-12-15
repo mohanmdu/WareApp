@@ -19,7 +19,7 @@ public interface VendorService {
 	
 	public List<String> getVendorListByName();
 	
-	public List<String> findVendorByName(String name);
+	public List<Object> findVendorByName(String truckno);
 	
 	public List<String> getVendorNameByTruckno(String truckno);
 }

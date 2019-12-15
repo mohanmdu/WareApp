@@ -27,7 +27,10 @@ public interface VendorRepository extends JpaRepository<Vendor, Long>{
 	@Query(value = "select v.vendorname from vendor v inner join vehicle ve on v.id=ve.id where ve.vehicleno=:truckno",nativeQuery = true)
 	public List<String> getVendorNameByTruckno(@Param("truckno") String truckno);
 	
-	@Query(value = "select v.vendorname, va.vendoraddr from vendor v inner join VendorAddress va on v.id=va.vehicleid where va.vehicleno=:truckno",nativeQuery = true)
-	public List<String> getVendorNameAddressByTruckno(@Param("truckno") String truckno);
+	/*@Query(value = "select v.vendorname, va.vendoraddr from vendor v inner join VendorAddress va on v.id=va.vehicleid where va.vehicleno=:truckno",nativeQuery = true)
+	public List<String> getVendorNameAddressByTruckno(@Param("truckno") String truckno);*/
+	
+	@Query(value = "select v.vendorname,va.vendoraddr from vendor v inner join vendoraddress va on v.id=va.id inner join vehicle ve on v.id=ve.id  where ve.vehicleno=:truckno",nativeQuery = true)
+	public List<Object> getVendorNameAddressByTruckno(@Param("truckno") String truckno);
 	
 }
