@@ -89,7 +89,7 @@
 <div ng-controller="indexController" style="width: 100%;height: 100%;">
 
 <!--Navbar ng-controller="indexController" -->
- <nav class = "navbar navbar-expand-sm bg-primary navbar-dark" style="background-image: radial-gradient(circle, #777886, #7f8b92, #768586, #66716b, #606f71eb);">
+ <nav class = "navbar navbar-expand-sm  navbar-dark" style="background: #fff;border-bottom: solid 1px #c5d6de;">
             <a class = "navbar-brand" href = "#">
                <img src = "img/sse.png" 
                   style="width: 73px;height: 28px;" alt = "">
@@ -98,7 +98,7 @@
               
                 <li class="nav-item dropdown">
 		        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
-		          aria-haspopup="true" aria-expanded="false">
+		          aria-haspopup="true" aria-expanded="false" style="color: #00a8ff;">
 		          <i class="fa fa-user-circle"></i> Profile </a>
 		        <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
 		          <a class="dropdown-item" href="#">My account</a>
@@ -2351,14 +2351,14 @@ angular.forEach($scope.customerInvoiceJson, function(value, key) {
 	$scope.getVenDetails =function(data){
 		
 	 	//$scope.custDetailResp=[];
-		var url=localurl +"/api/v1/vendoristbyvendname?name="+data;
+		var url=localurl +"/api/v1/vendoristbyvendname/"+data;
 		 $http({
 			    method : 'GET',
 			    url : url
 			    //params: data,
 			   }).then(function successCallback(response) {
 			  // $scope.custDetailResp = response.data[0];
-			  $scope.venPrintData.venAddr = response.data[1] ?  response.data[1] :"";
+			  $scope.venPrintData.venAddr = response.data[0][1] ?  response.data[0][1] :"";
 			   $scope.updateVenBilledTrip($scope.vencallBackdata);
 			   }, function errorCallback(response) {
 			    console.log(response.statusText);
@@ -2760,7 +2760,7 @@ $scope.updateVenBilledTrip =function(data){
 			  $('#VendorInvoice').hide();
 			  $('#customerView').show();
 			  $('#customerView').addClass("active");
-			  $scope.initView();
+			 // $scope.initView();
 		  }else if(currEvent =="VendorInvoice"){
 			  $('#CustomerInvoice').hide();
 			  $('#VendorInvoice').show();
@@ -2805,7 +2805,7 @@ $scope.updateVenBilledTrip =function(data){
 			  $('#CustomerInvoice').hide();
 			  $('#VendorInvoice').hide();
 			  $('#customerView').hide();
-			  $scope.initvenView();
+			  //$scope.initvenView();
 		  }
 	}
 	$scope.init_Billing();
