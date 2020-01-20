@@ -1069,7 +1069,8 @@ app.controller('VehicleController', function ($scope, $timeout,$window ,$filter,
     ]);
 	
 	$scope.validateOrigin =function(data){
-		if($scope.listdataJson.indexOf(data) == -1) {
+		
+		if(data && $scope.listdataJson.indexOf(data) == -1) {
 			 toastr.error('Invalid Data');
 			}
 	}
@@ -2086,11 +2087,11 @@ angular.forEach($scope.customerInvoiceJson, function(value, key) {
 	}
 	$scope.resetvenView=function() {
 		$scope.vendorView={fromdate:"",todate:"",vendorname:""};
-		$scope.initvenView();
+		//$scope.initvenView();
 	}
 	
 	$scope.resetcustView=function() {
-		$scope.initView();
+		//$scope.initView();
 		$scope.customerView={fromdate:"",todate:"",customername:""};
 	}
 	
@@ -2726,6 +2727,7 @@ $scope.updateVenBilledTrip =function(data){
 			$(mprintWindows)[0].focus();
 			$(mprintWindows)[0].print();
 			$(mprintWindows)[0].close();
+			scope.resetItem();
 			 }, 1000);
 		} else {// code for IE6, IE5
 			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
@@ -2760,7 +2762,7 @@ $scope.updateVenBilledTrip =function(data){
 			  $('#VendorInvoice').hide();
 			  $('#customerView').show();
 			  $('#customerView').addClass("active");
-			 // $scope.initView();
+			  //$scope.initView();
 		  }else if(currEvent =="VendorInvoice"){
 			  $('#CustomerInvoice').hide();
 			  $('#VendorInvoice').show();

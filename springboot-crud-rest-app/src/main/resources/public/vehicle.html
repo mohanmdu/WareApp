@@ -271,7 +271,7 @@
 									ng-blur="validateOrigin(trip.origin)"
 									ng-change="getCommonDetails(trip.origin)" />
 								<datalist id="dataList">
-									<option ng-repeat="v in listdataJson" value="{{v}}"><!-- Name {{v}} --></option>
+									<option ng-repeat="v in listdataJson track by $index" value="{{v}}"><!-- Name {{v}} --></option>
 								</datalist>
 							</div>
 							<div class='col-md-3'>
@@ -282,7 +282,7 @@
 									ng-blur="validateOrigin(trip.destination)"
 									ng-change="getCommonDetails(trip.destination)" />
 								<datalist id="dataListDest">
-									<option ng-repeat="v in listdataJson" value="{{v}}"><!-- Name {{v}} --></option>
+									<option ng-repeat="v in listdataJson track by $index" value="{{v}}"><!-- Name {{v}} --></option>
 								</datalist>
 							</div>
 
