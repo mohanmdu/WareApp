@@ -89,17 +89,17 @@
 <div ng-controller="indexController" style="width: 100%;height: 100%;">
 
 <!--Navbar ng-controller="indexController" -->
- <nav class = "navbar navbar-expand-sm bg-primary navbar-dark" style="background-image: radial-gradient(circle, #777886, #7f8b92, #768586, #66716b, #606f71eb);">
+ <nav class = "navbar navbar-expand-sm  navbar-dark" style="background: #fff;border-bottom: solid 1px #c5d6de;">
             <a class = "navbar-brand" href = "#">
                <img src = "img/sse.png" 
                   style="width: 73px;height: 28px;" alt = "">
-            </a>
+            </a><i class="fa fa-bars fa-2x menu-toggle" aria-hidden="true" style="color: #004587;"></i>
             <ul class = "navbar-nav ml-auto">
               
                 <li class="nav-item dropdown">
 		        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
-		          aria-haspopup="true" aria-expanded="false">
-		          <i class="fa fa-user-circle"></i> Profile </a>
+		          aria-haspopup="true" aria-expanded="false" style="color: #00a8ff;">
+		          <i class="fa fa-user-circle fa-2x"></i><span> Profile </span></a>
 		        <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
 		          <a class="dropdown-item" href="#">My account</a>
 		          <a class="dropdown-item" href="#">Log out</a>
@@ -115,21 +115,21 @@
       <!-- Sidebar -->
       <div id="sidebar-wrapperMain" >
       <ul id="sidebar_menu" class="sidebar-nav">
-          <li class="sidebar-brand" ><a class="" href="#" id="home" ng-click="redirectUrl($event)">Dashboard</a><i class="fa fa-bars sub_icon menu-toggle" aria-hidden="true" style="position: absolute;left: 65%;"></i></li>
+          <li class="sidebar-brand" ><a class="" href="#" id="home" ng-click="redirectUrl($event)"><i class="fa fa-dashboard subicon"  aria-hidden="true" style="color: #ac6bec;"></i>Dashboard</a></li>
       </ul>
       <ul  class="sidebar-nav">  
-	<li class="sidebar-brand" id="customer_master" ng-click="redirectUrl($event)"><a>Customer<i class="fa fa-user sub_icon" aria-hidden="true"></i></a></li>
-	<li class="sidebar-brand" id="vendor_master"  ng-click="redirectUrl($event)"><a>Vendor<i class="fa fa-user-circle sub_icon"></i></a></li> 
-	<li class="sidebar-brand" id="employee_master" ng-click="redirectUrl($event)" ><a>Employee<i class="fa fa-users sub_icon" aria-hidden="true"></i></a></li> 
+	<li class="sidebar-brand" id="customer_master" ng-click="redirectUrl($event)"><a><i class="fa fa-user subicon" aria-hidden="true" style="color: #ac6bec;"></i>Customer</a></li>
+	<li class="sidebar-brand" id="vendor_master"  ng-click="redirectUrl($event)"><a><i class="fa fa-user-circle subicon"  style="color: #1b99cf;"></i>Vendor</a></li> 
+	<li class="sidebar-brand" id="employee_master" ng-click="redirectUrl($event)" ><a><i class="fa fa-users subicon" aria-hidden="true"  style="color: #f29824;"></i>Employee</a></li> 
 	<!-- <li class='sidebar-brand' ><a id="product_master"  ng-click="redirectUrl($event)">Product<i class="fa fa-product-hunt sub_icon" aria-hidden="true"></i></a></li> --> 
-	<li class="sidebar-brand" id="vehicle_master" ng-click="redirectUrl($event)"><a>TripSheet<i class="fa fa-truck sub_icon" aria-hidden="true"></i></a></li>
-	<li class="sidebar-brand" id="user_master" ng-click="redirectUrl($event)"><a>User<i class="fa fa-user sub_icon" aria-hidden="true"></i></a></li>
-	<li class="sidebar-brand" id="userAccess_master" ng-click="redirectUrl($event)"><a>Access<i class="fa fa-check-square-o sub_icon" aria-hidden="true"></i></a></li>
-	<li class="sidebar-brand" id="billing_master" ng-click="redirectUrl($event)"><a>Billing<i class="fa fa-money sub_icon" aria-hidden="true"></i></a></li>
-	<li class="sidebar-brand" id="receipt_master" ng-click="redirectUrl($event)"><a>Receipt<i class="fa fa-address-book sub_icon" aria-hidden="true"></i></a></li>
-	<li class="sidebar-brand" id="voucher_master" ng-click="redirectUrl($event)"><a>Voucher<i class="fa fa-address-book sub_icon" aria-hidden="true"></i></a></li>
-	<li class="sidebar-brand" id="ledger_master" ng-click="redirectUrl($event)"><a>Ledger<i class="fa fa-address-book sub_icon" aria-hidden="true"></i></a></li>
- 	<li class="sidebar-brand" id="logout" ng-click="redirectUrl($event)"><a>Logout<i class="fa fa-sign-out sub_icon" aria-hidden="true"></i></a></li>
+	<li class="sidebar-brand" id="vehicle_master" ng-click="redirectUrl($event)"><a><i class="fa fa-truck subicon" aria-hidden="true"  style="color: #46c35f;"></i>TripSheet</a></li>
+	<li class="sidebar-brand" id="user_master" ng-click="redirectUrl($event)"><a><i class="fa fa-user subicon" aria-hidden="true"  style="color: #fa424a;"></i>User</a></li>
+	<li class="sidebar-brand" id="userAccess_master" ng-click="redirectUrl($event)"><a><i class="fa fa-check-square-o subicon" aria-hidden="true"  style="color: #cd6724;"></i>Access</a></li>
+	<li class="sidebar-brand" id="billing_master" ng-click="redirectUrl($event)"><a><i class="fa fa-money subicon" aria-hidden="true"  style="color: #21a788;"></i>Billing</a></li>
+	<li class="sidebar-brand" id="receipt_master" ng-click="redirectUrl($event)"><a><i class="fa fa-address-book subicon" aria-hidden="true"  style="color: #ff561c;"></i>Receipt</a></li>
+	<li class="sidebar-brand" id="voucher_master" ng-click="redirectUrl($event)"><a><i class="fa fa-address-book subicon" aria-hidden="true"  style="color: #46c35f;"></i>Voucher</a></li>
+	<li class="sidebar-brand" id="ledger_master" ng-click="redirectUrl($event)"><a><i class="fa fa-address-book subicon" aria-hidden="true"  style="color: #b348ae;"></i>Ledger</a></li>
+ 	<li class="sidebar-brand" id="logout" ng-click="redirectUrl($event)"><a><i class="fa fa-sign-out subicon" aria-hidden="true"  style="color: #f29824;"></i>Logout</a></li>
       </ul>
         
       </div>
@@ -1069,7 +1069,8 @@ app.controller('VehicleController', function ($scope, $timeout,$window ,$filter,
     ]);
 	
 	$scope.validateOrigin =function(data){
-		if($scope.listdataJson.indexOf(data) == -1) {
+		
+		if(data && $scope.listdataJson.indexOf(data) == -1) {
 			 toastr.error('Invalid Data');
 			}
 	}
@@ -2086,11 +2087,11 @@ angular.forEach($scope.customerInvoiceJson, function(value, key) {
 	}
 	$scope.resetvenView=function() {
 		$scope.vendorView={fromdate:"",todate:"",vendorname:""};
-		$scope.initvenView();
+		//$scope.initvenView();
 	}
 	
 	$scope.resetcustView=function() {
-		$scope.initView();
+		//$scope.initView();
 		$scope.customerView={fromdate:"",todate:"",customername:""};
 	}
 	
@@ -2340,8 +2341,9 @@ angular.forEach($scope.customerInvoiceJson, function(value, key) {
 			    //params: data,
 			   }).then(function successCallback(response) {
 			  // $scope.custDetailResp = response.data[0];
-			  $scope.custPrintData.custAddr = response.data[0].customerDetails[0].customerAddr ?  response.data[0].customerDetails[0].customerAddr :"";
-			   $scope.updateBilledTrip($scope.custcallBackdata);
+				//$scope.custPrintData.custAddr = response.data[0].customerDetails[0].customerAddr ?  response.data[0].customerDetails[0].customerAddr :"";
+				$scope.custPrintData.custAddr = response.data[0] ?  response.data[0] :"";
+				$scope.updateBilledTrip($scope.custcallBackdata);
 			   }, function errorCallback(response) {
 			    console.log(response.statusText);
 			   }); 
@@ -2350,14 +2352,14 @@ angular.forEach($scope.customerInvoiceJson, function(value, key) {
 	$scope.getVenDetails =function(data){
 		
 	 	//$scope.custDetailResp=[];
-		var url=localurl +"/api/v1/vendoristbyvendname?name="+data;
+		var url=localurl +"/api/v1/vendoristbyvendname/"+data;
 		 $http({
 			    method : 'GET',
 			    url : url
 			    //params: data,
 			   }).then(function successCallback(response) {
 			  // $scope.custDetailResp = response.data[0];
-			  $scope.venPrintData.venAddr = response.data[0].vendorAddress[0].vendoraddr ?  response.data[0].vendorAddress[0].vendoraddr :"";
+			  $scope.venPrintData.venAddr = response.data[0][1] ?  response.data[0][1] :"";
 			   $scope.updateVenBilledTrip($scope.vencallBackdata);
 			   }, function errorCallback(response) {
 			    console.log(response.statusText);
@@ -2416,7 +2418,7 @@ $scope.saveVendorInvoice =function(){
 		        	$scope.venPrintData.tripRate =(parseInt($scope.venPrintData.totalkmpercharge) ? parseInt($scope.venPrintData.totalkmpercharge): 0) + (parseInt($scope.venPrintData.totalfreightamt) ? parseInt($scope.venPrintData.totalfreightamt): 0);
 		        	$scope.venPrintData.advLeak =(parseInt($scope.venPrintData.totaladvance) ? parseInt($scope.venPrintData.totaladvance): 0) + (parseInt($scope.venPrintData.leakage) ? parseInt($scope.venPrintData.leakage): 0);
 		        	$scope.venPrintData.totalAmountInWords = inWords(parseInt($scope.venPrintData.netamount));
-		        	$scope.getVenDetails($scope.venPrintData.vendorname);
+		        	$scope.getVenDetails($scope.venPrintData.truckno);
 		        	//$scope.updateVenBilledTrip($scope.vencallBackdata);
 		            //toastr.success('Data added successfully');
 		        }, function error(response) {
@@ -2725,6 +2727,7 @@ $scope.updateVenBilledTrip =function(data){
 			$(mprintWindows)[0].focus();
 			$(mprintWindows)[0].print();
 			$(mprintWindows)[0].close();
+			scope.resetItem();
 			 }, 1000);
 		} else {// code for IE6, IE5
 			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
@@ -2759,7 +2762,7 @@ $scope.updateVenBilledTrip =function(data){
 			  $('#VendorInvoice').hide();
 			  $('#customerView').show();
 			  $('#customerView').addClass("active");
-			  $scope.initView();
+			  //$scope.initView();
 		  }else if(currEvent =="VendorInvoice"){
 			  $('#CustomerInvoice').hide();
 			  $('#VendorInvoice').show();
@@ -2804,7 +2807,7 @@ $scope.updateVenBilledTrip =function(data){
 			  $('#CustomerInvoice').hide();
 			  $('#VendorInvoice').hide();
 			  $('#customerView').hide();
-			  $scope.initvenView();
+			  //$scope.initvenView();
 		  }
 	}
 	$scope.init_Billing();
