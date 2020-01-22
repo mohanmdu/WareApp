@@ -457,13 +457,13 @@
        </div>
 
   </div>
-  <div class="col-2">
+  <!-- <div class="col-2">
 		<label class="col-12"><b>CUSTOMER NAME </b></label>
-		<select ng-model="customerView.customername"  class="form-control" style="display: block;margin: 2% auto;">
-		<option value="" selected>Select Customer</option>
-		<option ng-repeat="custView in customerViewList | unique:'customername'" value="{{custView.customername}}">{{custView.customername}}</option>
-	  </select> 
-	 </div>
+	  <input type="text" list="datacustList" ng-model="customerView.customername" class="form-control col-12" placeholder="Select Customer" />  
+		 <datalist id="datacustList" >
+		<option ng-repeat="custView in custviewdataJson track by $index" value="{{custView}}">{{custView}}</option>
+		</datalist> 
+	 </div> -->
 	
      <div class="col-2">
 
@@ -545,11 +545,16 @@
 	 </div> -->
 	 <div class="col-2">
 		<label class="col-12"><b>VENDOR NAME </b></label>
-		<select   ng-model="vendorView.vendorname" class="form-control"  style="display: block;margin: 2% auto;">
+		<!-- <select   ng-model="vendorView.vendorname" class="form-control"  style="display: block;margin: 2% auto;">
 		<option value="" selected>Select Vendor</option>
-		<option ng-repeat="venView in vendorViewList | unique:'vendorname'" value="{{venView.vendorname}}">{{venView.vendorname}}</option>
+		<option ng-repeat="venView in vendorNameList | unique:'vendorname'" value="{{venView.vendorname}}">{{venView.vendorname}}</option>
 	  
-	  </select> 
+	  </select>  -->
+	  <input type="text" list="datavenNameList" ng-model="vendorView.vendorname" class="form-control col-12" placeholder="Select vendor" />  
+		 <datalist id="datavenNameList" >
+		<option ng-repeat="venView in vendorNameList | unique:'vendorname'" value="{{venView.vendorname}}">{{venView.vendorname}}</option>
+		</datalist> 
+	  
 	 </div>
      <div class="col-2">
 
@@ -648,39 +653,7 @@
 
 
 </div>
-<!--<div class="row pad1">
-<div class="col-6">
-<label class="col-6"><b>Item</b></label>
-<input type="text" list="dataList" ng-model="manpowerBilling.item" class="inputbox" placeholder="Select Item" />  
- <datalist id="dataList" >
-</datalist>
-</div>
-<div class="col-6">
-<label class="col-6"><b>Tax</b> </label>
-<input type="text" list="dataList" ng-model="manpowerBilling.tax" class="inputbox" placeholder="Select Tax" />  
- <datalist id="dataList" >
-</datalist>
 
-</div>
-</div>
- <div class="row pad1">
-<div class="col-6">
-<label class="col-6"><b>Amount</b></label>
-<input type="text" ng-model="manpowerBilling.amount" class="inputbox" placeholder="Select Amount" />  
-</div>
-<div class="col-6">
-<label class="col-6"><b>Qty</b> </label>
-<input type="number" ng-model="manpowerBilling.qty" class="inputbox" placeholder="Select Qty" />  
-</div>
-</div> 
-
-<div class="row pad1">
-<div class="col-6">
-<label class="col-6"><b>Total Taxable Value</b></label>
-<input type="text" ng-model="manpowerBilling.totaltaxable" class="inputbox" placeholder="Select Total" />  
-</div>
-
-</div>-->
 	</div>	
 	<div class="pad1">
 	<table  id="manage-manpower-table"  class="table table-bordered table-striped" >

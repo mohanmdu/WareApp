@@ -1771,7 +1771,7 @@ app.controller('BillingController',function ($compile,$scope, $window,DTOptionsB
 	$scope.file = {};
 	$scope.customerInvoice={fromdate:"",todate:""};
 	$scope.vendorInvoice={fromdate:"",todate:"",truckno:""};
-	$scope.customerView={fromdate:"",todate:"",customername:""};
+	$scope.customerView={fromdate:"",todate:""};
 	$scope.vendorView={fromdate:"",todate:"",vendorname:""};
 	$scope.checkedValue=[];
 	$scope.checkedVendorValue=[];
@@ -1789,6 +1789,7 @@ app.controller('BillingController',function ($compile,$scope, $window,DTOptionsB
 	$scope.vendorInvoiceJson =[];
 	$scope.customerViewList=[];
 	$scope.vendorViewList =[];
+	$scope.vendorNameList =[];
 	$scope.criteriaCust = {};
 	$scope.criteriaView = {};
 	/* $scope.vendorInvoiceJson =[{id:"1",loadNo: "23678",datetime: "1-Apr-2019", invoiceNo: "7345300022", origin: "NEMAM",customerName:"HCCBPL REDHILLS DEPOT",destination:"POOCHIATHIPATTU",truckno: "TN3QU2333", truckType: "TRS", noOfCase: "1123",opkm:"678",clskm:"788",diffKM: "100", perkmchargecustomer: "330", freightAmtCust: "2000",advance:"",discount:"1000",grandTotal:""},
@@ -2033,10 +2034,10 @@ angular.forEach($scope.customerInvoiceJson, function(value, key) {
 		}else if($scope.customerView.todate=="" || $scope.customerView.todate==undefined){
 			 toastr.error('Please enter To date');
 			return;
-		}else if($scope.customerView.customername=="" || $scope.customerView.customername== undefined){
+		}/*else if($scope.customerView.customername=="" || $scope.customerView.customername== undefined){
 			 toastr.error('Please enter CustomerName');
 			return;
-		}else{
+		}*/else{
 			var url=localurl +"/api/v1/invoicelistincustomer";
 			 $http({
 				    method : 'GET',
@@ -2059,7 +2060,7 @@ angular.forEach($scope.customerInvoiceJson, function(value, key) {
 			 toastr.error('Please enter To date');
 			return;
 		}else if($scope.vendorView.vendorname=="" || $scope.vendorView.vendorname== undefined){
-			 toastr.error('Please enter CustomerName');
+			 toastr.error('Please enter VendorName');
 			return;
 		}else{
 			var url=localurl +"/api/v1/vendorinvoicelistinvendor";
@@ -2088,11 +2089,13 @@ angular.forEach($scope.customerInvoiceJson, function(value, key) {
 	$scope.resetvenView=function() {
 		$scope.vendorView={fromdate:"",todate:"",vendorname:""};
 		//$scope.initvenView();
+		$scope.vendorViewList=[];
 	}
 	
 	$scope.resetcustView=function() {
 		//$scope.initView();
-		$scope.customerView={fromdate:"",todate:"",customername:""};
+		$scope.customerView={fromdate:"",todate:""};
+		$scope.customerViewList=[];
 	}
 	
 	$scope.custInvoicePrint=function() {
@@ -2528,7 +2531,7 @@ $scope.updateVenBilledTrip =function(data){
 			    method : 'GET',
 			    url : url
 			   }).then(function successCallback(response) {
-			   $scope.vendorViewList = response.data;
+			   $scope.vendorNameList = response.data;
 			   }, function errorCallback(response) {
 			    console.log(response.statusText);
 			   });
@@ -2753,6 +2756,8 @@ $scope.updateVenBilledTrip =function(data){
 	$scope.deleteRowItem = function(index){
 		$scope.manpower.splice(index,1);
 	}
+	
+
 	$scope.navRedirect =function(event){
 		 $(".nav").find(".active").removeClass("active");
 		   $(event).addClass("active");
@@ -2807,7 +2812,7 @@ $scope.updateVenBilledTrip =function(data){
 			  $('#CustomerInvoice').hide();
 			  $('#VendorInvoice').hide();
 			  $('#customerView').hide();
-			  //$scope.initvenView();
+			  $scope.initvenView();
 		  }
 	}
 	$scope.init_Billing();
@@ -3587,15 +3592,15 @@ app.controller('ReceiptController', function ($scope,$timeout,$http,toastr,DTOpt
 	}
 	$scope.init_Inst();
 	
-	 $timeout(function() { 
-		 $('#datetimepicker_custinstDate').datetimepicker({
+	 /* $timeout(function() { 
+		   $('#datetimepicker_custinstDate').datetimepicker({
 		        format: 'DD/MM/YYYY'
-		    });
+		    });  
 		 $('#datetimepicker_veninstDate').datetimepicker({
 		        format: 'DD/MM/YYYY'
 		    });
 		 
-		 }, 2000);
+		 }, 2000); */
 	scope=$scope;
 });
 

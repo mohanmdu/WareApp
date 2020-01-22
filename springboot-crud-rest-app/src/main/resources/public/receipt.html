@@ -142,9 +142,9 @@
 									            </select>
 										</td>
 										<td >
-										<div class="input-group date" id="datetimepicker_custinstDate" data-target-input="nearest" ng-show="pay.paymenttype != 'Credit' && pay.paymenttype != 'Cash'">
-						                  <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker_custinstDate" ng-model="pay.instrumentdate" placeholder="Instrument Date"/>
-						                  <div class="input-group-append" data-target="#datetimepicker_custinstDate" data-toggle="datetimepicker">
+										<div class="input-group date custReceipt" data-date-format="DD/MM/YYYY" id="datetimepicker_custinstDate{{$index}}" data-target-input="nearest" ng-show="pay.paymenttype != 'Credit' && pay.paymenttype != 'Cash'">
+						                  <input type="text"  class="form-control datetimepicker-input" data-target="#datetimepicker_custinstDate{{$index}}"  ng-model="pay.instrumentdate" placeholder="Instrument Date"/>
+						                  <div class="input-group-append" data-target="#datetimepicker_custinstDate{{$index}}" data-toggle="datetimepicker">
 						                      <div class="input-group-text"><i class="fa fa-calendar"></i></div>
 						                  </div>
 						              </div>
@@ -290,7 +290,7 @@
 									            </select>
 										</td>
 										<td >
-										<div class="input-group date" id="datetimepicker_veninstDate" data-target-input="nearest" ng-show="pay.paymenttype != 'Credit' && pay.paymenttype != 'Cash'">
+										<div class="input-group date" id="datetimepicker_veninstDate" data-date-format="DD/MM/YYYY" data-target-input="nearest" ng-show="pay.paymenttype != 'Credit' && pay.paymenttype != 'Cash'">
 						                  <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker_veninstDate" ng-model="pay.instrumentdate" placeholder="Instrument Date"/>
 						                  <div class="input-group-append" data-target="#datetimepicker_veninstDate" data-toggle="datetimepicker">
 						                      <div class="input-group-text"><i class="fa fa-calendar"></i></div>

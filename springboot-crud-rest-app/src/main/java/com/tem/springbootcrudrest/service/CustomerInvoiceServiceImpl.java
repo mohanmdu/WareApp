@@ -94,8 +94,8 @@ public class CustomerInvoiceServiceImpl implements CustomerInvoiceService {
 	}
 
 	@Override
-	public List<CustomerInvoice> getCustomerInvoiceLists(String fromdate, String todate, String customername) {
-		return customerInvoiceRepository.findInvoiceBetweenDateList(fromdate, todate, customername);
+	public List<CustomerInvoice> getCustomerInvoiceLists(String fromdate, String todate) {
+		return customerInvoiceRepository.findInvoiceBetweenDateList(fromdate, todate);
 	}
 
 	/*
