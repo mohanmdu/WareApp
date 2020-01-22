@@ -28,7 +28,7 @@ public class CustomerDetails {
 		@Id
 	    @GeneratedValue(strategy = GenerationType.AUTO)
 		private long customerDetailId;
-		@Column(name = "customercode", nullable = false)
+		@Column(name = "customercode", nullable = false,unique = true)
 		private String customercode;
 		@Column(name = "branchname", nullable = false)
 		private String branchname;
