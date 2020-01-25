@@ -94,5 +94,17 @@ public class CustomerCrudRestApi {
 
 		return customerService.findCustomerByName(name);
 	}
+	
+	@RequestMapping(path = "/findcustomername", method = RequestMethod.GET)
+	public ResponseEntity<Map<String, String>> getCustomerName(@RequestParam String customercode) {
+		String response = customerService.findCustomerNameByCustomercode(customercode);
+
+		System.out.println("customercode  "+customercode);
+		Map<String, String> responsemap = new HashMap<String, String>();
+		responsemap.put("status", response);
+
+		return ResponseEntity.ok(responsemap);
+
+	}
 
 }

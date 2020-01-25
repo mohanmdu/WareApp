@@ -43,4 +43,8 @@ public interface CustomerRepository extends JpaRepository<Customer, Long>{
 	
 	@Query(value = "select t From Customer t where t.customername=:name")
 	public Customer findCustomerByNamesforCustpaymentservice(@Param("name") String name);
+	
+	@Query(value="SELECT c.customername from customer c JOIN customer_details cd ON c.id = cd.id WHERE cd.customercode=:customercode",nativeQuery = true)
+	public String findCustomerNameByCustomercode(@Param("customercode") String customercode);
+	
 }

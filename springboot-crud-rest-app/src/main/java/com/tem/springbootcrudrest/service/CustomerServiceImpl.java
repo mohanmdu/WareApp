@@ -97,4 +97,12 @@ public class CustomerServiceImpl implements CustomerService {
 		return customerDetailsRepository.findCustomerDetailsByCustomerCode();
 	}
 
+	@Override
+	public String findCustomerNameByCustomercode(String customercode) {
+		String str = customerRepository.findCustomerNameByCustomercode(customercode);
+		System.out.println(str+" from service impl");
+		
+		return str;
+	}
+
 }
