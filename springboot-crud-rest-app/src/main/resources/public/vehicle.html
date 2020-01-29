@@ -317,6 +317,7 @@
 									class="mandatory">*</span></label> <select ng-model="trip.truckno"
 									class="form-control col-12" tabindex="8"
 									ng-options="b.vehicleNo as b.vehicleNo for b in vehlistdataJson"
+									ng-blur="getFindvendorByTruckno(trip.truckno)"
 									ng-change="changeBasedNumber(trip.truckno);calculateDate(trip.gatein,trip.gateout)">
 									<option value="">Select TruckNo</option>
 								</select>

@@ -1039,7 +1039,7 @@ app.controller('VehicleController', function ($scope, $timeout,$window ,$filter,
 					{loadNo: "1111",tripNo: "2222",origin: "NEEMAM",destination: "EGMORE",invoiceNO: "234322",dateTime: "23/4/2019",truckType: "CAN2",truckNo: "TN2323200",driverName: "Siva",noOfCase: "3",OPKM: "2",CLSKM: "5",diffKM: "4",advance: "500",perKMchargeCustomer: "6.5",perKMchargeVendor: "7.6",profit: "400",tollBill: "654787",policeBill: "57890",freightAmt: "700",haltingCharge: "700",remarks: "good"}];
 							  
 	*/	
-	$scope.trip = {customername:"",loadNo: "",tripNo: "",origin: "",destination: "",invoiceNO: "",dateTime: "",truckType: "",truckno: "",driverName: "",noOfCase: "",opkm: "0",clskm: "0",diffKM: "0",advance: "0",perkmchargecustomer: "0",perkmchargevendor: "0",gatein:"",gateout:"",haltedTime:"",customerhalt:"0",vendorhalt:"0",profit: "0",tollBill: "",policeBill: "",freightAmtCust: "0",freightAmtVen:"0",haltingCharge: "0",discount:"0",remarks: "",customerrate:0,vendorrate:0,customerperkm:0,vendorperkm:0};
+	$scope.trip = {customername:"",vendorname:"",loadNo: "",tripNo: "",origin: "",destination: "",invoiceNO: "",dateTime: "",truckType: "",truckno: "",driverName: "",noOfCase: "",opkm: "0",clskm: "0",diffKM: "0",advance: "0",perkmchargecustomer: "0",perkmchargevendor: "0",gatein:"",gateout:"",haltedTime:"",customerhalt:"0",vendorhalt:"0",profit: "0",tollBill: "",policeBill: "",freightAmtCust: "0",freightAmtVen:"0",haltingCharge: "0",discount:"0",remarks: "",customerrate:0,vendorrate:0,customerperkm:0,vendorperkm:0};
 	scope=$scope;
 	$scope.vehm = {};
 	$scope.vehm.dtVehicle = DTOptionsBuilder.newOptions()
@@ -1116,6 +1116,28 @@ app.controller('VehicleController', function ($scope, $timeout,$window ,$filter,
 				   });
 			}
 		}
+	
+	$scope.getFindvendorByTruckno =function(item){
+		
+		if(item){
+		var url=localurl +"/api/v1/vendornamebytruckno";
+		 $http({
+			    method : 'GET',
+			    url : url,
+			    params: {truckno: item}
+			   }).then(function successCallback(response) {
+			   console.log(response);
+			   var respData=response.data;
+			   if(respData[0]){
+				   $scope.trip.vendorname =respData[0];
+				   // $scope.trip.customername =respData.status;
+				  // $scope.trip.truckno="";
+			   }
+			   }, function errorCallback(response) {
+			    console.log(response.statusText);
+			   });
+		}
+	}
 	
 	$scope.changeBasedNumber =function(item){
 		if(item !="" && item !=undefined){
@@ -1299,7 +1321,7 @@ $('#tripModal').modal('show');
 $(".addVeh").css("display","block");
 $(".updateVeh").css("display","none");
 //$scope.trip={};
-$scope.trip = {customername:"",loadNo: "",tripNo: "",origin: "",destination: "",invoiceNO: "",dateTime: "",truckType: "",truckno: "",driverName: "",noOfCase: "",opkm: "0",clskm: "0",diffKM: "0",advance: "0",perkmchargecustomer: "0",perkmchargevendor: "0",gatein:"",gateout:"",haltedTime:"",customerhalt:"0",vendorhalt:"0",profit: "0",tollBill: "",policeBill: "",freightAmtCust: "0",freightAmtVen:"0",haltingCharge: "0",discount:"0",remarks: "",customerrate:0,vendorrate:0,customerperkm:0,vendorperkm:0};
+$scope.trip = {customername:"",vendorname:"",loadNo: "",tripNo: "",origin: "",destination: "",invoiceNO: "",dateTime: "",truckType: "",truckno: "",driverName: "",noOfCase: "",opkm: "0",clskm: "0",diffKM: "0",advance: "0",perkmchargecustomer: "0",perkmchargevendor: "0",gatein:"",gateout:"",haltedTime:"",customerhalt:"0",vendorhalt:"0",profit: "0",tollBill: "",policeBill: "",freightAmtCust: "0",freightAmtVen:"0",haltingCharge: "0",discount:"0",remarks: "",customerrate:0,vendorrate:0,customerperkm:0,vendorperkm:0};
 }
 $scope.addTripItem = function(item) {
 	  
@@ -1378,7 +1400,7 @@ var url = localurl +"/api/v1/createtripsheet";
 	        	toastr.success('Data not added');
 	          console.log(response.status);
 	        });
-	    $scope.trip = {customername:"",loadNo: "",tripNo: "",origin: "",destination: "",invoiceNO: "",dateTime: "",truckType: "",truckno: "",driverName: "",noOfCase: "",opkm: "0",clskm: "0",diffKM: "0",advance: "0",perkmchargecustomer: "0",perkmchargevendor: "0",gatein:"",gateout:"",haltedTime:"",customerhalt:"0",vendorhalt:"0",profit: "0",tollBill: "",policeBill: "",freightAmtCust: "0",freightAmtVen:"0",haltingCharge: "0",discount:"0",remarks: "",customerrate:0,vendorrate:0,customerperkm:0,vendorperkm:0};
+	    $scope.trip = {customername:"",vendorname:"",loadNo: "",tripNo: "",origin: "",destination: "",invoiceNO: "",dateTime: "",truckType: "",truckno: "",driverName: "",noOfCase: "",opkm: "0",clskm: "0",diffKM: "0",advance: "0",perkmchargecustomer: "0",perkmchargevendor: "0",gatein:"",gateout:"",haltedTime:"",customerhalt:"0",vendorhalt:"0",profit: "0",tollBill: "",policeBill: "",freightAmtCust: "0",freightAmtVen:"0",haltingCharge: "0",discount:"0",remarks: "",customerrate:0,vendorrate:0,customerperkm:0,vendorperkm:0};
 	}
 }
 
@@ -2252,7 +2274,7 @@ angular.forEach($scope.customerInvoiceJson, function(value, key) {
 	$scope.calculateVendorTotal =function(){
 		$scope.grandTotalVendorList={totaltrip:"",vendorname:"",invoiceNo:"",truckno:"",trucktype:"",totalkm:0,totalcase:0,totalkmpercharge:0,totalfreightamt:0,totaladvance:0,totaldiscount:0,netamount:0,paymentstatus:"",receiptnumber:"",leakage:"",cancatload:""};
 		angular.forEach($scope.checkedVendorValue, function(value, key) {
-			$scope.grandTotalVendorList.vendorname = value.destination;
+			$scope.grandTotalVendorList.vendorname = value.vendorname;
 			$scope.grandTotalVendorList.truckno = value.truckno;
 			$scope.grandTotalVendorList.trucktype = value.truckType;
 			
