@@ -147,7 +147,16 @@ public class TripSheet implements Serializable {
 	@Column(name = "vendorperkm")
 	private String vendorperkm;
 	
-		
+	@Column(name = "customername")
+	private String customername;
+	
+	public String getCustomername() {
+		return customername;
+	}
+
+	public void setCustomername(String customername) {
+		this.customername = customername;
+	}
 	public String getDiscount() {
 		return discount;
 	}

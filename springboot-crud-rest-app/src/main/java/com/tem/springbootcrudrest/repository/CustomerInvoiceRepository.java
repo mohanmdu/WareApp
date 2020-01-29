@@ -28,11 +28,11 @@ public interface CustomerInvoiceRepository extends JpaRepository<CustomerInvoice
 	
 	//customerinvoice
 	
-	@Query(value = "select c From CustomerInvoice c where  c.customername=:customername and c.paymentdate between :fromdate and :todate")
+	@Query(value = "select c From CustomerInvoice c where  c.customername=:customername and c.createddate between :fromdate and :todate")
 	public List<CustomerInvoice> findCustomerInvoiceByCustdatename(@Param("customername") String customername,@Param("fromdate") String fromdate,
 			@Param("todate") String todate);
 	
-	@Query(value = "select c From CustomerInvoice c where  c.paymentdate between :fromdate and :todate")
+	@Query(value = "select c From CustomerInvoice c where  c.createddate between :fromdate and :todate")
 	public List<CustomerInvoice> findCustInvoiceByFromDateToDate(@Param("fromdate") String fromdate,
 			@Param("todate") String todate);
 	

@@ -269,7 +269,7 @@
 									ng-model="trip.origin" class="form-control col-12"
 									placeholder="Origin" list="dataList"
 									ng-blur="validateOrigin(trip.origin)"
-									ng-change="getCommonDetails(trip.origin)" />
+									ng-change="getFindcustomer(trip.origin)" />
 								<datalist id="dataList">
 									<option ng-repeat="v in listdataJson track by $index" value="{{v}}"><!-- Name {{v}} --></option>
 								</datalist>
@@ -279,8 +279,7 @@
 									class="mandatory">*</span> </label> <input type="text"
 									ng-model="trip.destination" class="form-control col-12"
 									placeholder="Destination" list="dataListDest"
-									ng-blur="validateOrigin(trip.destination)"
-									ng-change="getCommonDetails(trip.destination)" />
+									ng-blur="validateOrigin(trip.destination)" /><!-- ng-change="getCommonDetails(trip.destination)" -->
 								<datalist id="dataListDest">
 									<option ng-repeat="v in listdataJson track by $index" value="{{v}}"><!-- Name {{v}} --></option>
 								</datalist>
