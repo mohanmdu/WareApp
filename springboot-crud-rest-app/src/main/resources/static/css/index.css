@@ -511,3 +511,9 @@ border-radius: 5px;
 #manage-vehicle-table_wrapper{
 line-height: 15px;
 }
+
+#manage-mpbilling-table_wrapper.dataTables_wrapper {
+      width: 90%;
+      margin: 0 auto;
+      overflow:auto;
+  }
