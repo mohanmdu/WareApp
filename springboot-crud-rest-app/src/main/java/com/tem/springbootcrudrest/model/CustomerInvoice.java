@@ -1,6 +1,7 @@
 package com.tem.springbootcrudrest.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -69,8 +72,12 @@ public class CustomerInvoice implements Serializable {
 	@Column(name = "totalkm")
 	private String totalkm;
 
-	@Column(name = "createddate")
-	private String createddate;
+	/*
+	 * @Column(name = "createddate") private String createddate;
+	 */
+	
+	@Temporal(TemporalType.DATE)
+	private Date createddate;
 
 	@Column(name = "modifieddate")
 	private String modifieddate;
@@ -224,13 +231,12 @@ public class CustomerInvoice implements Serializable {
 		this.totalkm = totalkm;
 	}
 
-	public String getCreateddate() {
-		return createddate;
-	}
-
-	public void setCreateddate(String createddate) {
-		this.createddate = createddate;
-	}
+	/*
+	 * public String getCreateddate() { return createddate; }
+	 * 
+	 * public void setCreateddate(String createddate) { this.createddate =
+	 * createddate; }
+	 */
 
 	public String getModifieddate() {
 		return modifieddate;
@@ -287,6 +293,12 @@ public class CustomerInvoice implements Serializable {
 	public void setPaymentmodifieddate(String paymentmodifieddate) {
 		this.paymentmodifieddate = paymentmodifieddate;
 	}
-	
-	
+
+	public Date getCreateddate() {
+		return createddate;
+	}
+
+	public void setCreateddate(Date createddate) {
+		this.createddate = createddate;
+	}	
 }

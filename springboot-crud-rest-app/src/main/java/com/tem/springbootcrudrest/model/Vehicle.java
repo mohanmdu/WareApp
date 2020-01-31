@@ -66,8 +66,13 @@ public class Vehicle {
 	@Column(name = "modifieddate")
 	private String modifiedDate;
 	
+	/*
+	 * @Column(name = "createddate") private String createdDate;
+	 */
+	
 	@Column(name = "createddate")
-	private String createdDate;
+	@Temporal(TemporalType.DATE)
+	private Date createddate;
 	
 	@Column(name = "Createdby", nullable = true)
 	private String createdby;
@@ -229,13 +234,20 @@ public class Vehicle {
 		this.vendorandvehicle = vendorandvehicle;
 	}
 
-	public String getCreatedDate() {
-		return createdDate;
+	public Date getCreateddate() {
+		return createddate;
 	}
 
-	public void setCreatedDate(String createdDate) {
-		this.createdDate = createdDate;
-	}	
+	public void setCreateddate(Date createddate) {
+		this.createddate = createddate;
+	}
+
+	/*
+	 * public String getCreatedDate() { return createdDate; }
+	 * 
+	 * public void setCreatedDate(String createdDate) { this.createdDate =
+	 * createdDate; }
+	 */
 	
 	
 }

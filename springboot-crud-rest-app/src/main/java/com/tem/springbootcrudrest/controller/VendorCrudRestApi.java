@@ -1,5 +1,7 @@
 package com.tem.springbootcrudrest.controller;
 
+import java.text.ParseException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,12 +35,12 @@ public class VendorCrudRestApi {
 	VendorService vendorService;
 
 	@PostMapping("/createvendor")
-	public Vendor createUser(@Valid @RequestBody Vendor vendor) {
-		String datetime = UTCDateTime.getCurentTimeAndDate();
+	public Vendor createUser(@Valid @RequestBody Vendor vendor) throws ParseException {
+		Date datetime = UTCDateTime.getCurentTimeAndDate();
 		vendor.setCreateddate(datetime);
 		
 		for(Vehicle vehicle:vendor.getVendorvehicle()) {
-			vehicle.setCreatedDate(datetime);
+			vehicle.setCreateddate(datetime);
 		}
 		
 		Vendor vendorresponse = vendorService.createVendor(vendor);

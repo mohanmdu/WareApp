@@ -80,8 +80,13 @@ public class Vendor {
 	@Column(name = "modifieddate", nullable = true)
 	private Date modifieddate;*/
 	
+	/*
+	 * @Column(name = "createddate") private String createddate;
+	 */
+	
 	@Column(name = "createddate")
-	private String createddate;
+	@Temporal(TemporalType.DATE)
+	private Date createddate;
 	
 	@Column(name = "modifieddate")
 	private String modifiedDate;
@@ -242,13 +247,12 @@ public class Vendor {
 		this.contactNo = contactNo;
 	}
 
-	public String getCreateddate() {
-		return createddate;
-	}
-
-	public void setCreateddate(String createddate) {
-		this.createddate = createddate;
-	}
+	/*
+	 * public String getCreateddate() { return createddate; }
+	 * 
+	 * public void setCreateddate(String createddate) { this.createddate =
+	 * createddate; }
+	 */
 
 	public String getModifiedDate() {
 		return modifiedDate;
@@ -264,6 +268,14 @@ public class Vendor {
 
 	public void setVendorvehicle(List<Vehicle> vendorvehicle) {
 		this.vendorvehicle = vendorvehicle;
+	}
+
+	public Date getCreateddate() {
+		return createddate;
+	}
+
+	public void setCreateddate(Date createddate) {
+		this.createddate = createddate;
 	}
 	
 }

@@ -1,5 +1,7 @@
 package com.tem.springbootcrudrest.controller;
 
+import java.text.ParseException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,9 +29,9 @@ public class CustomerPaymentCrudRestApi {
 	CustomerPaymentService customerPaymentService;
 
 	@PostMapping("/createcustomerpayment")
-	public CustomerPaymentParent createCustomerPayment(@RequestBody CustomerPaymentParent customerpaymentlist) {
+	public CustomerPaymentParent createCustomerPayment(@RequestBody CustomerPaymentParent customerpaymentlist) throws ParseException {
 
-		String datetime = UTCDateTime.getCurentTimeAndDate();
+		Date datetime = UTCDateTime.getCurentTimeAndDate();
 
 		customerpaymentlist.setCreateddate(datetime);
 
@@ -96,9 +98,9 @@ public class CustomerPaymentCrudRestApi {
 	//create manpowerpayment on customer and vendor payment table
 	
 	@PostMapping("/createmanpowerpayment")
-	public ResponseEntity<Map<String, Long>> createManpowerPayment(@RequestBody CustomerPaymentParent customerpaymentlist) {
+	public ResponseEntity<Map<String, Long>> createManpowerPayment(@RequestBody CustomerPaymentParent customerpaymentlist) throws ParseException {
 
-		String datetime = UTCDateTime.getCurentTimeAndDate();
+		Date datetime = UTCDateTime.getCurentTimeAndDate();
 
 		customerpaymentlist.setCreateddate(datetime);
 

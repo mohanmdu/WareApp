@@ -1,6 +1,8 @@
 package com.tem.springbootcrudrest.service;
 
+import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -158,7 +160,13 @@ public class CustomerPaymentServiceImpl implements CustomerPaymentService {
 	@Override
 	public long createManpowerPayment(CustomerPaymentParent customerpaymentlist) {
 
-		String datetime = UTCDateTime.getCurentTimeAndDate();
+		Date datetime = null;
+		try {
+			datetime = UTCDateTime.getCurentTimeAndDate();
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		customerpaymentlist.setCreateddate(datetime);
 

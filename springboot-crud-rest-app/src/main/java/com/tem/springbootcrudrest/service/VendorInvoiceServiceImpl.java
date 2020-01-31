@@ -197,8 +197,8 @@ public class VendorInvoiceServiceImpl implements VendorInvoiceService {
 				table.addCell(pdfWordCell);
 				
 				pdfWordCell = new PdfPCell();
-				Phrase dateValue = new Phrase(vendorInvoice.getCreateddate(), normalFont);
-				pdfWordCell.addElement(dateValue);
+			//	Phrase dateValue = new Phrase(vendorInvoice.getCreateddate(), normalFont);
+			//	pdfWordCell.addElement(dateValue);
 				table.addCell(pdfWordCell);
 				
 				

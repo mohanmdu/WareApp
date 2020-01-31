@@ -261,8 +261,8 @@ public class CustomerInvoiceServiceImpl implements CustomerInvoiceService {
 				table.addCell(pdfWordCell);
 
 				pdfWordCell = new PdfPCell();
-				Phrase dateValue = new Phrase(customerInvoice.getCreateddate(), normalFont);
-				pdfWordCell.addElement(dateValue);
+				//Phrase dateValue = new Phrase(customerInvoice.getCreateddate(), normalFont);
+				//pdfWordCell.addElement(dateValue);
 				table.addCell(pdfWordCell);
 
 				Phrase truckTypeLable = new Phrase("Truck Type", boldFont);

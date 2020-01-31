@@ -1,6 +1,7 @@
 package com.tem.springbootcrudrest.model;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -13,6 +14,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -37,8 +40,12 @@ public class CustomerPaymentParent implements Serializable {
 	@OneToMany(mappedBy = "customerPaymentParent", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Customerpayment> customerpayment;
 	
-	@Column(name = "createddate")
-	private String createddate;
+	/*
+	 * @Column(name = "createddate") private String createddate;
+	 */
+	
+	@Temporal(TemporalType.DATE)
+	private Date createddate;
 
 	@Column(name = "modifieddate")
 	private String modifieddate;
@@ -68,13 +75,12 @@ public class CustomerPaymentParent implements Serializable {
 		this.customerreceiptdate = customerreceiptdate;
 	}
 
-	public String getCreateddate() {
-		return createddate;
-	}
-
-	public void setCreateddate(String createddate) {
-		this.createddate = createddate;
-	}
+	/*
+	 * public String getCreateddate() { return createddate; }
+	 * 
+	 * public void setCreateddate(String createddate) { this.createddate =
+	 * createddate; }
+	 */
 
 	public String getModifieddate() {
 		return modifieddate;
@@ -82,5 +88,13 @@ public class CustomerPaymentParent implements Serializable {
 
 	public void setModifieddate(String modifieddate) {
 		this.modifieddate = modifieddate;
+	}
+
+	public Date getCreateddate() {
+		return createddate;
+	}
+
+	public void setCreateddate(Date createddate) {
+		this.createddate = createddate;
 	}
 }

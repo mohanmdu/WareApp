@@ -1,17 +1,19 @@
 package com.tem.util;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class UTCDateTime {
 
-	public static String getCurentTimeAndDate() {
+	public static Date getCurentTimeAndDate() throws ParseException {
 		Date todaysDate = new Date();
 		
-		DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		SimpleDateFormat  df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		String datestr = df.format(todaysDate);
-		return datestr;
+		Date date = df.parse(datestr);
+		return date;
 	}
 	
 }

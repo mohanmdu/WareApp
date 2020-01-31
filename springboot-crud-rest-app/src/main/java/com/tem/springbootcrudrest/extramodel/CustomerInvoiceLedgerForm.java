@@ -1,5 +1,10 @@
 package com.tem.springbootcrudrest.extramodel;
 
+import java.util.Date;
+
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 public class CustomerInvoiceLedgerForm {
 
 	private long customerinvoiceid;
@@ -34,7 +39,9 @@ public class CustomerInvoiceLedgerForm {
 
 	private String manpowercustomernamer;
 
-	private String manpowerinvoicedate;
+//	private String manpowerinvoicedate;
+	@Temporal(TemporalType.DATE)
+	private Date manpowerinvoicedate;
 
 	private String manpowertotal;
 	
@@ -178,13 +185,12 @@ public class CustomerInvoiceLedgerForm {
 		this.manpowercustomernamer = manpowercustomernamer;
 	}
 
-	public String getManpowerinvoicedate() {
-		return manpowerinvoicedate;
-	}
-
-	public void setManpowerinvoicedate(String manpowerinvoicedate) {
-		this.manpowerinvoicedate = manpowerinvoicedate;
-	}
+	/*
+	 * public String getManpowerinvoicedate() { return manpowerinvoicedate; }
+	 * 
+	 * public void setManpowerinvoicedate(String manpowerinvoicedate) {
+	 * this.manpowerinvoicedate = manpowerinvoicedate; }
+	 */
 
 	public String getManpowertotal() {
 		return manpowertotal;
@@ -241,4 +247,13 @@ public class CustomerInvoiceLedgerForm {
 	public void setVendpaymentbalanceamount(double vendpaymentbalanceamount) {
 		this.vendpaymentbalanceamount = vendpaymentbalanceamount;
 	}
+
+	public Date getManpowerinvoicedate() {
+		return manpowerinvoicedate;
+	}
+
+	public void setManpowerinvoicedate(Date manpowerinvoicedate) {
+		this.manpowerinvoicedate = manpowerinvoicedate;
+	}
+	
 }

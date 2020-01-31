@@ -1,5 +1,6 @@
 package com.tem.springbootcrudrest.model;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -12,6 +13,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -28,6 +32,8 @@ public class Customer {
 	@Column(name = "Customer_Id")
 	private long customerId;
 
+	@Temporal(TemporalType.DATE)
+	private Date date;
 	
 	@Column(name = "customername")
 	private String customername;
@@ -45,9 +51,14 @@ public class Customer {
 	private String IEC;
 
 	//@Temporal(TemporalType.DATE)
-	@Column(name = "createddate")
-	private String createddate;
+	/*
+	 * @Column(name = "createddate") private String createddate;
+	 */
 
+	@Column(name = "createddate")
+	@Temporal(TemporalType.DATE)
+	private Date createddate;
+	
 	@Column(name = "Created_by")
 	private String createdby;
 
@@ -191,13 +202,12 @@ public class Customer {
 		this.customername = customername;
 	}
 	
-	public String getCreateddate() {
-		return createddate;
-	}
-
-	public void setCreateddate(String createddate) {
-		this.createddate = createddate;
-	}
+	/*
+	 * public String getCreateddate() { return createddate; }
+	 * 
+	 * public void setCreateddate(String createddate) { this.createddate =
+	 * createddate; }
+	 */
 
 	public String getBankName() {
 		return bankName;
@@ -205,6 +215,14 @@ public class Customer {
 
 	public void setBankName(String bankName) {
 		this.bankName = bankName;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
 	public String getBranch() {
@@ -285,6 +303,14 @@ public class Customer {
 
 	public void setIEC(String iEC) {
 		IEC = iEC;
+	}
+
+	public Date getCreateddate() {
+		return createddate;
+	}
+
+	public void setCreateddate(Date createddate) {
+		this.createddate = createddate;
 	}
 
 	/*

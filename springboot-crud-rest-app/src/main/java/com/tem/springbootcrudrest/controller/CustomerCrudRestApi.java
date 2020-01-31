@@ -1,5 +1,7 @@
 package com.tem.springbootcrudrest.controller;
 
+import java.text.ParseException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -32,8 +34,8 @@ public class CustomerCrudRestApi {
 	CustomerService customerService;
 
 	@PostMapping("/createcustomer")
-	public Customer createCustomer(@Valid @RequestBody Customer customer) {
-		String datetime = UTCDateTime.getCurentTimeAndDate();
+	public Customer createCustomer(@Valid @RequestBody Customer customer) throws ParseException {
+		Date datetime = UTCDateTime.getCurentTimeAndDate();
 		customer.setCreateddate(datetime);
 
 		Customer customerresponse = customerService.createCustomer(customer);

@@ -1,5 +1,7 @@
 package com.tem.springbootcrudrest.controller;
 
+import java.text.ParseException;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,11 +28,12 @@ public class VendorPaymentCrudRestApi {
 	VendorPaymentService vendorPaymentService;
 
 	@PostMapping("/createvendorpayment")
-	public VendorPaymentParent createVendorPayment(@RequestBody VendorPaymentParent vendorPaymentParent) {
+	public VendorPaymentParent createVendorPayment(@RequestBody VendorPaymentParent vendorPaymentParent) throws ParseException {
 
-		String datetime = UTCDateTime.getCurentTimeAndDate();
+		Date datetime = UTCDateTime.getCurentTimeAndDate();
 
 		vendorPaymentParent.setCreateddate(datetime);
+		
 
 		VendorPaymentParent vendorPaymentParentresponse = vendorPaymentService.createVendorPayment(vendorPaymentParent);
 

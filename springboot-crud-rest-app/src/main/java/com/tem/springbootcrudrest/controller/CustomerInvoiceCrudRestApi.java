@@ -1,6 +1,8 @@
 package com.tem.springbootcrudrest.controller;
 
 import java.io.FileNotFoundException;
+import java.text.ParseException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -32,9 +34,9 @@ public class CustomerInvoiceCrudRestApi {
 	
 	
 	@PostMapping("/createcustomerinvoice")
-	public CustomerInvoice createCustomerInvoice(@Valid @RequestBody CustomerInvoice customerInvoice) {
+	public CustomerInvoice createCustomerInvoice(@Valid @RequestBody CustomerInvoice customerInvoice) throws ParseException {
 		
-		String datetime = UTCDateTime.getCurentTimeAndDate();
+		Date datetime = UTCDateTime.getCurentTimeAndDate();
 		
 		customerInvoice.setCreateddate(datetime);
 

@@ -1,5 +1,6 @@
 package com.tem.springbootcrudrest.service;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +24,12 @@ public class VendorPaymentServiceImpl implements VendorPaymentService{
 
 	@Override
 	public VendorPaymentParent createVendorPayment(VendorPaymentParent vendorpaymentparent) {
-		vendorpaymentparent.setCreateddate(UTCDateTime.getCurentTimeAndDate());
+		try {
+			vendorpaymentparent.setCreateddate(UTCDateTime.getCurentTimeAndDate());
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		VendorPaymentParent vendoerpaymentesponse = vendorPaymentParentRepository.save(vendorpaymentparent);
 		
 		return vendoerpaymentesponse;
@@ -92,7 +98,7 @@ public class VendorPaymentServiceImpl implements VendorPaymentService{
 				vendorpaymentchequeobj.setPaymenttype(vendorcheque.getPaymenttype());
 				vendorpaymentchequeobj.setStatus("Pending");
 				vendorpaymentchequeobj.setVendorreceiptdate(vendorcheque.getVendorreceiptdate());
-				vendorpaymentchequeobj.setModifieddate(UTCDateTime.getCurentTimeAndDate());
+				//vendorpaymentchequeobj.setModifieddate(UTCDateTime.getCurentTimeAndDate());
 				vendorpaymentchequeobj.setVendorname(vendorcheque.getVendorname());
 				vendorpaymentchequeobj.setVendorPaymentParent(vendorcheque.getVendorPaymentParent());
 				vendorPaymentRepository.save(vendorpaymentchequeobj);
