@@ -1,6 +1,7 @@
 package com.tem.springbootcrudrest.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,7 +31,7 @@ public class Vendorpayment implements Serializable {
 	private long vendorpaymentid;
 
 	@Column(name = "createddate")
-	private String createddate;
+	private Date createddate;
 
 	@Column(name = "modifieddate")
 	private String modifieddate;
@@ -73,13 +74,12 @@ public class Vendorpayment implements Serializable {
 		this.vendorpaymentid = vendorpaymentid;
 	}
 
-	public String getCreateddate() {
-		return createddate;
-	}
-
-	public void setCreateddate(String createddate) {
-		this.createddate = createddate;
-	}
+	/*
+	 * public String getCreateddate() { return createddate; }
+	 * 
+	 * public void setCreateddate(String createddate) { this.createddate =
+	 * createddate; }
+	 */
 
 	public String getModifieddate() {
 		return modifieddate;
@@ -160,5 +160,12 @@ public class Vendorpayment implements Serializable {
 	public void setVendorname(String vendorname) {
 		this.vendorname = vendorname;
 	}
-	
+
+	public Date getCreateddate() {
+		return createddate;
+	}
+
+	public void setCreateddate(Date createddate) {
+		this.createddate = createddate;
+	}
 }

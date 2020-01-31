@@ -71,7 +71,7 @@ public class Vehicle {
 	 */
 	
 	@Column(name = "createddate")
-	@Temporal(TemporalType.DATE)
+	//@Temporal(TemporalType.DATE)
 	private Date createddate;
 	
 	@Column(name = "Createdby", nullable = true)

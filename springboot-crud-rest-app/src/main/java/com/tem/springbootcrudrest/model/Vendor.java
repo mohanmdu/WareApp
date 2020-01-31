@@ -37,7 +37,7 @@ public class Vendor {
 	@Column(name = "vendorcode", nullable = false)
 	private String vendorcode;
 	
-	@Column(name = "vendorname", nullable = false)
+	@Column(name = "vendorname", nullable = false,unique=true)
 	private String vendorname;
 	
 	@Column(name = "pan", nullable = true)
@@ -85,7 +85,7 @@ public class Vendor {
 	 */
 	
 	@Column(name = "createddate")
-	@Temporal(TemporalType.DATE)
+	//@Temporal(TemporalType.DATE)
 	private Date createddate;
 	
 	@Column(name = "modifieddate")

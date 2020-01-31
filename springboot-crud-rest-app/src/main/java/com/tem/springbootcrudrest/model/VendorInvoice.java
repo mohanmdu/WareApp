@@ -74,7 +74,7 @@ public class VendorInvoice implements Serializable {
 	 */
 	
 	@Column(name = "createddate")
-	@Temporal(TemporalType.DATE)
+	//@Temporal(TemporalType.DATE)
 	private Date createddate;
 
 	@Column(name = "modifieddate")

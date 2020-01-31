@@ -43,7 +43,7 @@ public class ManPower {
 	 */
 	
 	@Column(name = "invoicedate")
-	@Temporal(TemporalType.DATE)
+	//@Temporal(TemporalType.DATE)
 	private Date invoicedate;
 	
 	@Column(name = "grandTotal")

@@ -76,7 +76,8 @@ public class CustomerInvoice implements Serializable {
 	 * @Column(name = "createddate") private String createddate;
 	 */
 	
-	@Temporal(TemporalType.DATE)
+	//@Temporal(TemporalType.DATE)
+	@Column(name = "createddate")
 	private Date createddate;
 
 	@Column(name = "modifieddate")

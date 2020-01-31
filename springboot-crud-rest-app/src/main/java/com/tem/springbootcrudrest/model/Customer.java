@@ -35,7 +35,7 @@ public class Customer {
 	@Temporal(TemporalType.DATE)
 	private Date date;
 	
-	@Column(name = "customername")
+	@Column(name = "customername" ,unique=true)
 	private String customername;
 
 	@Column(name = "pan")
@@ -56,7 +56,7 @@ public class Customer {
 	 */
 
 	@Column(name = "createddate")
-	@Temporal(TemporalType.DATE)
+	//@Temporal(TemporalType.DATE)
 	private Date createddate;
 	
 	@Column(name = "Created_by")

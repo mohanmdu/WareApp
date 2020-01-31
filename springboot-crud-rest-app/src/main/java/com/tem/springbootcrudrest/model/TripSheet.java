@@ -147,10 +147,10 @@ public class TripSheet implements Serializable {
 	@Column(name = "vendorperkm")
 	private String vendorperkm;
 	
-	@Column(name = "customername")
+	@Column(name = "customername",unique=true)
 	private String customername;
 	
-	@Column(name = "vendorname")
+	@Column(name = "vendorname",unique=true)
 	private String vendorname;
 	
 	public String getVendorname() {

@@ -44,7 +44,7 @@ public class CustomerPaymentParent implements Serializable {
 	 * @Column(name = "createddate") private String createddate;
 	 */
 	
-	@Temporal(TemporalType.DATE)
+	//@Temporal(TemporalType.DATE)
 	private Date createddate;
 
 	@Column(name = "modifieddate")
