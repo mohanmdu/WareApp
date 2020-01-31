@@ -1113,7 +1113,10 @@ app.controller('VehicleController', function ($scope, $timeout,$window ,$filter,
 				   }
 				   }, function errorCallback(response) {
 				    console.log(response.statusText);
+				    $scope.trip.customername="";
 				   });
+			}else{
+				$scope.trip.customername="";
 			}
 		}
 	
@@ -1135,7 +1138,10 @@ app.controller('VehicleController', function ($scope, $timeout,$window ,$filter,
 			   }
 			   }, function errorCallback(response) {
 			    console.log(response.statusText);
+			    $scope.trip.vendorname ="";
 			   });
+		}else{
+			$scope.trip.vendorname ="";
 		}
 	}
 	
