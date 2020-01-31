@@ -12,7 +12,7 @@ public interface ManPowerService {
 
 	ManPower createManPower(ManPower manPower);
 	
-	List<ManPower> findCustomerByFromDateToDateCustNameFromManPower(String fromdate, String todate,String customername);
+	List<ManPower> findCustomerByFromDateToDateCustNameFromManPower(String fromdate, String todate,String customername,String vendorname);
 	
 	List<ManPower> findCustomerByFromDateToDateCustNameFromManPowerCompleteStatus(String fromdate, String todate,String customername);
 	

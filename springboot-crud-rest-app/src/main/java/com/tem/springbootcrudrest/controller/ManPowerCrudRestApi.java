@@ -35,9 +35,9 @@ public class ManPowerCrudRestApi {
 	}
 	
 	@RequestMapping(path = "/listcustomerbydatename", method = RequestMethod.GET)
-	public List<ManPower> findCustomerByFromDateToDateCustNameFromManPower(@RequestParam(required = false) String fromdate, @RequestParam(required = false) String todate,@RequestParam(required = false) String customername) {
+	public List<ManPower> findCustomerByFromDateToDateCustNameFromManPower(@RequestParam(required = false) String fromdate, @RequestParam(required = false) String todate,@RequestParam(required = false) String customername,@RequestParam(required = false) String vendorname) {
 
-		List<ManPower> manpower = manPowerService.findCustomerByFromDateToDateCustNameFromManPower(fromdate, todate,customername);
+		List<ManPower> manpower = manPowerService.findCustomerByFromDateToDateCustNameFromManPower(fromdate, todate,customername,vendorname);
 
 		return manpower;
 	}

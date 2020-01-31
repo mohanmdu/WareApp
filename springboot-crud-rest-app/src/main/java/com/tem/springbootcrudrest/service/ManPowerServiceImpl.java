@@ -25,11 +25,15 @@ public class ManPowerServiceImpl implements ManPowerService {
 
 	@Override
 	public List<ManPower> findCustomerByFromDateToDateCustNameFromManPower(String fromdate, String todate,
-			String customername) {
+			String customername,String vendorname) {
 		if (fromdate != null && todate != null && customername != null) {
 			return manPowerRepository.findManPowerCustomerByFromDateToDateAndCustomerName(customername, fromdate,
 					todate);
-		} else if (fromdate != null && todate != null) {
+		}else if (fromdate != null && todate != null && vendorname != null) {
+			return manPowerRepository.findManPowerCustomerByFromDateToDateAndCustomerName(vendorname, fromdate,
+					todate);
+		}
+		else if (fromdate != null && todate != null) {
 			return manPowerRepository.findManPowerCustomerByFromDateToDate(fromdate, todate);
 		} else {
 			return manPowerRepository.findManPowerCustomerByCustomerName(customername);
