@@ -15,6 +15,9 @@ import javax.persistence.TemporalType;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
 @Entity
 @Table(name = "tripsheet")
 @EntityListeners(AuditingEntityListener.class)
@@ -52,8 +55,12 @@ public class TripSheet implements Serializable {
 	private String invoiceNO;
 
 	//@Temporal(TemporalType.DATE)
-	//@Column(name = "datetime")
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	@Column(name = "datetime")
 	private Date datetime;
+	
+	@Column(name = "time")
+	private String time;	
 
 	@Column(name = "truckType")
 	private String truckType;
@@ -515,4 +522,13 @@ public class TripSheet implements Serializable {
 	public void setDatetime(Date datetime) {
 		this.datetime = datetime;
 	}
+
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
+	
 }
