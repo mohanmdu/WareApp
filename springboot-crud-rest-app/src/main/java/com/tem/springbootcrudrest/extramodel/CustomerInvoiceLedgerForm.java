@@ -33,7 +33,7 @@ public class CustomerInvoiceLedgerForm {
 
 	private long vendpaymentid;
 
-	private String instrumentdate;
+	private Date instrumentdate;
 
 	private long manpowerid;
 
@@ -105,11 +105,11 @@ public class CustomerInvoiceLedgerForm {
 		this.vendorinvoiceid = vendorinvoiceid;
 	}
 
-	public String getInstrumentdate() {
+	public Date getInstrumentdate() {
 		return instrumentdate;
 	}
 
-	public void setInstrumentdate(String instrumentdate) {
+	public void setInstrumentdate(Date instrumentdate) {
 		this.instrumentdate = instrumentdate;
 	}
 

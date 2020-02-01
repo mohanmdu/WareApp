@@ -34,7 +34,7 @@ public interface CustomerPaymentRepository extends JpaRepository<Customerpayment
 	 public List<Customerpayment> findAllCustomerCheque();
 	 
 	 
-	   @Query(value = "select c From Customerpayment c where c.status='Pending' and c.customername=:customername and c.instrumentdate between :fromdate and :todate")
+	   @Query(value = "select c From Customerpayment c where c.status='Pending' and c.customername=:customername and c.instrumentdate between date(:fromdate) and date(:todate)")
 		public List<Customerpayment> findInvoiceBetweenDateForLedgerForm(@Param("fromdate") String fromdate,
 				@Param("todate") String todate,@Param("customername") String customername);
 	   

@@ -86,8 +86,12 @@ public class VendorInvoice implements Serializable {
 	@Column(name = "amount")
 	private String amount;
 
+	/*
+	 * @Column(name = "paymentdate") private String paymentdate;
+	 */
 	@Column(name = "paymentdate")
-	private String paymentdate;
+	//@Temporal(TemporalType.DATE)
+	private Date paymentdate;
 
 	@Column(name = "instrumentno")
 	private String instrumentno;
@@ -251,11 +255,11 @@ public class VendorInvoice implements Serializable {
 		this.amount = amount;
 	}
 
-	public String getPaymentdate() {
+	public Date getPaymentdate() {
 		return paymentdate;
 	}
 
-	public void setPaymentdate(String paymentdate) {
+	public void setPaymentdate(Date paymentdate) {
 		this.paymentdate = paymentdate;
 	}
 

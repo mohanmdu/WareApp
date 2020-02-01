@@ -48,8 +48,13 @@ public class Vendorpayment implements Serializable {
 	@Column(name = "instrumentno")
 	private String instrumentno;
 
+	/*
+	 * @Column(name = "instrumentdate") private String instrumentdate;
+	 */
+	
 	@Column(name = "instrumentdate")
-	private String instrumentdate;
+	//@Temporal(TemporalType.DATE)
+	private Date instrumentdate;
 	
 	
 	@Column(name = "status")
@@ -121,11 +126,11 @@ public class Vendorpayment implements Serializable {
 		this.instrumentno = instrumentno;
 	}
 
-	public String getInstrumentdate() {
+	public Date getInstrumentdate() {
 		return instrumentdate;
 	}
 
-	public void setInstrumentdate(String instrumentdate) {
+	public void setInstrumentdate(Date instrumentdate) {
 		this.instrumentdate = instrumentdate;
 	}
 

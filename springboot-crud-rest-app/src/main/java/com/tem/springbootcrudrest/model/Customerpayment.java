@@ -1,6 +1,7 @@
 package com.tem.springbootcrudrest.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -39,7 +40,7 @@ public class Customerpayment implements Serializable {
 	private String instrumentno;
 
 	@Column(name = "instrumentdate")
-	private String instrumentdate;
+	private Date instrumentdate;
 	
 	@Column(name = "status")
 	private String status;
@@ -87,11 +88,11 @@ public class Customerpayment implements Serializable {
 		this.instrumentno = instrumentno;
 	}
 
-	public String getInstrumentdate() {
+	public Date getInstrumentdate() {
 		return instrumentdate;
 	}
 
-	public void setInstrumentdate(String instrumentdate) {
+	public void setInstrumentdate(Date instrumentdate) {
 		this.instrumentdate = instrumentdate;
 	}
 

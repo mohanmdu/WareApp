@@ -38,12 +38,6 @@ public class TripSheetServiceImpl implements TripSheetService {
 		tripSheet.setVendorinvoicestatus("NO");
 		tripSheet.setStatus("YES");
 		tripSheet.setCustomerinvoiceno(0);
-		try {
-			tripSheet.setDatetime(UTCDateTime.getCurentTimeAndDate());
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 
 		return tripRepository.save(tripSheet);
 	}
@@ -298,7 +292,7 @@ public class TripSheetServiceImpl implements TripSheetService {
 	}
 
 	@Override
-	public List<TripSheet> findCustomerInvoiceBetweenDate(Date fromdate, Date todate) {
+	public List<TripSheet> findCustomerInvoiceBetweenDate(String fromdate, String todate) {
 		// TODO Auto-generated method stub
 		return tripRepository.findCustomerInvoiceBetweenDateList(fromdate, todate);
 	}
