@@ -2,6 +2,8 @@ package com.tem.springbootcrudrest.controller;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -193,7 +195,7 @@ public class TripSheetCrudRestApi {
 
 	@PostMapping("/upload") // //new annotation since 4.3
 	public Set<TripSheet> singleFileUpload(@RequestParam("file") MultipartFile file)
-			throws EncryptedDocumentException, IOException, InvalidFormatException {
+			throws EncryptedDocumentException, IOException, InvalidFormatException, ParseException {
 
 		//System.out.println("Wel....");
 		List<TripSheet> triplist = new ArrayList<TripSheet>();
@@ -227,7 +229,13 @@ public class TripSheetCrudRestApi {
 
 					if (String.valueOf(firstrow.getCell(0)).equals("Scheduled Date/Time(MM/DD/YYYY HH:MM)")) {
 						if (row.getCell(0) != null) {
-							trip.setDatetime(row.getCell(0).toString());
+							SimpleDateFormat  df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+							String datestr = df.format(row.getCell(0).toString());
+							Date date = df.parse(datestr);
+							
+							
+							trip.setDatetime(date);
+							
 						}
 					}
 

@@ -1,6 +1,7 @@
 package com.tem.springbootcrudrest.service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -93,11 +94,12 @@ public class TripSheetServiceImpl implements TripSheetService {
 		return tripRepository.findAllVendorInvoiceDetails();
 	}
 
-	@Override
-	public List<TripSheet> findCustomerInvoiceBetweenDate(String fromdate, String todate) {
-
-		return tripRepository.findCustomerInvoiceBetweenDateList(fromdate, todate);
-	}
+	/*
+	 * @Override public List<TripSheet> findCustomerInvoiceBetweenDate(String
+	 * fromdate, String todate) {
+	 * 
+	 * return tripRepository.findCustomerInvoiceBetweenDateList(fromdate, todate); }
+	 */
 
 	@Override
 	public List<String> getTrucknoList() {
@@ -285,5 +287,11 @@ public class TripSheetServiceImpl implements TripSheetService {
 		
 		return tripRepository.findVendorInvoiceId(vendorinvoiceid);
 		
+	}
+
+	@Override
+	public List<TripSheet> findCustomerInvoiceBetweenDate(Date fromdate, Date todate) {
+		// TODO Auto-generated method stub
+		return tripRepository.findCustomerInvoiceBetweenDateList(fromdate, todate);
 	}
 }
