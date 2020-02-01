@@ -75,6 +75,7 @@ public class VendorInvoice implements Serializable {
 	 * @Column(name = "createddate") private String createddate;
 	 */
 	
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	@Column(name = "createddate")
 	//@Temporal(TemporalType.DATE)
 	private Date createddate;

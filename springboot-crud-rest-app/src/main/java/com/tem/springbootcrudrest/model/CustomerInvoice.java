@@ -15,6 +15,8 @@ import javax.persistence.TemporalType;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 @Table(name = "customerinvoice")
 @EntityListeners(AuditingEntityListener.class)
@@ -77,6 +79,7 @@ public class CustomerInvoice implements Serializable {
 	 */
 	
 	//@Temporal(TemporalType.DATE)
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	@Column(name = "createddate")
 	private Date createddate;
 

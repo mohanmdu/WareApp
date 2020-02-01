@@ -18,6 +18,7 @@ import javax.persistence.TemporalType;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
@@ -55,6 +56,7 @@ public class Customer {
 	 * @Column(name = "createddate") private String createddate;
 	 */
 
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	@Column(name = "createddate")
 	//@Temporal(TemporalType.DATE)
 	private Date createddate;

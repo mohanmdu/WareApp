@@ -17,6 +17,7 @@ import javax.persistence.Table;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name = "customerpayment")
@@ -39,6 +40,7 @@ public class Customerpayment implements Serializable {
 	@Column(name = "instrumentno")
 	private String instrumentno;
 
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	@Column(name = "instrumentdate")
 	private Date instrumentdate;
 	
