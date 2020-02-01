@@ -1,6 +1,7 @@
 package com.tem.springbootcrudrest.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -48,8 +51,9 @@ public class TripSheet implements Serializable {
 	@Column(name = "invoiceNO")
 	private String invoiceNO;
 
-	@Column(name = "datetime")
-	private String datetime;
+	@Temporal(TemporalType.DATE)
+	//@Column(name = "datetime")
+	private Date datetime;
 
 	@Column(name = "truckType")
 	private String truckType;
@@ -256,11 +260,11 @@ public class TripSheet implements Serializable {
 		this.invoiceNO = invoiceNO;
 	}
 
-	public String getDatetime() {
+	public Date getDatetime() {
 		return datetime;
 	}
 
-	public void setDatetime(String datetime) {
+	public void setDatetime(Date datetime) {
 		this.datetime = datetime;
 	}
 

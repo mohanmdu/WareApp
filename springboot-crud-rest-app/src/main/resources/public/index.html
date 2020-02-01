@@ -341,7 +341,7 @@ app.controller('HomeController', function ($scope, $routeParams,$rootScope) {
 	 $scope.logusername = $routeParams.username;
 	 $rootScope.loggedIn =false;
 });
-app.controller('CustomerController',function ($scope,$http,$location,DTOptionsBuilder, DTColumnBuilder, DTColumnDefBuilder,toastr) {
+app.controller('CustomerController',function ($scope,$filter,$http,$location,DTOptionsBuilder, DTColumnBuilder, DTColumnDefBuilder,toastr) {
 	scope=$scope;
 	$scope.listCustomerJson =[];
 	/* $scope.listCustomerJson =[{customerId: "1111",customerName: "Demo",pan: "12354EWRWE",tan: "12354DFGDD",kyc: "123544UGDSCF",iec: "12354UUFFA",customerDetails:[{ customerAddr: "3,xyz street,mumbai", mobileNo: "123544", phoneNo: "123544",gstin: "12354RTUGF"},{ customerAddr: "3,xyz street,mumbai", mobileNo: "123544", phoneNo: "123544",gstin: "12354RTUGF"}]},
@@ -377,6 +377,24 @@ app.controller('CustomerController',function ($scope,$http,$location,DTOptionsBu
         ]
       }
     ]);
+	
+	$scope.getValid = function(selectedType,data) {
+		var checkState = $filter('filter')($scope.listStateJson, {statename: selectedType});
+		   
+		if(checkState.length!=0){
+			 angular.forEach(checkState,function(value,index){
+				 if(checkState[index].statename != selectedType){
+					 toastr.error('Please Select Listed state');
+				    	$scope.item.customerDetails[data].state="";
+				    	return ;
+				 }
+		 })
+		    }else if(checkState.length==0){
+		    	 toastr.error('Please Select Listed state');
+		    	 $scope.item.customerDetails[data].state="";
+		    	 return false;
+		    }
+		} 
 $scope.createCust = function() {
 $("#custModal").modal("show");
 $(".custId").css("display","");
@@ -397,7 +415,12 @@ $scope.deleteCustomerDetails = function(index){
 	$scope.item.customerDetails.splice(index,1);
 
 }
+
+
 $scope.addItem = function(item) {
+	
+	
+	
 	 if(item.customername==""){
 		 toastr.error('Please enter CustomerName');
 		return;
@@ -549,7 +572,7 @@ $scope.initcustState =function(){
  $scope.initcust();
  $scope.initcustState();
 });
-app.controller('VendorController', function ($scope ,$http,$location,DTOptionsBuilder, DTColumnBuilder, DTColumnDefBuilder,toastr) {
+app.controller('VendorController', function ($scope,$filter,$http,$location,DTOptionsBuilder, DTColumnBuilder, DTColumnDefBuilder,toastr) {
 	$scope.listVendorJson=[];
 	 /* $scope.listVendorJson =[{vendorid: "1111",vendorName: "Demo",pan: "12354EWRWE",tan: "12354DFGDD",kyc: "123544UGDSCF",iec: "12354UUFFA",bankName:"ICICI",branch:"Chennai",accountNo:"232434",ifsc:"ICIC0003",contactPerson:"Dinesh",contactNo:"868755487",vendorVehicle:[{drivername: "Siva",mobileno: "234234",vehicleno: "555",vehicleType: "CAN3",FC: "4455",insurance: "555",RCno: "888",roadTax: "33",pollutioncert: "4324",goodPermit: "23423",statePermit: "2342"}],vendorAddress:[{ vendoraddr: "3,xyz street,mumbai", mobileno: "123544", phoneno: "123544",gstin: "12354RTUGF"},{ vendoraddr: "3,xyz street,mumbai", mobileno: "123544", phoneno: "123544",gstin: "12354RTUGF"}]},
 	                        {vendorid: "2222",vendorName: "XYZ",pan: "12354EWRWE",tan: "12354DFGDD",kyc: "123544UGDSCF" ,iec: "12354UUFFA",bankName:"HDFC",branch:"Chennai",accountNo:"232434",ifsc:"ICIC0003",contactPerson:"Dinesh",contactNo:"868755487",vendorVehicle:[{drivername: "Siva",mobileno: "234234",vehicleno: "555",vehicleType: "CAN3",FC: "4455",insurance: "555",RCno: "888",roadTax: "33",pollutioncert: "4324",goodPermit: "23423",statePermit: "2342"}], vendorAddress:[{ vendoraddr: "3,xyz street,mumbai", mobileno: "123544", phoneno: "123544",gstin: "12354RTUGF"}]},
@@ -586,6 +609,15 @@ app.controller('VendorController', function ($scope ,$http,$location,DTOptionsBu
         ]
       }
     ]);
+	
+$scope.getstateValid = function(selectedType,data) {
+	var checkState = $filter('filter')($scope.listvenStateJson, {statename: selectedType});
+	    if(checkState.length==0){
+	    	toastr.error('Please Select Listed state');
+	    	//$scope.vendorDetail.state="";
+	    	data.currentTarget.value="";
+	    }
+	} 
 $scope.createVendor = function() {
 $("#venModal").modal('show');
 $(".venId").css("display","");
@@ -613,6 +645,7 @@ $scope.deleteVendorDetails = function(index){
 
 }
 $scope.addItem = function(item) {
+	
 	if(item.vendorcode==""){
 		 toastr.error('Please enter VendorCode');
 		return;
@@ -2809,6 +2842,32 @@ $scope.updateVenBilledTrip =function(data){
 				    console.log(response.statusText);
 				   });
 		 }
+	 
+		$scope.searchmpItem =function(){
+			$scope.mpInvoiceJson=[];
+			if($scope.mpInvoice.fromdate=="" || $scope.mpInvoice.fromdate== undefined){
+				 toastr.error('Please enter From date');
+				return;
+			}else if($scope.mpInvoice.todate=="" || $scope.mpInvoice.todate==undefined){
+				 toastr.error('Please enter To date');
+				return;
+			}else if($scope.mpInvoice.customername=="" || $scope.mpInvoice.customername== undefined){
+				 toastr.error('Please enter CustomerName');
+				return;
+			}else{
+				var url=localurl +"/api/v1/listcustomerbydatename";
+				 $http({
+					    method : 'GET',
+					    url : url,
+					    params: $scope.mpInvoice,
+					   }).then(function successCallback(response) {
+					   $scope.mpInvoiceJson = response.data;
+					   }, function errorCallback(response) {
+					    console.log(response.statusText);
+					   });
+			}
+			
+		};
 
 	$scope.navRedirect =function(event){
 		 $(".nav").find(".active").removeClass("active");
@@ -2866,9 +2925,9 @@ $scope.updateVenBilledTrip =function(data){
 			  $('#VendorInvoice').hide();
 			  $('#customerView').hide();
 			  $('#vendorView').hide();
-			  $scope.initmpcustList();
-			  $scope.initmpvenList();
-			  //$scope.getCustVenListmanPower();
+			  //$scope.initmpcustList();
+			  //$scope.initmpvenList();
+			  $scope.getCustVenListmanPower();
 			  //$scope.getItem();
 			 //$scope.grandTotalList={totaltrip:"",customername:"",invoiceNo:"",truckno:"",trucktype:"",totalkm:0,totalcase:0,totalkmpercharge:0,totalfreightamt:0,totaladvance:0,totaldiscount:0,netamount:0,paymentstatus:"",receiptnumber:"",leakage:"",cancatload:""};
 		  }else{
@@ -4328,6 +4387,25 @@ app.directive('initialDate', function () {
     }
   });
   
+app.directive("stateValid", function() {
+
+    var regexp;
+    return {
+        restrict: "A",
+        link: function(scope, elem, attrs) {
+           // regexp = /^([0-9]){0,10}$/;
+           // var char;
+            elem.bind("blur", function(event) {
+            console.log(event);	
+            
+                /* char = String.fromCharCode(event.which)
+                if(!regexp.test(elem.val() + char))
+                    event.preventDefault(); */
+            })
+        }
+    }
+
+});
 app.directive('fileModel', ['$parse', function($parse){
     return {
         restrict: 'A',

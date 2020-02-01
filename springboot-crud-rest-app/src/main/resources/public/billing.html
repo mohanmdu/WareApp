@@ -48,7 +48,7 @@
  <div class="col-3">
 <label class="col-12"><b>FROM </b></label>
   
-  <div class="input-group date" id="datetimepicker_fromdate" data-target-input="nearest">
+  <div class="input-group date" data-date-format="YYYY-MM-DD" id="datetimepicker_fromdate" data-target-input="nearest">
      <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker_fromdate" ng-model="customerInvoice.fromdate" placeholder="From Date"/>
         <div class="input-group-append" data-target="#datetimepicker_fromdate" data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -59,7 +59,7 @@
 
 	 <div class="col-3">
 	  <label class="col-12"><b>TO </b></label>
-	  <div class="input-group date" id="datetimepicker_todate" data-target-input="nearest">
+	  <div class="input-group date" data-date-format="YYYY-MM-DD" id="datetimepicker_todate" data-target-input="nearest">
         <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker_todate" ng-model="customerInvoice.todate" placeholder="To Date"/>
         <div class="input-group-append" data-target="#datetimepicker_todate" data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -164,7 +164,7 @@
 						<!-- <td><label>{{grandTotalList.truckno}}</label></td> -->
 						<td><label>{{grandTotalList.totaltrip}}</label></td>
 						<td>
-						<div class="input-group date" id="datetimepicker_custinvoicedate" data-target-input="nearest">
+						<div class="input-group date" data-date-format="YYYY-MM-DD" id="datetimepicker_custinvoicedate" data-target-input="nearest">
 				        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker_custinvoicedate" ng-model="grandTotalList.custinvoicedate" placeholder="Invoice Date"/>
 				        <div class="input-group-append" data-target="#datetimepicker_custinvoicedate" data-toggle="datetimepicker">
 				            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -242,7 +242,7 @@
 <div class="row" style="margin-top: 1%;">
  <div class="col-3">
 <label class="col-12"><b>FROM </b></label>
-  <div class="input-group date" id="datetimepicker_fromvendordate" data-target-input="nearest">
+  <div class="input-group date" data-date-format="YYYY-MM-DD" id="datetimepicker_fromvendordate" data-target-input="nearest">
      <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker_fromvendordate" ng-model="vendorInvoice.fromdate" placeholder="From Date"/>
         <div class="input-group-append" data-target="#datetimepicker_fromvendordate" data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -253,7 +253,7 @@
 
 	 <div class="col-3">
 	  <label class="col-12"><b>TO </b></label>
-	  <div class="input-group date" id="datetimepicker_tovendordate" data-target-input="nearest">
+	  <div class="input-group date" data-date-format="YYYY-MM-DD" id="datetimepicker_tovendordate" data-target-input="nearest">
         <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker_tovendordate" ng-model="vendorInvoice.todate" placeholder="To Date"/>
         <div class="input-group-append" data-target="#datetimepicker_tovendordate" data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -361,7 +361,7 @@
 						<!-- <td><label>{{grandTotalVendorList.truckno}}</label></td> -->
 						<td><label>{{grandTotalVendorList.totaltrip}}</label></td>
 						<td>
-						<div class="input-group date" id="datetimepicker_veninvoicedate" data-target-input="nearest">
+						<div class="input-group date" data-date-format="YYYY-MM-DD" id="datetimepicker_veninvoicedate" data-target-input="nearest">
 				        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker_veninvoicedate" ng-model="grandTotalVendorList.veninvoicedate" placeholder="Invoice Date"/>
 				        <div class="input-group-append" data-target="#datetimepicker_veninvoicedate" data-toggle="datetimepicker">
 				            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -441,7 +441,7 @@
 <div class="row" style="margin-top: 1%;">
  <div class="col-3">
 <label class="col-12"><b>FROM </b></label>
-<div class="input-group date" id="datetimepicker_startBillDate" data-target-input="nearest">
+<div class="input-group date" data-date-format="YYYY-MM-DD" id="datetimepicker_startBillDate" data-target-input="nearest">
            <input type="text" ng-model="customerView.fromdate" class="form-control datetimepicker-input" data-target="#datetimepicker_startBillDate" placeholder="Bill Start Date">
            <div class="input-group-append" data-target="#datetimepicker_startBillDate" data-toggle="datetimepicker">
                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -452,7 +452,7 @@
 
 	 <div class="col-3">
 	  <label class="col-12"><b>TO </b></label>
-	  <div class="input-group date" id="datetimepicker_endBillDate" data-target-input="nearest">
+	  <div class="input-group date" data-date-format="YYYY-MM-DD" id="datetimepicker_endBillDate" data-target-input="nearest">
            <input type="text" ng-model="customerView.todate" class="form-control datetimepicker-input" data-target="#datetimepicker_endBillDate" placeholder="Bill End Date">
            <div class="input-group-append" data-target="#datetimepicker_endBillDate" data-toggle="datetimepicker">
                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -521,7 +521,7 @@
 <div class="row" style="margin-top: 1%;">
  <div class="col-3">
 <label class="col-12"><b>FROM </b></label>
-<div class="input-group date" id="datetimepicker_fromcustview" data-target-input="nearest">
+<div class="input-group date" data-date-format="YYYY-MM-DD" id="datetimepicker_fromcustview" data-target-input="nearest">
            <input type="text" ng-model="vendorView.fromdate" class="form-control datetimepicker-input" data-target="#datetimepicker_fromcustview" placeholder="Bill Start Date">
            <div class="input-group-append" data-target="#datetimepicker_fromcustview" data-toggle="datetimepicker">
                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -532,7 +532,7 @@
 
 	 <div class="col-3">
 	  <label class="col-12"><b>TO </b></label>
-	  <div class="input-group date" id="datetimepicker_tocustview" data-target-input="nearest">
+	  <div class="input-group date" data-date-format="YYYY-MM-DD" id="datetimepicker_tocustview" data-target-input="nearest">
            <input type="text"  ng-model="vendorView.todate" class="form-control datetimepicker-input" data-target="#datetimepicker_tocustview" placeholder="Bill End Date">
            <div class="input-group-append" data-target="#datetimepicker_tocustview" data-toggle="datetimepicker">
                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -802,7 +802,7 @@
  <div class="col-2">
 <label class="col-12"><b>FROM </b></label>
   
-  <div class="input-group date" id="datetimepicker_mpfromdate" data-target-input="nearest">
+  <div class="input-group date" data-date-format="DD/MM/YYYY" id="datetimepicker_mpfromdate" data-target-input="nearest">
      <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker_mpfromdate" ng-model="mpInvoice.fromdate" placeholder="From Date"/>
         <div class="input-group-append" data-target="#datetimepicker_mpfromdate" data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -813,7 +813,7 @@
 
 	 <div class="col-2">
 	  <label class="col-12"><b>TO </b></label>
-	  <div class="input-group date" id="datetimepicker_mptodate" data-target-input="nearest">
+	  <div class="input-group date" data-date-format="DD/MM/YYYY" id="datetimepicker_mptodate" data-target-input="nearest">
         <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker_mptodate" ng-model="mpInvoice.todate" placeholder="To Date"/>
         <div class="input-group-append" data-target="#datetimepicker_mptodate" data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -826,17 +826,16 @@
 		<!-- <input type="text"  ng-model="mpInvoice.customer" class="form-control col-12" placeholder="Customer Name" />  --> 
 	 	<input type="text" list="datampcustList" ng-model="mpInvoice.customer" class="form-control col-12" placeholder="Customer Name" />  
 		 <datalist id="datampcustList" >
-		<option ng-repeat="b in mpCustomerlist" value="{{b.customername}}"></option>
+		<option ng-repeat="b in custlistJson" value="{{b.customername}}"></option>
 		</datalist> 
 	 </div> 
-	<div class="col-2">
+	<!-- <div class="col-2">
 		<label class="col-12"><b>Vendor Name </b></label>
-		<!-- <input type="text"  ng-model="mpInvoice.vendor" class="form-control col-12" placeholder="Vendor Name" /> -->  
 		<input type="text" list="datampvenList" ng-model="mpInvoice.vendor" class="form-control col-12" placeholder="Vendor Name" />  
 		 <datalist id="datampvenList" >
 		<option ng-repeat="b in mpVendorlist" value="{{b.vendorname}}"></option>
 		</datalist> 
-	 </div>
+	 </div> -->
      <div class="col-2">
 
 		<input name="" type="button" class="btn btn-dark" id="" value="Search" ng-click="searchmpItem()" style="margin-top:15%">
@@ -850,43 +849,41 @@
  <thead>
 								<tr>
 								      
-									<th width="15%">LoadID</th>
+									<th width="15%">Name</th>
 									<th width="15%">Date</th>
-									<th width="15%">InvoiceNo</th>
-									<th width="15%">Origin</th>
-									<th width="15%">Destination</th>
-									<th width="15%">TruckNo</th>
+									<th width="15%">Branch</th>
+									<th width="15%">State</th>
+									<th width="15%">Total</th>
+									<th width="15%">Status</th>
+									<!-- <th width="15%">TruckNo</th>
 									<th width="15%">TruckType</th>
 									<th width="15%">No of case</th>
 									<th width="15%">OP Kms</th>
 									<th width="15%">Cls Kms</th>
-									<th width="15%">Total kms</th>
 									<th width="15%">Per kms</th>
 									<th width="15%">TRType Fixed</th>
-									<th width="15%">Advance</th>
+									<th width="15%">Advance</th> -->
 									<th></th>
 								</tr>
 							</thead>
  
   							<tbody>
-								<tr ng-repeat="invoice in  customerInvoiceJson track by $index">
+								<tr ng-repeat="invoice in  mpInvoiceJson track by $index">
 								  
-										<td><label>{{invoice.loadno}}</label></td>
-										<td><label>{{invoice.datetime}}</label></td>
-										<td><label>{{invoice.invoiceNO}}</label></td>
-										<td><label>{{invoice.origin}}</label></td>
-										<!-- <td><label>{{invoice.customerName}}</label></td> -->
-										<td><label>{{invoice.destination}}</label></td>
-										<td><label>{{invoice.truckno}}</label></td>
-										<td><label>{{invoice.truckType}}</label></td>
+										<td><label>{{invoice.customername}}</label></td>
+										<td><label>{{invoice.inviocedate}}</label></td>
+										<td><label>{{invoice.customerbranch}}</label></td>
+										<td><label>{{invoice.customerstate}}</label></td>
+										<td><label>{{invoice.grand_total}}</label></td>
+										<td><label>{{invoice.status}}</label></td>
+										<!-- <td><label>{{invoice.truckType}}</label></td>
 										<td><label>{{invoice.noOfCase}}</label></td>
 										<td><label>{{invoice.opkm}}</label></td>
 										<td><label>{{invoice.clskm}}</label></td>
 										<td><label>{{invoice.diffKM}}</label></td>
 										<td><label>{{invoice.perkmchargecustomer}}</label></td>
 										<td><label>{{invoice.freightAmtCust}}</label></td>
-										<td><label>{{invoice.advance}}</label></td>
-										<!-- <td><label>{{invoice.grandTotal}}</label></td> -->
+										<td><label>{{invoice.advance}}</label></td> -->
 										<td>
 									 <i class="fa fa-trash fa-lg" aria-hidden="true" ng-click="removempInvoice($index)"></i> </td>
 								</tr>

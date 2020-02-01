@@ -1,5 +1,7 @@
 package com.tem.springbootcrudrest.repository;
 
+
+import java.util.Date;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -45,7 +47,7 @@ public interface TripRepository extends JpaRepository<TripSheet, Long> {
 	 public TripSheet findByLoadNO(@Param("loadno") String loadno);
 	 
 	 @Query(value="SELECT t FROM TripSheet t WHERE t.loadno=:loadno and t.datetime=:datetime") 
-	 public TripSheet findByLoadNOAndDatetime(@Param("loadno") String loadno,@Param("datetime") String datetime);
+	 public TripSheet findByLoadNOAndDatetime(@Param("loadno") String loadno,@Param("datetime") Date datetime);
 
 	 @Query(value="SELECT t FROM TripSheet t WHERE t.loadno=:loadno and t.tripNo=:tripno") 
 	 public TripSheet findByLoadNOAndripNo(@Param("loadno") String loadno,@Param("tripno") String tripno);

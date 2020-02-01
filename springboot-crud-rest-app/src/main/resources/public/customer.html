@@ -222,7 +222,7 @@
 				<textarea rows = "1" cols = "22" name = "description" ng-model="customerDetail.customerAddr" placeholder="Enter your Addr"> </textarea>
               </td>
                <td colspan="1">
-                <input type='text' list="datastate" ng-model="customerDetail.state" placeholder="State" />
+                <input type='text' class="statevalidation" list="datastate" ng-model="customerDetail.state" ng-blur="getValid(customerDetail.state,$index)" placeholder="State"/>
                 <datalist id="datastate" >
 				  <option ng-repeat="state in listStateJson" value="{{state.statename}}">{{state.statename}}</option> 
 				</datalist>

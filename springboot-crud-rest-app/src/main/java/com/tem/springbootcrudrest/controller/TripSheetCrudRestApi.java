@@ -3,6 +3,7 @@ package com.tem.springbootcrudrest.controller;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -166,7 +167,7 @@ public class TripSheetCrudRestApi {
 	 */
 	@RequestMapping(path = "/customerinvoicelist", method = RequestMethod.GET)
 
-	public List<TripSheet> getCustomerInvoiceList(@RequestParam String fromdate, @RequestParam String todate) {
+	public List<TripSheet> getCustomerInvoiceList(@RequestParam Date fromdate, @RequestParam Date todate) {
 
 		List<TripSheet> tripSheetList = tripSheetService.findCustomerInvoiceBetweenDate(fromdate, todate);
 

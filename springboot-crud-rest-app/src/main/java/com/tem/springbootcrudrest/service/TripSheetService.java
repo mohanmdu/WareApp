@@ -1,5 +1,6 @@
 package com.tem.springbootcrudrest.service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -23,7 +24,7 @@ public interface TripSheetService {
 	
 	public List<TripSheet> getVendoInvoiceList();
 	
-	public List<TripSheet> findCustomerInvoiceBetweenDate(String fromdate,String todate);
+	public List<TripSheet> findCustomerInvoiceBetweenDate(Date fromdate,Date todate);
 	
 	public List<TripSheet> findVendorInvoiceBetweenDate(String fromdate,String todate,String truckno);
 	
