@@ -161,10 +161,15 @@
 				<textarea rows = "1" cols = "22" name = "description" ng-model="vendorDetail.vendoraddr" placeholder="Enter your Addr"> </textarea>
               </td>
               <td colspan="1">
-                <input type='text' list="datavendorstate" ng-model="vendorDetail.state" ng-blur="getstateValid(vendorDetail.state,$event)" placeholder="State" />
+                <!-- <input type='text' list="datavendorstate" ng-model="vendorDetail.state" ng-blur="getstateValid(vendorDetail.state,$event)" placeholder="State" />
                 <datalist id="datavendorstate" >
 				  <option ng-repeat="state in listvenStateJson" value="{{state.statename}}">{{state.statename}}</option> 
-				</datalist>
+				</datalist> -->
+				<select   ng-model="vendorDetail.state" class="form-control"  >
+				<option value="" selected>Select Vendor</option>
+				<option ng-repeat="state in listvenStateJson" value="{{state.statename}}">{{state.statename}}</option>
+			  
+			  </select> 
               </td>
               <td colspan="1">
                 <input type='text' ng-model="vendorDetail.mobileno" placeholder="MobileNo" numeric-regex/>
