@@ -1,5 +1,6 @@
 package com.tem.springbootcrudrest.service;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
@@ -16,6 +17,7 @@ import com.tem.springbootcrudrest.model.TripSheet;
 import com.tem.springbootcrudrest.repository.CustomerRepository;
 import com.tem.springbootcrudrest.repository.TripRepository;
 import com.tem.springbootcrudrest.repository.VendorRepository;
+import com.tem.util.UTCDateTime;
 
 @Component
 public class TripSheetServiceImpl implements TripSheetService {
@@ -36,6 +38,12 @@ public class TripSheetServiceImpl implements TripSheetService {
 		tripSheet.setVendorinvoicestatus("NO");
 		tripSheet.setStatus("YES");
 		tripSheet.setCustomerinvoiceno(0);
+		try {
+			tripSheet.setDatetime(UTCDateTime.getCurentTimeAndDate());
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		return tripRepository.save(tripSheet);
 	}

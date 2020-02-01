@@ -51,7 +51,7 @@ public class TripSheet implements Serializable {
 	@Column(name = "invoiceNO")
 	private String invoiceNO;
 
-	@Temporal(TemporalType.DATE)
+	//@Temporal(TemporalType.DATE)
 	//@Column(name = "datetime")
 	private Date datetime;
 
@@ -260,13 +260,7 @@ public class TripSheet implements Serializable {
 		this.invoiceNO = invoiceNO;
 	}
 
-	public Date getDatetime() {
-		return datetime;
-	}
-
-	public void setDatetime(Date datetime) {
-		this.datetime = datetime;
-	}
+	
 
 	public String getTruckType() {
 		return truckType;
@@ -512,5 +506,13 @@ public class TripSheet implements Serializable {
 
 	public void setVendorperkm(String vendorperkm) {
 		this.vendorperkm = vendorperkm;
+	}
+
+	public Date getDatetime() {
+		return datetime;
+	}
+
+	public void setDatetime(Date datetime) {
+		this.datetime = datetime;
 	}
 }
