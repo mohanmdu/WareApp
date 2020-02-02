@@ -109,11 +109,7 @@
             </ul>
             
          </nav>
-
-<div id="wrapper" class="active">
-      
-      <!-- Sidebar -->
-      <div id="sidebar-wrapperMain" >
+<div  id="sidebar-wrapperMain" >
       <ul id="sidebar_menu" class="sidebar-nav">
           <li class="sidebar-brand" ><a class="" href="#" id="home" ng-click="redirectUrl($event)"><i class="fa fa-dashboard subicon"  aria-hidden="true" style="color: #ac6bec;"></i>Dashboard</a></li>
       </ul>
@@ -133,6 +129,10 @@
       </ul>
         
       </div>
+<div id="wrapper" class="active">
+      
+      <!-- Sidebar -->
+      
           
       <!-- Page content -->
       <div id="page-content-wrapper">
@@ -317,7 +317,7 @@ app.controller('indexController',['$scope','$location', "$timeout", function ($s
 				//angular.element('#menuToggle').css('z-index',"0");
 	        }, 500);
 		}
-		$("#wrapper").toggleClass("active");
+		$("#sidebar-wrapperMain").toggleClass("active");
 	} 
 }]);
 app.controller("myCtrl", ['$scope', '$window','$location','$rootScope', function($scope, $window, $location,$rootScope){
@@ -1072,7 +1072,8 @@ app.controller('VehicleController', function ($scope, $timeout,$window ,$filter,
 					{loadNo: "1111",tripNo: "2222",origin: "NEEMAM",destination: "EGMORE",invoiceNO: "234322",dateTime: "23/4/2019",truckType: "CAN2",truckNo: "TN2323200",driverName: "Siva",noOfCase: "3",OPKM: "2",CLSKM: "5",diffKM: "4",advance: "500",perKMchargeCustomer: "6.5",perKMchargeVendor: "7.6",profit: "400",tollBill: "654787",policeBill: "57890",freightAmt: "700",haltingCharge: "700",remarks: "good"}];
 							  
 	*/	
-	$scope.trip = {customername:"",vendorname:"",loadNo: "",tripNo: "",origin: "",destination: "",invoiceNO: "",dateTime: "",truckType: "",truckno: "",driverName: "",noOfCase: "",opkm: "0",clskm: "0",diffKM: "0",advance: "0",perkmchargecustomer: "0",perkmchargevendor: "0",gatein:"",gateout:"",haltedTime:"",customerhalt:"0",vendorhalt:"0",profit: "0",tollBill: "",policeBill: "",freightAmtCust: "0",freightAmtVen:"0",haltingCharge: "0",discount:"0",remarks: "",customerrate:0,vendorrate:0,customerperkm:0,vendorperkm:0};
+	$scope.trip = {customername:"",vendorname:"",loadno: "",tripNo: "",origin: "",destination: "",invoiceno: "",datetime: "",truckType: "",truckno: "",driverName: "",noOfCase: 0,opkm: 0,clskm: 0,diffKM: 0,advance: 0,perkmchargecustomer: 0,perkmchargevendor: 0,gatein:"",gateout:"",haltedtime:"",customerhalt:0,vendorhalt:0,profit: 0,tollBill: 0,policeBill: 0,freightAmtCust: 0,freightAmtVen:0,haltingCharge: 0,discount:0,remarks: "",customerrate:0,vendorrate:0,customerperkm:0,vendorperkm:0};
+
 	scope=$scope;
 	$scope.vehm = {};
 	$scope.vehm.dtVehicle = DTOptionsBuilder.newOptions()
@@ -1288,7 +1289,7 @@ app.controller('VehicleController', function ($scope, $timeout,$window ,$filter,
 	        var hours = Math.floor(diff / (60 * 60 * 1000)) - (days * 24);
 	        var minutes = Math.floor(diff / (60 * 1000)) - ((days * 24 * 60) + (hours * 60));
 	        var seconds = Math.floor(diff / 1000) - ((days * 24 * 60 * 60) + (hours * 60 * 60) + (minutes * 60));
-	        scope.trip.haltedTime = days +" Days "+ hours +" Hr " +minutes+" Min";
+	        scope.trip.haltedtime = days +" Days "+ hours +" Hr " +minutes+" Min";
 	        var dayminus =days;
 	        dayminus =dayminus?dayminus:0;
 	        if(scope.trip.truckType !="" && scope.trip.truckType =="EICHER"){
@@ -1360,67 +1361,73 @@ $('#tripModal').modal('show');
 $(".addVeh").css("display","block");
 $(".updateVeh").css("display","none");
 //$scope.trip={};
-$scope.trip = {customername:"",vendorname:"",loadNo: "",tripNo: "",origin: "",destination: "",invoiceNO: "",dateTime: "",truckType: "",truckno: "",driverName: "",noOfCase: "",opkm: "0",clskm: "0",diffKM: "0",advance: "0",perkmchargecustomer: "0",perkmchargevendor: "0",gatein:"",gateout:"",haltedTime:"",customerhalt:"0",vendorhalt:"0",profit: "0",tollBill: "",policeBill: "",freightAmtCust: "0",freightAmtVen:"0",haltingCharge: "0",discount:"0",remarks: "",customerrate:0,vendorrate:0,customerperkm:0,vendorperkm:0};
+//$scope.trip = {customername:"",vendorname:"",loadno: "",tripNo: "",origin: "",destination: "",invoiceno: "",datetime: "",truckType: "",truckno: "",driverName: "",noOfCase: "",opkm: "0",clskm: "0",diffKM: "0",advance: "0",perkmchargecustomer: "0",perkmchargevendor: "0",gatein:"",gateout:"",haltedtime:"",customerhalt:"0",vendorhalt:"0",profit: "0",tollBill: "",policeBill: "",freightAmtCust: "0",freightAmtVen:"0",haltingCharge: "0",discount:"0",remarks: "",customerrate:0,vendorrate:0,customerperkm:0,vendorperkm:0};
+$scope.trip = {customername:"",vendorname:"",loadno: "",tripNo: "",origin: "",destination: "",invoiceno: "",datetime: "",truckType: "",truckno: "",driverName: "",noOfCase: 0,opkm: 0,clskm: 0,diffKM: 0,advance: 0,perkmchargecustomer: 0,perkmchargevendor: 0,gatein:"",gateout:"",haltedtime:"",customerhalt:0,vendorhalt:0,profit: 0,tollBill: 0,policeBill: 0,freightAmtCust: 0,freightAmtVen:0,haltingCharge: 0,discount:0,remarks: "",customerrate:0,vendorrate:0,customerperkm:0,vendorperkm:0};
+
 }
 $scope.addTripItem = function(item) {
 	  
-	 if(!$scope.checkDisabled){
-		 if(item.opkm==""){
-			 toastr.error('Please enter opKm');
-				return;
-		}else if(item.clskm==""){
-			 toastr.error('Please enter Clskm');
-				return;
-		}
-	 }
-	if(item.loadno==""){
+	 
+	if(!item.loadno){
 		 toastr.error('Please enter Load Number');
 		return;
-	}else if(item.tripNo==""){
+	}else if(!item.tripNo){
 		 toastr.error('Please enter Trip Number');
 		return;
 	}
-	else if(item.origin==""){
+	else if(!item.origin){
 		 toastr.error('Please enter Origin');
 		return;
-	}else if(item.destination==""){
+	}else if(!item.destination){
 		 toastr.error('Please enter Destination');
 			return;
-	}else if(item.invoiceNo==""){
+	}else if(!item.invoiceno){
 		 toastr.error('Please enter Invoice Number');
 			return;
-	}else if(item.datetime==""){
+	}else if(!item.datetime){
 		 toastr.error('Please enter Date');
 			return;
-	}else if(item.truckno==""){
+	}else if(!item.truckno){
 		 toastr.error('Please enter Truck Number');
 			return;
-	}else if(item.truckType==""){
+	}else if(!item.truckType){
 		 toastr.error('Please enter Truck Type');
 			return;
-	}else if(item.driverName==""){
+	}else if(!item.driverName){
 		 toastr.error('Please enter Driver Name');
 			return;
-	}else if(item.noOfCase==""){
+	}else if(!item.noOfCase){
 		 toastr.error('Please enter No Of Case');
 			return;
-	}else if(item.advance==""){
+	}else if(!item.advance){
 		 toastr.error('Please enter Advance');
 			return;
-	}else if(item.tollBill==""){
+	}else if(!item.haltedtime){
+		 toastr.error('Please Fill Halting Time');
+			return;
+	}else if(!item.tollBill){
 		 toastr.error('Please enter Toll Bill');
 			return;
-	}else if(item.policeBill==""){
+	}else if(!item.policeBill){
 		 toastr.error('Please enter Police Bill');
 			return;
-	}else if(item.haltingCharge==""){
+	}/* else if(!item.haltingCharge){
 		 toastr.error('Please enter Halting Charge');
 			return;
-	}else if(item.discount==""){
+	} */else if(!item.discount){
 		 toastr.error('Please enter Discount');
 			return;
 	}
 	else{
+		if(!$scope.checkDisabled){
+			 if(!item.opkm){
+				 toastr.error('Please enter opKm');
+					return;
+			}else if(!item.clskm){
+				 toastr.error('Please enter Clskm');
+					return;
+			}
+		 }
 //$scope.listVehicleJson.push(item);
 var url = localurl +"/api/v1/createtripsheet";
 	//$scope.listCustomerJson.push(angular.copy(item));
@@ -1439,7 +1446,9 @@ var url = localurl +"/api/v1/createtripsheet";
 	        	toastr.success('Data not added');
 	          console.log(response.status);
 	        });
-	    $scope.trip = {customername:"",vendorname:"",loadNo: "",tripNo: "",origin: "",destination: "",invoiceNO: "",dateTime: "",truckType: "",truckno: "",driverName: "",noOfCase: "",opkm: "0",clskm: "0",diffKM: "0",advance: "0",perkmchargecustomer: "0",perkmchargevendor: "0",gatein:"",gateout:"",haltedTime:"",customerhalt:"0",vendorhalt:"0",profit: "0",tollBill: "",policeBill: "",freightAmtCust: "0",freightAmtVen:"0",haltingCharge: "0",discount:"0",remarks: "",customerrate:0,vendorrate:0,customerperkm:0,vendorperkm:0};
+	    //$scope.trip = {customername:"",vendorname:"",loadno: "",tripNo: "",origin: "",destination: "",invoiceno: "",datetime: "",truckType: "",truckno: "",driverName: "",noOfCase: "",opkm: "0",clskm: "0",diffKM: "0",advance: "0",perkmchargecustomer: "0",perkmchargevendor: "0",gatein:"",gateout:"",haltedtime:"",customerhalt:"0",vendorhalt:"0",profit: "0",tollBill: "",policeBill: "",freightAmtCust: "0",freightAmtVen:"0",haltingCharge: "0",discount:"0",remarks: "",customerrate:0,vendorrate:0,customerperkm:0,vendorperkm:0};
+	    $scope.trip = {customername:"",vendorname:"",loadno: "",tripNo: "",origin: "",destination: "",invoiceno: "",datetime: "",truckType: "",truckno: "",driverName: "",noOfCase: 0,opkm: 0,clskm: 0,diffKM: 0,advance: 0,perkmchargecustomer: 0,perkmchargevendor: 0,gatein:"",gateout:"",haltedtime:"",customerhalt:0,vendorhalt:0,profit: 0,tollBill: 0,policeBill: 0,freightAmtCust: 0,freightAmtVen:0,haltingCharge: 0,discount:0,remarks: "",customerrate:0,vendorrate:0,customerperkm:0,vendorperkm:0};
+
 	}
 }
 
@@ -4250,7 +4259,7 @@ $(document).ready(function(){
 
 	$(".menu-toggle").click(function(e) {
         e.preventDefault();
-        $("#wrapper").toggleClass("active");
+        $("#sidebar-wrapperMain").toggleClass("active");
 	});
 	// $('#datetimepicker_gateIn').datetimepicker();
 	/*  $('#datetimepicker_gateIn').on('dp.change', function (e) {

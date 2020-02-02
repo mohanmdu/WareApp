@@ -290,7 +290,7 @@
 							<div class='col-md-3'>
 								<label class="col-12"><b>Invoice NO </b><span
 									class="mandatory">*</span></label> <input type="text" min="0"
-									ng-model="trip.invoiceNO" class="form-control col-12"
+									ng-model="trip.invoiceno" class="form-control col-12"
 									placeholder="InvoiceNO" />
 							</div>
 							<div class='col-md-3'>
@@ -336,20 +336,20 @@
 						
 						<div class="row" style="margin-top: 1%;">
 							<div class='col-md-3'>
-								<label class="col-12"><b>Customer Rate </b><span class="mandatory">*</span></label> 
+								<label class="col-12"><b>Customer Rate </b><!-- <span class="mandatory">*</span> --></label> 
 								<input type="text" ng-model="trip.customerrate" class="form-control col-12"
 									placeholder="Customer Rate" ng-blur="changeBasedNumber(trip.truckno)" numeric-regex/>
 							</div>
 							<div class='col-md-3'>
-								<label class="col-12"><b>Vendor Rate </b><span
-									class="mandatory">*</span></label>
+								<label class="col-12"><b>Vendor Rate </b>
+								<!-- <span class="mandatory">*</span> --></label>
 								<input type="text"  ng-model="trip.vendorrate"  class="form-control col-12"
 									placeholder="Vendor Rate" ng-blur="changeBasedNumber(trip.truckno)" numeric-regex/>
 							</div>
 
 							<div class='col-md-3'>
-								<label class="col-12"><b>Customer PerKM </b><span
-									class="mandatory">*</span></label> 
+								<label class="col-12"><b>Customer PerKM </b>
+								<!-- <span class="mandatory">*</span> --></label> 
 								<input type="text"  ng-model="trip.customerperkm" ng-disabled="checkDisabled" class="form-control col-12"
 									placeholder="Customer PerKM" ng-blur="changeBasedNumber(trip.truckno)"numeric-regex/>
 							</div>
@@ -445,8 +445,8 @@
 							<div class='col-md-3'>
 								<label class="col-12"><b>Halted Time </b><span
 									class="mandatory">*</span></label> <input type="text" min="0"
-									ng-model="trip.haltedTime" class="form-control col-12"
-									placeholder="Halted Time" numeric-regex/><!-- ng-blur="addAmtoFrieght()"  -->
+									ng-model="trip.haltedtime" class="form-control col-12"
+									placeholder="Halted Time" disabled/><!-- ng-blur="addAmtoFrieght()"  -->
 							</div> 
 
 							<div class='col-md-3'>

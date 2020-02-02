@@ -15,7 +15,7 @@ import com.tem.springbootcrudrest.model.CustomerInvoice;
 @Transactional
 public interface CustomerInvoiceRepository extends JpaRepository<CustomerInvoice, Long>{
 
-	@Query(value = "select t From CustomerInvoice t where t.createddate between date(:fromdate) and date(:todate)")
+	@Query(value = "select t From CustomerInvoice t where t.custinvoicedate between date(:fromdate) and date(:todate)")
 	public List<CustomerInvoice> findInvoiceBetweenDateList(@Param("fromdate") String fromdate,
 			@Param("todate") String todate);
 	

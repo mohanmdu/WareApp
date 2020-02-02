@@ -51,8 +51,8 @@ public class TripSheet implements Serializable {
 	@Column(name = "destination")
 	private String destination;
 
-	@Column(name = "invoiceNO")
-	private String invoiceNO;
+	@Column(name = "invoiceno")
+	private String invoiceno;
 
 	//@Temporal(TemporalType.DATE)
 	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
@@ -164,6 +164,59 @@ public class TripSheet implements Serializable {
 	@Column(name = "vendorname")
 	private String vendorname;
 	
+	@Column(name = "gatein")
+	private String gatein; 
+		@Column(name = "gateout")
+	private String gateout; 
+	@Column(name = "haltedtime")
+	private String haltedtime; 
+	@Column(name = "customerhalt")
+	private String customerhalt;
+	@Column(name = "vendorhalt")
+	private String vendorhalt;
+	 
+	public String getGatein() {
+		return gatein;
+	}
+
+	public void setGatein(String gatein) {
+		this.gatein = gatein;
+	}
+
+	public String getGateout() {
+		return gateout;
+	}
+
+	public void setGateout(String gateout) {
+		this.gateout = gateout;
+	}
+
+	public String getHaltedtime() {
+		return haltedtime;
+	}
+
+	public void setHaltedtime(String haltedtime) {
+		this.haltedtime = haltedtime;
+	}
+
+	public String getCustomerhalt() {
+		return customerhalt;
+	}
+
+	public void setCustomerhalt(String customerhalt) {
+		this.customerhalt = customerhalt;
+	}
+
+	public String getVendorhalt() {
+		return vendorhalt;
+	}
+
+	public void setVendorhalt(String vendorhalt) {
+		this.vendorhalt = vendorhalt;
+	}
+
+
+	
 	public String getVendorname() {
 		return vendorname;
 	}
@@ -258,16 +311,14 @@ public class TripSheet implements Serializable {
 	public void setDestination(String destination) {
 		this.destination = destination;
 	}
-
-	public String getInvoiceNO() {
-		return invoiceNO;
-	}
-
-	public void setInvoiceNO(String invoiceNO) {
-		this.invoiceNO = invoiceNO;
-	}
-
 	
+	public String getInvoiceno() {
+		return invoiceno;
+	}
+
+	public void setInvoiceno(String invoiceno) {
+		this.invoiceno = invoiceno;
+	}
 
 	public String getTruckType() {
 		return truckType;

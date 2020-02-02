@@ -107,6 +107,17 @@ public class CustomerInvoice implements Serializable {
 	@Column(name = "cancatload")
 	private String cancatload;
 
+	@Column(name = "custinvoicedate")
+	private String custinvoicedate;
+	
+	public String getCustinvoicedate() {
+		return custinvoicedate;
+	}
+
+	public void setCustinvoicedate(String custinvoicedate) {
+		this.custinvoicedate = custinvoicedate;
+	}
+
 	public String getTotaltrip() {
 		return totaltrip;
 	}
