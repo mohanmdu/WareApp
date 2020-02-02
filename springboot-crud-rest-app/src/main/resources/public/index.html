@@ -123,8 +123,8 @@
 	<li class="sidebar-brand" id="employee_master" ng-click="redirectUrl($event)" ><a><i class="fa fa-users subicon" aria-hidden="true"  style="color: #f29824;"></i>Employee</a></li> 
 	<!-- <li class='sidebar-brand' ><a id="product_master"  ng-click="redirectUrl($event)">Product<i class="fa fa-product-hunt sub_icon" aria-hidden="true"></i></a></li> --> 
 	<li class="sidebar-brand" id="vehicle_master" ng-click="redirectUrl($event)"><a><i class="fa fa-truck subicon" aria-hidden="true"  style="color: #46c35f;"></i>TripSheet</a></li>
-	<li class="sidebar-brand" id="user_master" ng-click="redirectUrl($event)"><a><i class="fa fa-user subicon" aria-hidden="true"  style="color: #fa424a;"></i>User</a></li>
-	<li class="sidebar-brand" id="userAccess_master" ng-click="redirectUrl($event)"><a><i class="fa fa-check-square-o subicon" aria-hidden="true"  style="color: #cd6724;"></i>Access</a></li>
+	<li class="sidebar-brand" id="user_master" ng-click="redirectUrl($event)" style="display: none;"><a><i class="fa fa-user subicon" aria-hidden="true"  style="color: #fa424a;"></i>User</a></li>
+	<li class="sidebar-brand" id="userAccess_master" ng-click="redirectUrl($event)" style="display: none;"><a><i class="fa fa-check-square-o subicon" aria-hidden="true"  style="color: #cd6724;"></i>Access</a></li>
 	<li class="sidebar-brand" id="billing_master" ng-click="redirectUrl($event)"><a><i class="fa fa-money subicon" aria-hidden="true"  style="color: #21a788;"></i>Billing</a></li>
 	<li class="sidebar-brand" id="receipt_master" ng-click="redirectUrl($event)"><a><i class="fa fa-address-book subicon" aria-hidden="true"  style="color: #ff561c;"></i>Receipt</a></li>
 	<li class="sidebar-brand" id="voucher_master" ng-click="redirectUrl($event)"><a><i class="fa fa-address-book subicon" aria-hidden="true"  style="color: #46c35f;"></i>Voucher</a></li>
@@ -2171,6 +2171,7 @@ angular.forEach($scope.customerInvoiceJson, function(value, key) {
 			$(myWindow)[0].focus();
 			$(myWindow)[0].print();
 			$(myWindow)[0].close();
+			scope.resetCustomerInvoice();
 			 }, 1000);
 		} else {// code for IE6, IE5
 			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
@@ -2339,6 +2340,7 @@ angular.forEach($scope.customerInvoiceJson, function(value, key) {
 		$scope.customerInvoice={fromdate:"",todate:""};
 		$scope.customerInvoiceJson =[];
 		$scope.grandTotalList={totaltrip:"",customername:"",invoiceNo:"",truckno:"",trucktype:"",totalkm:0,totalcase:0,totalkmpercharge:0,totalfreightamt:0,totaladvance:0,totaldiscount:0,netamount:0,paymentstatus:"",receiptnumber:"",leakage:"",cancatload:""};
+		$scope.leakage="";
 	}
 	$scope.resetVendorInvoice =function(){
 		$scope.vendorInvoice={fromdate:"",todate:"",truckno:""};
