@@ -31,7 +31,7 @@
  <div class="col-3">
 <label class="col-12"><b>FROM </b></label>
   
-  <div class="input-group date" id="datetimepicker_custfromrepbill" data-target-input="nearest">
+  <div class="input-group date"  data-date-format="YYYY-MM-DD"  id="datetimepicker_custfromrepbill" data-target-input="nearest">
      <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker_custfromrepbill" ng-model="customerPayment.fromdate" placeholder="From Date"/>
         <div class="input-group-append" data-target="#datetimepicker_custfromrepbill" data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -42,7 +42,7 @@
 
 	 <div class="col-3">
 	  <label class="col-12"><b>TO </b></label>
-	  <div class="input-group date" id="datetimepicker_custtorepbill" data-target-input="nearest">
+	  <div class="input-group date"  data-date-format="YYYY-MM-DD"  id="datetimepicker_custtorepbill" data-target-input="nearest">
         <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker_custtorepbill" ng-model="customerPayment.todate" placeholder="To Date"/>
         <div class="input-group-append" data-target="#datetimepicker_custtorepbill" data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -102,7 +102,7 @@
  <div class="col-6">
  <div class="row">
  <label class="col-6" style="font-weight: bold;"> Receipt Date</label>
-<div class="col-6 input-group date" id="datetimepicker_custreceiptDate" data-target-input="nearest">
+<div class="col-6 input-group date"  data-date-format="YYYY-MM-DD"  id="datetimepicker_custreceiptDate" data-target-input="nearest">
     <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker_custreceiptDate" ng-model="commoncustList.custreceiptDate" placeholder="Receipt Date"/>
     <div class="input-group-append" data-target="#datetimepicker_custreceiptDate" data-toggle="datetimepicker">
         <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -142,7 +142,7 @@
 									            </select>
 										</td>
 										<td >
-										<div class="input-group date custReceipt" data-date-format="DD/MM/YYYY" id="datetimepicker_custinstDate{{$index}}" data-target-input="nearest" ng-show="pay.paymenttype != 'Credit' && pay.paymenttype != 'Cash'">
+										<div class="input-group date custReceipt"  data-date-format="YYYY-MM-DD" id="datetimepicker_custinstDate{{$index}}" data-target-input="nearest" ng-show="pay.paymenttype != 'Credit' && pay.paymenttype != 'Cash'">
 						                  <input type="text"  class="form-control datetimepicker-input" data-target="#datetimepicker_custinstDate{{$index}}"  ng-model="pay.instrumentdate" placeholder="Instrument Date"/>
 						                  <div class="input-group-append" data-target="#datetimepicker_custinstDate{{$index}}" data-toggle="datetimepicker">
 						                      <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -177,7 +177,7 @@
  <div class="col-3">
 <label class="col-12"><b>FROM </b></label>
   
-  <div class="input-group date" id="datetimepicker_venfromrepbill" data-target-input="nearest">
+  <div class="input-group date" id="datetimepicker_venfromrepbill" data-date-format="YYYY-MM-DD" data-target-input="nearest">
      <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker_venfromrepbill" ng-model="vendorPayment.fromdate" placeholder="From Date"/>
         <div class="input-group-append" data-target="#datetimepicker_venfromrepbill" data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -188,7 +188,7 @@
 
 	 <div class="col-3">
 	  <label class="col-12"><b>TO </b></label>
-	  <div class="input-group date" id="datetimepicker_ventorepbill" data-target-input="nearest">
+	  <div class="input-group date" id="datetimepicker_ventorepbill" data-date-format="YYYY-MM-DD" data-target-input="nearest">
         <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker_ventorepbill" ng-model="vendorPayment.todate" placeholder="To Date"/>
         <div class="input-group-append" data-target="#datetimepicker_ventorepbill" data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -250,7 +250,7 @@
  <div class="col-6">
  <div class="row">
  <label class="col-6" style="font-weight: bold;"> Receipt Date</label>
-<div class="col-6 input-group date" id="datetimepicker_venreceiptDate" data-target-input="nearest">
+<div class="col-6 input-group date" id="datetimepicker_venreceiptDate" data-date-format="YYYY-MM-DD" data-target-input="nearest">
     <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker_venreceiptDate" ng-model="commonvenList.venreceiptDate" placeholder="Receipt Date"/>
     <div class="input-group-append" data-target="#datetimepicker_venreceiptDate" data-toggle="datetimepicker">
         <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -290,7 +290,7 @@
 									            </select>
 										</td>
 										<td >
-										<div class="input-group date" id="datetimepicker_veninstDate" data-date-format="DD/MM/YYYY" data-target-input="nearest" ng-show="pay.paymenttype != 'Credit' && pay.paymenttype != 'Cash'">
+										<div class="input-group date" id="datetimepicker_veninstDate" data-date-format="YYYY-MM-DD"  data-target-input="nearest" ng-show="pay.paymenttype != 'Credit' && pay.paymenttype != 'Cash'">
 						                  <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker_veninstDate" ng-model="pay.instrumentdate" placeholder="Instrument Date"/>
 						                  <div class="input-group-append" data-target="#datetimepicker_veninstDate" data-toggle="datetimepicker">
 						                      <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -325,7 +325,7 @@
  <div class="col-3">
 <label class="col-12"><b>FROM </b></label>
   
-  <div class="input-group date" id="datetimepicker_custfromcustpayview" data-target-input="nearest">
+  <div class="input-group date" id="datetimepicker_custfromcustpayview" data-date-format="YYYY-MM-DD" data-target-input="nearest">
      <input type="text" class="form-control datetimepicker-input ng-pristine ng-untouched ng-valid ng-empty" data-target="#datetimepicker_custfromcustpayview" ng-model="customerPaymentView.fromdate" placeholder="From Date">
         <div class="input-group-append" data-target="#datetimepicker_custfromcustpayview" data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -334,7 +334,7 @@
 	</div>
 	 <div class="col-3">
 	  <label class="col-12"><b>TO </b></label>
-	  <div class="input-group date" id="datetimepicker_custtocustpayview" data-target-input="nearest">
+	  <div class="input-group date" id="datetimepicker_custtocustpayview" data-date-format="YYYY-MM-DD" data-target-input="nearest">
         <input type="text" class="form-control datetimepicker-input ng-pristine ng-untouched ng-valid ng-empty" data-target="#datetimepicker_custtocustpayview" ng-model="customerPaymentView.todate" placeholder="To Date">
         <div class="input-group-append" data-target="#datetimepicker_custtocustpayview" data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -402,7 +402,7 @@
  <div class="col-3">
 <label class="col-12"><b>FROM </b></label>
   
-  <div class="input-group date" id="datetimepicker_custfromvenpayview" data-target-input="nearest">
+  <div class="input-group date" id="datetimepicker_custfromvenpayview" data-date-format="YYYY-MM-DD" data-target-input="nearest">
      <input type="text" class="form-control datetimepicker-input ng-pristine ng-untouched ng-valid ng-empty" data-target="#datetimepicker_custfromvenpayview" ng-model="vendorPaymentView.fromdate" placeholder="From Date">
         <div class="input-group-append" data-target="#datetimepicker_custfromvenpayview" data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -411,7 +411,7 @@
 	</div>
 	 <div class="col-3">
 	  <label class="col-12"><b>TO </b></label>
-	  <div class="input-group date" id="datetimepicker_custtovenpayview" data-target-input="nearest">
+	  <div class="input-group date" id="datetimepicker_custtovenpayview" data-date-format="YYYY-MM-DD" data-target-input="nearest">
         <input type="text" class="form-control datetimepicker-input ng-pristine ng-untouched ng-valid ng-empty" data-target="#datetimepicker_custtovenpayview" ng-model="vendorPaymentView.todate" placeholder="To Date">
         <div class="input-group-append" data-target="#datetimepicker_custtovenpayview" data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -474,7 +474,7 @@
  <div class="col-3">
 <label class="col-12"><b>FROM </b></label>
   
-  <div class="input-group date" id="datetimepicker_custfrompaymp" data-target-input="nearest">
+  <div class="input-group date" id="datetimepicker_custfrompaymp" data-date-format="YYYY-MM-DD" data-target-input="nearest">
      <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker_custfrompaymp" ng-model="customermanpowerPay.fromdate" placeholder="From Date"/>
         <div class="input-group-append" data-target="#datetimepicker_custfrompaymp" data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -485,7 +485,7 @@
 
 	 <div class="col-3">
 	  <label class="col-12"><b>TO </b></label>
-	  <div class="input-group date" id="datetimepicker_custtopaymp" data-target-input="nearest">
+	  <div class="input-group date" id="datetimepicker_custtopaymp" data-date-format="YYYY-MM-DD" data-target-input="nearest">
         <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker_custtopaymp" ng-model="customermanpowerPay.todate" placeholder="To Date"/>
         <div class="input-group-append" data-target="#datetimepicker_custtopaymp" data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -541,7 +541,7 @@
  <div class="col-6">
  <div class="row">
  <label class="col-6" style="font-weight: bold;"> Receipt Date</label>
-<div class="col-6 input-group date" id="datetimepicker_mpreceiptDate" data-target-input="nearest">
+<div class="col-6 input-group date" id="datetimepicker_mpreceiptDate" data-date-format="YYYY-MM-DD" data-target-input="nearest">
     <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker_mpreceiptDate" ng-model="commonmpList.custreceiptDate" placeholder="Receipt Date"/>
     <div class="input-group-append" data-target="#datetimepicker_mpreceiptDate" data-toggle="datetimepicker">
         <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -581,7 +581,7 @@
 									            </select>
 										</td>
 										<td >
-										<div class="input-group date" id="datetimepicker_mpinstDate" data-target-input="nearest" ng-show="pay.paymenttype != 'Credit' && pay.paymenttype != 'Cash'">
+										<div class="input-group date" id="datetimepicker_mpinstDate" data-date-format="YYYY-MM-DD" data-target-input="nearest" ng-show="pay.paymenttype != 'Credit' && pay.paymenttype != 'Cash'">
 						                  <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker_mpinstDate" ng-model="pay.instrumentdate" placeholder="Instrument Date"/>
 						                  <div class="input-group-append" data-target="#datetimepicker_mpinstDate" data-toggle="datetimepicker">
 						                      <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -617,7 +617,7 @@
  <div class="col-3">
 <label class="col-12"><b>FROM </b></label>
   
-  <div class="input-group date" id="datetimepicker_custfromviewdetails" data-target-input="nearest">
+  <div class="input-group date" id="datetimepicker_custfromviewdetails" data-date-format="YYYY-MM-DD" data-target-input="nearest">
      <input type="text" class="form-control datetimepicker-input ng-pristine ng-untouched ng-valid ng-empty" data-target="#datetimepicker_custfromviewdetails" ng-model="manpowerview.fromdate" placeholder="From Date">
         <div class="input-group-append" data-target="#datetimepicker_custfromviewdetails" data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -626,7 +626,7 @@
 	</div>
 	 <div class="col-3">
 	  <label class="col-12"><b>TO </b></label>
-	  <div class="input-group date" id="datetimepicker_custtoviewdetails" data-target-input="nearest">
+	  <div class="input-group date" id="datetimepicker_custtoviewdetails"data-date-format="YYYY-MM-DD"  data-target-input="nearest">
         <input type="text" class="form-control datetimepicker-input ng-pristine ng-untouched ng-valid ng-empty" data-target="#datetimepicker_custtoviewdetails" ng-model="manpowerview.todate" placeholder="To Date">
         <div class="input-group-append" data-target="#datetimepicker_custtoviewdetails" data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-calendar"></i></div>

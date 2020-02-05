@@ -173,7 +173,8 @@ public class TripSheetCrudRestApi {
 
           Date todaysDate = new Date();
 		
-		SimpleDateFormat  df = new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat  df = new SimpleDateFormat("yyyy-MM-dd");
+		//dd/MM/yyyy
 		
 		Date from = null;
 		Date to = null;

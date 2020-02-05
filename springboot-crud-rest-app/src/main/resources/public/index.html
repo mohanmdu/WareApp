@@ -2019,9 +2019,9 @@ app.controller('BillingController',function ($compile,$scope, $window,DTOptionsB
 			$('#datetimepicker_veninvoicedate').datetimepicker({
 		        format: 'DD/MM/YYYY'
 			});
-			$('#datetimepicker_mpinvoicedate').datetimepicker({
+			/* $('#datetimepicker_mpinvoicedate').datetimepicker({
 		        format: 'DD/MM/YYYY'
-			});
+			}); */
 			var bm = $scope;
 			bm.dtInstanceCallback = function(instance) {
 			 	bm.dtInstance = instance;
@@ -2697,7 +2697,11 @@ $scope.updateVenBilledTrip =function(data){
 			   angular.forEach(response.data,function(value,index){
 				   if(value.customername || value.vendorname){
 					   $scope.users.name=value.customername ? value.customername : value.vendorname;
-					   $scope.users.code=value.customercode ? value.customercode : value.vendorcode;
+					   if(value.customerDetails ==undefined){
+						   $scope.users.code=value.vendorcode;
+					   }else{
+						   $scope.users.code=value.customerDetails[0].customercode ? value.customerDetails[0].customercode : value.vendorcode;
+					   }
 					   if(value.customerDetails==undefined){
 						   $scope.users.address=value.vendorAddress;
 						  // $scope.users.state=value.vendorAddress[0].state ? value.vendorAddress[0].state : "";
@@ -2862,7 +2866,7 @@ $scope.updateVenBilledTrip =function(data){
 			}else if($scope.mpInvoice.todate=="" || $scope.mpInvoice.todate==undefined){
 				 toastr.error('Please enter To date');
 				return;
-			}else if($scope.mpInvoice.customername=="" || $scope.mpInvoice.customername== undefined){
+			}else if($scope.mpInvoice.customer=="" || $scope.mpInvoice.customer== undefined){
 				 toastr.error('Please enter CustomerName');
 				return;
 			}else{
@@ -3380,22 +3384,22 @@ app.controller('ReceiptController', function ($scope,$timeout,$http,toastr,DTOpt
 		$scope.paymentJson.totalAmount =amt + amt * data;
 	} */
 	$scope.init_Inst =function(){
-		 $('#datetimepicker_custfromrepbill').datetimepicker({
+		/*  $('#datetimepicker_custfromrepbill').datetimepicker({
 		        format: 'DD/MM/YYYY'
-		    });
-		 $('#datetimepicker_custtorepbill').datetimepicker({
+		    }); */
+		/*  $('#datetimepicker_custtorepbill').datetimepicker({
 		        format: 'DD/MM/YYYY'
-		    });
-		 $('#datetimepicker_venfromrepbill').datetimepicker({
+		    }); */
+		 /* $('#datetimepicker_venfromrepbill').datetimepicker({
 		        format: 'DD/MM/YYYY'
 		    });
 		 $('#datetimepicker_ventorepbill').datetimepicker({
 		        format: 'DD/MM/YYYY'
-		    });
-		 $('#datetimepicker_custreceiptDate').datetimepicker({
+		    }); */
+		 /* $('#datetimepicker_custreceiptDate').datetimepicker({
 		        format: 'DD/MM/YYYY'
-		    });
-		 $('#datetimepicker_venreceiptDate').datetimepicker({
+		    }); */
+		 /* $('#datetimepicker_venreceiptDate').datetimepicker({
 		        format: 'DD/MM/YYYY'
 		    });
 		 $('#datetimepicker_custfrompaymp').datetimepicker({
@@ -3422,7 +3426,7 @@ app.controller('ReceiptController', function ($scope,$timeout,$http,toastr,DTOpt
 		    });
 		 $('#datetimepicker_custtovenpayview').datetimepicker({
 		        format: 'DD/MM/YYYY'
-		    });
+		    }); */
 		 $scope.initcustPayment();
 	}
 	
@@ -4189,12 +4193,12 @@ $scope.checkvenVoucherInArray =function(index,item){
 
 app.controller('LedgerController', function ($scope,$timeout,$http,toastr,DTOptionsBuilder, DTColumnBuilder, DTColumnDefBuilder) {
 	 $scope.initLedger =function(){
-		 $('#datetimepicker_customerfromledge').datetimepicker({
+		 /* $('#datetimepicker_customerfromledge').datetimepicker({
 		        format: 'DD/MM/YYYY'
 		    });
 		 $('#datetimepicker_customertoledge').datetimepicker({
 		        format: 'DD/MM/YYYY'
-		    });
+		    }); */
 		 $scope.getLedger();
 	 }
 	 

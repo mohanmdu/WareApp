@@ -13,7 +13,7 @@ import com.tem.springbootcrudrest.model.VendorInvoice;
 @Repository
 public interface VendorInvoiceRepository extends JpaRepository<VendorInvoice, Long> {
 
-	@Query(value = "select t From VendorInvoice t where t.vendorname=:vendorname and t.createddate between date(:fromdate) and date(:todate)")
+	@Query(value = "select t From VendorInvoice t where t.vendorname=:vendorname and t.veninvoicedate between date(:fromdate) and date(:todate)")
 	public List<VendorInvoice> findInvoiceBetweenDateList(@Param("fromdate") String fromdate,
 			@Param("todate") String todate, @Param("vendorname") String vendorname);
 

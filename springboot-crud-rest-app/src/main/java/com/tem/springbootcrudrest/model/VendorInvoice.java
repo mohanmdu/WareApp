@@ -71,9 +71,21 @@ public class VendorInvoice implements Serializable {
 	@Column(name = "totalkm")
 	private String totalkm;
 
+	@Column(name = "veninvoicedate")
+	private String veninvoicedate;
+	
 	/*
 	 * @Column(name = "createddate") private String createddate;
 	 */
+	
+	public String getVeninvoicedate() {
+		return veninvoicedate;
+	}
+
+	public void setVeninvoicedate(String veninvoicedate) {
+		this.veninvoicedate = veninvoicedate;
+	}
+	
 	
 	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	@Column(name = "createddate")

@@ -55,7 +55,7 @@ public class TripSheet implements Serializable {
 	private String invoiceno;
 
 	//@Temporal(TemporalType.DATE)
-	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	@JsonFormat(pattern="yyyy-MM-dd")
 	@Column(name = "datetime")
 	private Date datetime;
 	

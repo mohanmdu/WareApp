@@ -43,7 +43,7 @@ public class ManPower {
 	 * @Column(name = "invoicedate") private String invoicedate;
 	 */
 	
-	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	@JsonFormat(pattern="yyyy-MM-dd")
 	@Column(name = "invoicedate")
 	//@Temporal(TemporalType.DATE)
 	private Date invoicedate;
