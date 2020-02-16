@@ -40,7 +40,7 @@ public class Customerpayment implements Serializable {
 	@Column(name = "instrumentno")
 	private String instrumentno;
 
-	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	@JsonFormat(pattern="yyyy-MM-dd")
 	@Column(name = "instrumentdate")
 	private Date instrumentdate;
 	

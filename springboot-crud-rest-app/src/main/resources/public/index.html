@@ -2206,6 +2206,7 @@ angular.forEach($scope.customerInvoiceJson, function(value, key) {
 			$(myWindows)[0].focus();
 			$(myWindows)[0].print();
 			$(myWindows)[0].close();
+			scope.resetVendorInvoice();
 			 }, 1000);
 		} else {// code for IE6, IE5
 			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
@@ -2355,6 +2356,7 @@ angular.forEach($scope.customerInvoiceJson, function(value, key) {
 		$scope.vendorInvoice={fromdate:"",todate:"",truckno:""};
 		$scope.vendorInvoiceJson =[];
 		$scope.grandTotalVendorList={totaltrip:"",vendorname:"",invoiceNo:"",truckno:"",trucktype:"",totalkm:0,totalcase:0,totalkmpercharge:0,totalfreightamt:0,totaladvance:0,totaldiscount:0,netamount:0,paymentstatus:"",receiptnumber:"",leakage:"",cancatload:""};
+		$scope.vendorleakage="";
 	}
 	$scope.saveCustomerInvoice =function(){
 		$scope.custPrintData={};
@@ -2866,7 +2868,7 @@ $scope.updateVenBilledTrip =function(data){
 			}else if($scope.mpInvoice.todate=="" || $scope.mpInvoice.todate==undefined){
 				 toastr.error('Please enter To date');
 				return;
-			}else if($scope.mpInvoice.customer=="" || $scope.mpInvoice.customer== undefined){
+			}else if($scope.mpInvoice.customername=="" || $scope.mpInvoice.customername== undefined){
 				 toastr.error('Please enter CustomerName');
 				return;
 			}else{
@@ -2974,6 +2976,7 @@ app.controller('ReceiptController', function ($scope,$timeout,$http,toastr,DTOpt
 	$scope.checkedvenPaymentValue=[];
 	$scope.commoncustList={custreceiptDate:"",totalamount:0};
 	$scope.commonvenList={venreceiptDate:"",totalamount:0};
+	$scope.commonmpList={custreceiptDate:"",totalamount:0};
 	
 	  
 	$scope.dtInstanceCallback = function(instance) {
@@ -2994,6 +2997,12 @@ app.controller('ReceiptController', function ($scope,$timeout,$http,toastr,DTOpt
  	$scope.addNewpayment =function(){
  		$scope.paymentJson.push({paymenttype: "",instrumentdate: "", amount: "", instrumentno:""}); 		
  	}
+ 	$scope.addNewVendorpayment =function(){
+ 		$scope.paymentvenJson.push({paymenttype: "",instrumentdate: "", amount: "", instrumentno:""}); 		
+ 	}
+ 	$scope.deleteVendorpaymentIndex =function(index){
+		$scope.paymentvenJson.splice(index,1);		
+	}
  	$scope.calculatepaymentTotal =function(){
  		$scope.commoncustList={custreceiptDate:"",totalamount:0};
  		$scope.paymentJson =[{paymenttype: "",instrumentdate: "", amount: "", instrumentno:""}];
@@ -3561,11 +3570,11 @@ app.controller('ReceiptController', function ($scope,$timeout,$http,toastr,DTOpt
 		$scope.mpPaymentsubmitData={customerreceiptdate:$scope.commonmpList.custreceiptDate,customerpayment:[]};
 		$scope.mpPaymentsubmitData.customerpayment=$scope.mppaymentJson;
 		var url = localurl +"/api/v1/createmanpowerpayment";
-		$scope.checkCredit=false;
+		$scope.checkmpCredit=false;
 		$scope.checkmpamt=0;
 		angular.forEach($scope.mppaymentJson, function(value, key) {
 			if(value.paymenttype =="Credit"){
-				$scope.checkCredit=true;
+				$scope.checkmpCredit=true;
 			}
 			if($scope.existmpCustomerName){
 				value.customername =$scope.existmpCustomerName;
@@ -3586,7 +3595,7 @@ app.controller('ReceiptController', function ($scope,$timeout,$http,toastr,DTOpt
 			toastr.warning('Please select Receipt Date..');
 			return;	
 		}
-		if($scope.checkCredit){
+		if($scope.checkmpCredit){
 			if($scope.commonmpList.totalamount ==$scope.checkmpamt){
 				//toastr.success('matched');
 				
@@ -3612,12 +3621,14 @@ app.controller('ReceiptController', function ($scope,$timeout,$http,toastr,DTOpt
 			}
 			
 		}else{
-			if($scope.commoncustList.totalamount <=$scope.checkamt){
+			
+			if($scope.commonmpList.totalamount <=$scope.checkmpamt){
+			//if($scope.commoncustList.totalamount <=$scope.checkamt){
 				//toastr.success('Matched');
 				$http({
 			        method : 'POST',
 			        url : url,
-			        data : angular.toJson($scope.custPaymentsubmitData),
+			        data : angular.toJson($scope.mpPaymentsubmitData),
 			        headers : {
 			        'Content-Type' : 'application/json'
 			        }
@@ -3652,10 +3663,17 @@ app.controller('ReceiptController', function ($scope,$timeout,$http,toastr,DTOpt
 	            //$scope.listCustomerJson = response.data;
 	            toastr.success('Payment registered successfully');
 	            $scope.getPayItem();
+	            $scope.resetmpReceipt();
 	        }, function error(response) {
 	        	toastr.error('Payment not registered');
 	          console.log(response.status);
 	        });
+	}
+	$scope.resetmpReceipt =function(){
+		 $scope.customermanpowerPay={fromdate:"",todate:"",customername:""};
+		 $scope.customerpaymentList =[];
+		 $scope.commonmpList={custreceiptDate:"",totalamount:0};
+		 $scope.mppaymentJson =[{paymenttype: "",instrumentdate: "", amount: "", instrumentno:""}];
 	}
 	$scope.getmpInitialize=function(){
 		 $('#datetimepicker_custfromviewdetails').datetimepicker({

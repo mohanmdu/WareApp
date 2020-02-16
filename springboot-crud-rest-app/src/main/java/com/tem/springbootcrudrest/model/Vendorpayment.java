@@ -54,7 +54,7 @@ public class Vendorpayment implements Serializable {
 	 */
 	
 	@Column(name = "instrumentdate")
-	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	@JsonFormat(pattern="yyyy-MM-dd")
 	//@Temporal(TemporalType.DATE)
 	private Date instrumentdate;
 	

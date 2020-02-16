@@ -411,7 +411,7 @@
 					<tr><th colspan="1"><label >Description</label></th><th colspan="1"><label>HSN Code</label></th><th colspan="1"><label>Amount</label></th></tr>
 					<tr><td colspan="1"><label>Trip Rate/Spot Rate Freight charge</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venPrintData.tripRate}}</label></td></tr>
 					<tr><td colspan="1"><label>Sub Total</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venPrintData.tripRate}}</label></td></tr>
-					<tr><td colspan="1"><label>Discount</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venPrintData.totaldiscount}}</label></td></tr>
+					<tr><td colspan="1"><label>Discount</label></td><td colspan="1"><label></label></td><td colspan="1"><!-- <label>{{venPrintData.totaldiscount}}</label> --></td></tr>
 					<tr><td colspan="1"><label>Advance/Leakage</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venPrintData.advLeak}}</label></td></tr>
 					<tr><td colspan="1"><label>Sub Total(Rs)</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venPrintData.netamount}}</label></td></tr>
 					<tr><td colspan="1"><label>CGST</label></td><td colspan="1"><label></label></td><td colspan="1"><label>0</label></td></tr>
@@ -824,7 +824,7 @@
    <div class="col-2">
 		<label class="col-12"><b>Customer Name </b></label>
 		<!-- <input type="text"  ng-model="mpInvoice.customer" class="form-control col-12" placeholder="Customer Name" />  --> 
-	 	<input type="text" list="datampcustList" ng-model="mpInvoice.customer" class="form-control col-12" placeholder="Customer Name" />  
+	 	<input type="text" list="datampcustList" ng-model="mpInvoice.customername" class="form-control col-12" placeholder="Customer Name" />  
 		 <datalist id="datampcustList" >
 		<option ng-repeat="b in custlistJson" value="{{b.name}}"></option>
 		</datalist> 
