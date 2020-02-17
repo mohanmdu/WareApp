@@ -35,6 +35,10 @@ public class CustomerPaymentCrudRestApi {
 
 		customerpaymentlist.setCreateddate(datetime);
 
+		for(Customerpayment customer:customerpaymentlist.getCustomerpayment()) {
+			customer.setStatus("Pending");
+		}
+		
 		CustomerPaymentParent customerPaymentresponse = customerPaymentService
 				.createCustomerPayment(customerpaymentlist);
 

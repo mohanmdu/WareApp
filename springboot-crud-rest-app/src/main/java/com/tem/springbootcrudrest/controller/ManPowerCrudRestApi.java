@@ -28,8 +28,11 @@ public class ManPowerCrudRestApi {
 	
 	@PostMapping("/manpowercreate")
 	public ManPower createCustomer(@RequestBody ManPower manPower) {
+		
+		manPower.setStatus("Pending");
 
 		ManPower manPowerResponse = manPowerService.createManPower(manPower);
+		
 
 		return manPowerResponse;
 	}

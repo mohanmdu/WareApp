@@ -33,7 +33,9 @@ public class VendorPaymentCrudRestApi {
 		Date datetime = UTCDateTime.getCurentTimeAndDate();
 
 		vendorPaymentParent.setCreateddate(datetime);
-		
+		for(Vendorpayment vendor:vendorPaymentParent.getVendorpayment()) {
+			vendor.setStatus("Pending");
+		}
 
 		VendorPaymentParent vendorPaymentParentresponse = vendorPaymentService.createVendorPayment(vendorPaymentParent);
 
