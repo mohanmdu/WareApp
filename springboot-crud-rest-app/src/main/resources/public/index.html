@@ -2269,6 +2269,32 @@ angular.forEach($scope.customerInvoiceJson, function(value, key) {
 		
 		xmlhttp.send();
 	}
+	
+	
+	$scope.viewmpPrint=function() {
+		var xmlhttp;
+		if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+			xmlhttp = new XMLHttpRequest();
+			var venViewmpWindows = $window.open('', '', 'width=2000,height=1000');
+			venViewmpWindows.document.write('<html><head><title>ManPower Invoice</title><link rel="stylesheet" type="text/css" href="css/pdfstyle.css"></head><body>');
+			$(venViewmpWindows.document.body).append($("table[id=manage-mpv-table]").clone(true));
+			venViewmpWindows.document.write('</body></html>');
+			setTimeout(function(){ 
+			$(venViewmpWindows)[0].focus();
+			$(venViewmpWindows)[0].print();
+			$(venViewmpWindows)[0].close();
+			 }, 1000);
+		} else {// code for IE6, IE5
+			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xmlhttp.onreadystatechange = function() {
+			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+				document.getElementById("myvenviewmpDiv").innerHTML = xmlhttp.responseText;
+			}
+		}
+		
+		xmlhttp.send();
+	}
 	/* $scope.redirectToTab = function(){
         $window.open('billing.html', '', 'width=2000,height=1000');
     }; */
@@ -2577,7 +2603,10 @@ $scope.updateVenBilledTrip =function(data){
 		$scope.venviewData.totalAmountInWords = inWords(parseInt($scope.venviewData.netamount));
 		$("#venviewModal").modal("show");
 	}
-	
+	$scope.showMpDetails =function(data){
+		$scope.mpDetailView=data;
+		$("#ViewMpDetailModal").modal("show");
+	}
 	$scope.removevendorInvoice  =function(index){
 		$scope.vendorInvoiceJson.splice(index,1);
 	};
@@ -2959,7 +2988,7 @@ $scope.updateVenBilledTrip =function(data){
 	$scope.init_Billing();
 	scope=$scope;
 });
-app.controller('ReceiptController', function ($scope,$timeout,$http,toastr,DTOptionsBuilder, DTColumnBuilder, DTColumnDefBuilder) {
+app.controller('ReceiptController', function ($scope,$timeout,$window,$http,toastr,DTOptionsBuilder, DTColumnBuilder, DTColumnDefBuilder) {
 	
 	$scope.listReceiptJson =[{instrumentType: "Sew",shipperName: "xyzz", consignorName: "ABCCC", billingDetails: {}},
 							  {instrumentType: "Software",shipperName: "ABCCC", consignorName: "ABCCC", billingDetails: {}},
@@ -3448,6 +3477,97 @@ app.controller('ReceiptController', function ($scope,$timeout,$http,toastr,DTOpt
 	        format: 'DD/MM/YYYY'
 	    });
 	    
+	    $scope.showcustRecpt =function(data){
+			$scope.custRecptDetailView=data;
+			$("#custRecptDetailModal").modal("show");
+		}
+	    
+		$scope.custRecptviewPrint=function() {
+			var xmlhttp;
+			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+				xmlhttp = new XMLHttpRequest();
+				var custRecptWindows = $window.open('', '', 'width=2000,height=1000');
+				custRecptWindows.document.write('<html><head><title>Customer Payment View</title><link rel="stylesheet" type="text/css" href="css/pdfstyle.css"></head><body>');
+				$(custRecptWindows.document.body).append($("table[id=manage-crv-table]").clone(true));
+				custRecptWindows.document.write('</body></html>');
+				setTimeout(function(){ 
+				$(custRecptWindows)[0].focus();
+				$(custRecptWindows)[0].print();
+				$(custRecptWindows)[0].close();
+				 }, 1000);
+			} else {// code for IE6, IE5
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					document.getElementById("custviewRepDiv").innerHTML = xmlhttp.responseText;
+				}
+			}
+			
+			xmlhttp.send();
+		}
+		
+		$scope.showvenRecpt =function(data){
+			$scope.venRecptDetailView=data;
+			$("#venRecptDetailModal").modal("show");
+		}
+	    
+		$scope.venRecptviewPrint=function() {
+			var xmlhttp;
+			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+				xmlhttp = new XMLHttpRequest();
+				var venRecptWindows = $window.open('', '', 'width=2000,height=1000');
+				venRecptWindows.document.write('<html><head><title>Vendor Payment View</title><link rel="stylesheet" type="text/css" href="css/pdfstyle.css"></head><body>');
+				$(venRecptWindows.document.body).append($("table[id=manage-vrv-table]").clone(true));
+				venRecptWindows.document.write('</body></html>');
+				setTimeout(function(){ 
+				$(venRecptWindows)[0].focus();
+				$(venRecptWindows)[0].print();
+				$(venRecptWindows)[0].close();
+				 }, 1000);
+			} else {// code for IE6, IE5
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					document.getElementById("venviewRepDiv").innerHTML = xmlhttp.responseText;
+				}
+			}
+			
+			xmlhttp.send();
+		}
+	    
+		
+		$scope.showmpRecpt =function(data){
+			$scope.mpRecptDetailView=data;
+			$("#mpRecptDetailModal").modal("show");
+		}
+		
+		
+		$scope.mpRecptviewPrint=function() {
+			var xmlhttp;
+			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+				xmlhttp = new XMLHttpRequest();
+				var mpRecptWindows = $window.open('', '', 'width=2000,height=1000');
+				mpRecptWindows.document.write('<html><head><title>Manpower Payment View</title><link rel="stylesheet" type="text/css" href="css/pdfstyle.css"></head><body>');
+				$(mpRecptWindows.document.body).append($("table[id=manage-mrv-table]").clone(true));
+				mpRecptWindows.document.write('</body></html>');
+				setTimeout(function(){ 
+				$(mpRecptWindows)[0].focus();
+				$(mpRecptWindows)[0].print();
+				$(mpRecptWindows)[0].close();
+				 }, 1000);
+			} else {// code for IE6, IE5
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					document.getElementById("mpviewRepDiv").innerHTML = xmlhttp.responseText;
+				}
+			}
+			
+			xmlhttp.send();
+		}
 	    $scope.initcustPayment =function(){
 	    	$scope.paymentJson =[{paymenttype: "",instrumentdate: "", amount: "", instrumentno:""}];
 	    	$scope.customerpaymentList =[];
@@ -3689,6 +3809,7 @@ app.controller('ReceiptController', function ($scope,$timeout,$http,toastr,DTOpt
 	 }
  	$scope.initvenPaymentView=function(){
  		$scope.vendorPaymentView={fromdate:"",todate:"",vendorname:""};
+ 		$scope.initvenPayment();
 	 }
 	$scope.navRedirect =function(event){
 		
