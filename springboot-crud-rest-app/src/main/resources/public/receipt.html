@@ -161,7 +161,7 @@
 						</table>
 		      		</div>
 					<div class="pull-right">
-					<input name="" type="button" class="btn btn-primary" id="" value="Print" style="margin-left: -20%;">
+					<!-- <input name="" type="button" class="btn btn-primary" id="" value="Print" style="margin-left: -20%;"> -->
 					<input name="" type="button" class="btn btn-primary" id="" value="Save" style="margin-left: -1%;" ng-click="saveCustPayment()">
 					</div>
 </div>
@@ -199,7 +199,7 @@
   <div class="col-2">
 		<label class="col-12"><b>VENDOR </b></label>
 	 	<select ng-model="vendorPayment.vendorname"  class="form-control" style="display: block;margin: 2% auto;">
-		<option value="" selected>Select Customer</option>
+		<option value="" selected>Select Vendor</option>
 		<option ng-repeat="custView in vendorpayList | unique:'vendorname'" value="{{custView.vendorname}}">{{custView.vendorname}}</option>
 	  </select> 
 	 
@@ -310,7 +310,7 @@
 		      			
 		      		</div>
 		      		<div class="pull-right">
-					<input name="" type="button" class="btn btn-primary" id="" value="Print" style="margin-left: -20%;">
+					<!-- <input name="" type="button" class="btn btn-primary" id="" value="Print" style="margin-left: -20%;"> -->
 					<input name="" type="button" class="btn btn-primary" id="" value="Save" ng-click="saveVenPayment()" style="margin-left: -1%;">
 					</div>
 					
@@ -369,6 +369,7 @@
 									<th width="15%">Amount</th>
 									 <th width="15%">Date</th> 
 									<th width="15%">Status</th>
+									<th width="15%">Action</th>
 								</tr>
 							</thead>
  
@@ -382,13 +383,15 @@
 										<td><label>{{view.createddate}}</label></td>
 										<td><label class="badge" ng-class="{'badge-danger': view.paymentstatus == 'Pending','badge-success': view.paymentstatus == 'Completed'}">{{view.paymentstatus}}</label></td>
 										<!-- <td><i class="fa fa-trash fa-lg" aria-hidden="true" ng-click="removeInvoice($index)"></i> </td> -->
+										<td><input name="" type="button" class="btn btn-info" id="" value="View" ng-click="showcustRecpt(view)" >
+										<!-- <input name="" type="button" class="btn btn-info" id="" value="Print" ng-click="custPrintViewModal(view)" > --></td>
 								</tr>
 							</tbody> 
  </table> 
  </div>
 		      		</div>
 		      		<div class="pull-right">
-					<input name="" type="button" class="btn btn-primary" id="" value="Print" style="margin-left: 20%;">
+					<!-- <input name="" type="button" class="btn btn-primary" id="" value="Print" style="margin-left: 20%;"> -->
 					</div>
 					
 </div>
@@ -442,6 +445,7 @@
 									<th width="15%">Amount</th>
 									 <th width="15%">Date</th> 
 									<th width="15%">Status</th>
+									<th width="15%">Action</th>
 								</tr>
 							</thead>
   							<tbody>
@@ -454,13 +458,15 @@
 										<td><label>{{view.createddate}}</label></td>
 										<td><label class="badge" ng-class="{'badge-danger': view.paymentstatus == 'Pending','badge-success': view.paymentstatus == 'Completed'}">{{view.paymentstatus}}</label></td>
 										<!-- <td><i class="fa fa-trash fa-lg" aria-hidden="true" ng-click="removeInvoice($index)"></i> </td> -->
+										<td><input name="" type="button" class="btn btn-info" id="" value="View" ng-click="showvenRecpt(view)" >
+										<!-- <input name="" type="button" class="btn btn-info" id="" value="Print" ng-click="custPrintViewModal(view)" > --></td>
 								</tr>
 							</tbody> 
  </table> 
  </div>
 		      		</div>
 		      		<div class="pull-right">
-					<input name="" type="button" class="btn btn-primary" id="" value="Print" style="margin-left: 20%;">
+					<!-- <input name="" type="button" class="btn btn-primary" id="" value="Print" style="margin-left: 20%;"> -->
 					</div>
 					
 </div>
@@ -581,9 +587,9 @@
 									            </select>
 										</td>
 										<td >
-										<div class="input-group date" id="datetimepicker_mpinstDate" data-date-format="YYYY-MM-DD" data-target-input="nearest" ng-show="pay.paymenttype != 'Credit' && pay.paymenttype != 'Cash'">
-						                  <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker_mpinstDate" ng-model="pay.instrumentdate" placeholder="Instrument Date"/>
-						                  <div class="input-group-append" data-target="#datetimepicker_mpinstDate" data-toggle="datetimepicker">
+										<div class="input-group date" id="datetimepicker_mpinstDate{{$index}}" data-date-format="YYYY-MM-DD" data-target-input="nearest" ng-show="pay.paymenttype != 'Credit' && pay.paymenttype != 'Cash'">
+						                  <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker_mpinstDate{{$index}}" ng-model="pay.instrumentdate" placeholder="Instrument Date"/>
+						                  <div class="input-group-append" data-target="#datetimepicker_mpinstDate{{$index}}" data-toggle="datetimepicker">
 						                      <div class="input-group-text"><i class="fa fa-calendar"></i></div>
 						                  </div>
 						              </div>
@@ -599,7 +605,7 @@
 							</tbody>
 						</table>
 		<div class="pull-right">
-					<input name="" type="button" class="btn btn-primary" id="" value="Print" style="margin-left: -20%;">
+					<!-- <input name="" type="button" class="btn btn-primary" id="" value="Print" style="margin-left: -20%;"> -->
 					<input name="" type="button" class="btn btn-primary" id="" value="Save" style="margin-left: -1%;" ng-click="savempPayment()">
 					</div>
 
@@ -657,6 +663,7 @@
 									<th width="15%">Amount</th>
 									 <th width="15%">Date</th> 
 									<th width="15%">Status</th>
+									<th width="15%">Action</th>
 								</tr>
 							</thead>
  
@@ -668,6 +675,7 @@
 										<td><label>{{view.grandTotal}}</label></td>
 										<td><label>{{view.invoicedate}}</label></td>
 										<td><label class="badge" ng-class="{'badge-danger': view.status == 'Pending','badge-success': view.status == 'Completed'}">{{view.status}}</label></td>
+										<td><input name="" type="button" class="btn btn-info" id="" value="View" ng-click="showmpRecpt(view)" ></td>
 										<!-- <td><i class="fa fa-trash fa-lg" aria-hidden="true" ng-click="removeInvoice($index)"></i> </td> -->
 								</tr>
 							</tbody> 
@@ -675,7 +683,7 @@
  </div>
 		      		</div>
 		      		<div class="pull-right">
-					<input name="" type="button" class="btn btn-primary" id="" value="Print" style="margin-left: 0%;">
+					<!-- <input name="" type="button" class="btn btn-primary" id="" value="Print" style="margin-left: 0%;"> -->
 					</div>
 					
 </div>
@@ -684,3 +692,204 @@
 </div>
 </div>
 </div>
+
+<!-- Customer View and Print -->
+
+<div class="modal" id="custRecptDetailModal" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Customer View Details</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="height: 500px;overflow: auto;">
+        <!-- <div class="row " style="margin-top: 1%;">
+        <div class="col-4"><label class="col-4"><b>Name :</b></label><label class="col-8">{{venviewdetail.venname}}</label></div>
+        <div class="col-4"><label class="col-4"><b>Amount:</b></label><label class="col-8">{{venviewdetail.venviewAmt}}</label></div>
+        <div class="col-4"><label class="col-4"><b>Date :</b></label><label class="col-8">{{venviewdetail.venviewDateAmt}}</label></div>	
+		</div>  --> 
+          <div class="row col-12" >
+          
+					<table  id="manage-crv-table"  class="table table-bordered table-striped" >
+					
+					<tr><th colspan="2" class="textCenter"><h2>S.SARAVANAN ENTERPRISES</h2>
+					<h5>47,Bajanai Koil Street,Paruthapattu,Avadi, Chennai - 600 071. Tamilnadu</h5>
+					<h5><b>Email:</b>ssenterprises4358@gmail.com  <b>Ph:</b>+91-44-5559-5555</h5></th>
+					<th colspan="1" ><img src='img/sse.png' style="width: 40%;height: 30%;margin: 3% 0% 0% 20%;"></th>
+					</tr>
+
+ 
+  							<tbody>
+  							
+								
+					<tr><td colspan="1"><label>Customer InvoiceId</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{custRecptDetailView.customerinvoiceid}}</label></td></tr>
+					<tr><td colspan="1"><label>CustomerName</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{custRecptDetailView.customername}}</label></td></tr>
+					<tr><td colspan="1"><label>Invoicedate</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{custRecptDetailView.custinvoicedate}}</label></td></tr>
+					<tr><td colspan="1"><label>TotalTrip</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{custRecptDetailView.totaltrip}}</label></td></tr>
+					<tr><td colspan="1"><label>Truckno</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{custRecptDetailView.truckno}}</label></td></tr>
+					<tr><td colspan="1"><label>Trucktype</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{custRecptDetailView.trucktype}}</label></td></tr>
+					<tr><td colspan="1"><label>Totalcase</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{custRecptDetailView.totalcase}}</label></td></tr>
+					<tr><th colspan="1"><label>Totalkm</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{custRecptDetailView.totalkm}}</label></td></tr>
+					<tr><td colspan="1"><label>Totalkmpercharge</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{custRecptDetailView.totalkmpercharge}}</label></td></tr>
+					<tr><td colspan="1"><label>Totalfreightamt</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{custRecptDetailView.totalfreightamt}}</label></td></tr>
+					<tr><td colspan="1"><label>Leakage</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{custRecptDetailView.leakage}}</label></td></tr>
+					<tr><th colspan="1"><label>Netamount</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{custRecptDetailView.netamount}}</label></td></tr>
+					<tr><th colspan="1"><label>Paymentstatus</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{custRecptDetailView.paymentstatus}}</label></td></tr>
+					<!-- <tr><td colspan="3"><label><b>Note:- </b> Forward charges Mechanism(if GST Charged by Transporter)</label></td></tr>
+					<tr><th colspan="2">Amount(Rs.)In Words</th><td colspan="1"> <label>{{venviewData.totalAmountInWords}}</label><label>Only</label></td></tr>
+					<tr><td colspan="3"><label><b>Note:- </b>Under Reserve Charges Mechanism,GST is Payable by the Consignot/Service Receiver</label></td></tr>
+					<tr></tr> -->
+							</tbody> 
+ </table> 
+					
+			</div>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+         <button type="button" class="btn btn-info" ng-click="custRecptviewPrint()" >Print</button> 
+          <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- Vendor View and Print -->
+
+<div class="modal" id="venRecptDetailModal" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Vendor View Details</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="height: 500px;overflow: auto;">
+        <!-- <div class="row " style="margin-top: 1%;">
+        <div class="col-4"><label class="col-4"><b>Name :</b></label><label class="col-8">{{venviewdetail.venname}}</label></div>
+        <div class="col-4"><label class="col-4"><b>Amount:</b></label><label class="col-8">{{venviewdetail.venviewAmt}}</label></div>
+        <div class="col-4"><label class="col-4"><b>Date :</b></label><label class="col-8">{{venviewdetail.venviewDateAmt}}</label></div>	
+		</div>  --> 
+          <div class="row col-12" >
+          
+					<table  id="manage-vrv-table"  class="table table-bordered table-striped" >
+					
+					<tr><th colspan="2" class="textCenter"><h2>S.SARAVANAN ENTERPRISES</h2>
+					<h5>47,Bajanai Koil Street,Paruthapattu,Avadi, Chennai - 600 071. Tamilnadu</h5>
+					<h5><b>Email:</b>ssenterprises4358@gmail.com  <b>Ph:</b>+91-44-5559-5555</h5></th>
+					<th colspan="1" ><img src='img/sse.png' style="width: 40%;height: 30%;margin: 3% 0% 0% 20%;"></th>
+					</tr>
+
+ 
+  							<tbody>
+  							
+								
+					<tr><td colspan="1"><label>Vendor InvoiceId</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venRecptDetailView.vendorinvoiceid}}</label></td></tr>
+					<tr><td colspan="1"><label>VendorName</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venRecptDetailView.vendorname}}</label></td></tr>
+					<tr><td colspan="1"><label>Invoicedate</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venRecptDetailView.veninvoicedate}}</label></td></tr>
+					<tr><td colspan="1"><label>TotalTrip</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venRecptDetailView.totaltrip}}</label></td></tr>
+					<tr><td colspan="1"><label>Truckno</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venRecptDetailView.truckno}}</label></td></tr>
+					<tr><td colspan="1"><label>Trucktype</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venRecptDetailView.trucktype}}</label></td></tr>
+					<tr><td colspan="1"><label>Totalcase</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venRecptDetailView.totalcase}}</label></td></tr>
+					<tr><th colspan="1"><label>Totalkm</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venRecptDetailView.totalkm}}</label></td></tr>
+					<tr><td colspan="1"><label>Totalkmpercharge</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venRecptDetailView.totalkmpercharge}}</label></td></tr>
+					<tr><td colspan="1"><label>Totalfreightamt</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venRecptDetailView.totalfreightamt}}</label></td></tr>
+					<tr><td colspan="1"><label>Leakage</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venRecptDetailView.leakage}}</label></td></tr>
+					<tr><th colspan="1"><label>Netamount</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venRecptDetailView.netamount}}</label></td></tr>
+					<tr><th colspan="1"><label>Paymentstatus</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venRecptDetailView.paymentstatus}}</label></td></tr>
+					<!-- <tr><td colspan="3"><label><b>Note:- </b> Forward charges Mechanism(if GST Charged by Transporter)</label></td></tr>
+					<tr><th colspan="2">Amount(Rs.)In Words</th><td colspan="1"> <label>{{venviewData.totalAmountInWords}}</label><label>Only</label></td></tr>
+					<tr><td colspan="3"><label><b>Note:- </b>Under Reserve Charges Mechanism,GST is Payable by the Consignot/Service Receiver</label></td></tr>
+					<tr></tr> -->
+							</tbody> 
+ </table> 
+					
+			</div>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+         <button type="button" class="btn btn-info" ng-click="venRecptviewPrint()" >Print</button> 
+          <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+  
+   <!-- Manpower View and Print -->
+
+<div class="modal" id="mpRecptDetailModal" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Manpower View Details</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="height: 500px;overflow: auto;">
+        <!-- <div class="row " style="margin-top: 1%;">
+        <div class="col-4"><label class="col-4"><b>Name :</b></label><label class="col-8">{{venviewdetail.venname}}</label></div>
+        <div class="col-4"><label class="col-4"><b>Amount:</b></label><label class="col-8">{{venviewdetail.venviewAmt}}</label></div>
+        <div class="col-4"><label class="col-4"><b>Date :</b></label><label class="col-8">{{venviewdetail.venviewDateAmt}}</label></div>	
+		</div>  --> 
+          <div class="row col-12" >
+          
+					<table  id="manage-mrv-table"  class="table table-bordered table-striped" >
+					
+					<tr><th colspan="2" class="textCenter"><h2>S.SARAVANAN ENTERPRISES</h2>
+					<h5>47,Bajanai Koil Street,Paruthapattu,Avadi, Chennai - 600 071. Tamilnadu</h5>
+					<h5><b>Email:</b>ssenterprises4358@gmail.com  <b>Ph:</b>+91-44-5559-5555</h5></th>
+					<th colspan="1" ><img src='img/sse.png' style="width: 40%;height: 30%;margin: 3% 0% 0% 20%;"></th>
+					</tr>
+
+ 
+  							<tbody>
+  							
+								
+					<tr><td colspan="1"><label>Manpowerid</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{mpRecptDetailView.manpowerid}}</label></td></tr>
+					<tr><td colspan="1"><label>Customername</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{mpRecptDetailView.customername}}</label></td></tr>
+					<tr><td colspan="1"><label>Invoicedate</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{mpRecptDetailView.invoicedate}}</label></td></tr>
+					<tr><td colspan="1"><label>Customerbranch</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{mpRecptDetailView.customerbranch}}</label></td></tr>
+					<tr><td colspan="1"><label>Customerstate</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{mpRecptDetailView.customerstate}}</label></td></tr>
+					<tr><td colspan="1"><label>GrandTotal</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{mpRecptDetailView.grandTotal}}</label></td></tr>
+					<tr><td colspan="1"><label>Status</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{mpRecptDetailView.status}}</label></td></tr>
+					<!-- <tr><th colspan="1"><label>Totalkm</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venRecptDetailView.totalkm}}</label></td></tr>
+					<tr><td colspan="1"><label>Totalkmpercharge</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venRecptDetailView.totalkmpercharge}}</label></td></tr>
+					<tr><td colspan="1"><label>Totalfreightamt</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venRecptDetailView.totalfreightamt}}</label></td></tr>
+					<tr><td colspan="1"><label>Leakage</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venRecptDetailView.leakage}}</label></td></tr>
+					<tr><th colspan="1"><label>Netamount</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venRecptDetailView.netamount}}</label></td></tr>
+					<tr><th colspan="1"><label>Paymentstatus</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venRecptDetailView.paymentstatus}}</label></td></tr> -->
+					<!-- <tr><td colspan="3"><label><b>Note:- </b> Forward charges Mechanism(if GST Charged by Transporter)</label></td></tr>
+					<tr><th colspan="2">Amount(Rs.)In Words</th><td colspan="1"> <label>{{venviewData.totalAmountInWords}}</label><label>Only</label></td></tr>
+					<tr><td colspan="3"><label><b>Note:- </b>Under Reserve Charges Mechanism,GST is Payable by the Consignot/Service Receiver</label></td></tr>
+					<tr></tr> -->
+							</tbody> 
+ </table> 
+					
+			</div>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+         <button type="button" class="btn btn-info" ng-click="mpRecptviewPrint()" >Print</button> 
+          <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
