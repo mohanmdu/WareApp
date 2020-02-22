@@ -33,7 +33,7 @@ public interface TripRepository extends JpaRepository<TripSheet, Long> {
 	public List<TripSheet> findCustomerInvoiceBetweenDateList(@Param("fromdate") String fromdate,
 			@Param("todate") String todate);
 	
-	@Query(value = "select t From TripSheet t where t.vendorinvoicestatus='NO'and t.truckno=:truckno and t.datetime between :fromdate and :todate")
+	@Query(value = "select t From TripSheet t where t.vendorinvoicestatus='NO'and t.truckno=:truckno and t.datetime between date(:fromdate) and date(:todate)")
 	public List<TripSheet> findVendorInvoiceBetweenDateList(@Param("fromdate") String fromdate,
 			@Param("todate") String todate,@Param("truckno") String truckno);
 	
