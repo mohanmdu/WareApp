@@ -15,24 +15,24 @@ import com.tem.springbootcrudrest.model.CustomerInvoice;
 @Transactional
 public interface CustomerInvoiceRepository extends JpaRepository<CustomerInvoice, Long>{
 
-	@Query(value = "select t From CustomerInvoice t where t.custinvoicedate between date(:fromdate) and date(:todate)")
+	@Query(value = "select t From CustomerInvoice t where t.custinvoicedate between :fromdate and :todate")
 	public List<CustomerInvoice> findInvoiceBetweenDateList(@Param("fromdate") String fromdate,
 			@Param("todate") String todate);
 	
 	public CustomerInvoice findByCustomerinvoiceid(long customerinvoiceid);
 	
 	
-	@Query(value = "select t From CustomerInvoice t where t.customername=:customername and t.paymentdate between date(:fromdate) and date(:todate)")
+	@Query(value = "select t From CustomerInvoice t where t.customername=:customername and t.paymentdate between :fromdate and :todate")
 	public List<CustomerInvoice> findInvoiceBetweenDateForLedgerForm(@Param("fromdate") String fromdate,
 			@Param("todate") String todate,@Param("customername") String customername);
 	
 	//customerinvoice
 	
-	@Query(value = "select c From CustomerInvoice c where  c.customername=:customername and c.createddate between date(:fromdate) and date(:todate)")
+	@Query(value = "select c From CustomerInvoice c where  c.customername=:customername and c.createddate between :fromdate and :todate")
 	public List<CustomerInvoice> findCustomerInvoiceByCustdatename(@Param("customername") String customername,@Param("fromdate") String fromdate,
 			@Param("todate") String todate);
 	
-	@Query(value = "select c From CustomerInvoice c where  c.createddate between date(:fromdate) and date(:todate)")
+	@Query(value = "select c From CustomerInvoice c where  c.createddate between :fromdate and :todate")
 	public List<CustomerInvoice> findCustInvoiceByFromDateToDate(@Param("fromdate") String fromdate,
 			@Param("todate") String todate);
 	
