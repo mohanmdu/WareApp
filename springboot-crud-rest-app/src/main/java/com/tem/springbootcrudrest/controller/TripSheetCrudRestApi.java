@@ -171,20 +171,16 @@ public class TripSheetCrudRestApi {
 
 	public List<TripSheet> getCustomerInvoiceList(@RequestParam String fromdate, @RequestParam String todate) {
 
-          Date todaysDate = new Date();
+         // Date todaysDate = new Date();
 		
-		SimpleDateFormat  df = new SimpleDateFormat("yyyy-MM-dd");
+	//	SimpleDateFormat  df = new SimpleDateFormat("yyyy-MM-dd");
 		//dd/MM/yyyy
 		
-		Date from = null;
-		Date to = null;
-		try {
-			from = df.parse(fromdate);
-			to = df.parse(todate);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		/*
+		 * Date from = null; Date to = null; try { //from = df.parse(fromdate); to =
+		 * df.parse(todate); } catch (ParseException e) { // TODO Auto-generated catch
+		 * block e.printStackTrace(); }
+		 */
 		//System.out.println("date... "+ from +" to "+to);
 		
 		List<TripSheet> tripSheetList = tripSheetService.findCustomerInvoiceBetweenDate(fromdate, todate);
