@@ -9,7 +9,7 @@ public class UTCDateTime {
 	public static Date getCurentTimeAndDate() throws ParseException {
 		Date todaysDate = new Date();
 		
-		SimpleDateFormat  df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		SimpleDateFormat  df = new SimpleDateFormat("yyyy-MM-dd");
 		String datestr = df.format(todaysDate);
 		Date date = df.parse(datestr);
 		return date;

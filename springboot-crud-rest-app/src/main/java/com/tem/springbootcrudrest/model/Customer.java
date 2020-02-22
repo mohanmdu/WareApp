@@ -56,7 +56,7 @@ public class Customer {
 	 * @Column(name = "createddate") private String createddate;
 	 */
 
-	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	@JsonFormat(pattern="yyyy-MM-dd")
 	@Column(name = "createddate")
 	//@Temporal(TemporalType.DATE)
 	private Date createddate;
