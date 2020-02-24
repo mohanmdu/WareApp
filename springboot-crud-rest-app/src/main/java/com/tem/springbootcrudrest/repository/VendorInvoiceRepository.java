@@ -13,7 +13,7 @@ import com.tem.springbootcrudrest.model.VendorInvoice;
 @Repository
 public interface VendorInvoiceRepository extends JpaRepository<VendorInvoice, Long> {
 
-	@Query(value = "select t From VendorInvoice t where t.vendorname=:vendorname and t.veninvoicedate between :fromdate and :todate")
+	@Query(value = "select t From VendorInvoice t where t.vendorname=:vendorname and t.veninvoicedate between date(:fromdate) and date(:todate)")
 	public List<VendorInvoice> findInvoiceBetweenDateList(@Param("fromdate") String fromdate,
 			@Param("todate") String todate, @Param("vendorname") String vendorname);
 
@@ -25,7 +25,7 @@ public interface VendorInvoiceRepository extends JpaRepository<VendorInvoice, Lo
 	 @Query(value="SELECT v FROM VendorInvoice v WHERE v.vendorinvoiceid=:vendorinvoiceid") 
 	 public VendorInvoice findByVendorInvoiceId(@Param("vendorinvoiceid") long vendorinvoiceid);
 	 
-	 @Query(value = "select v From VendorInvoice v where v.vendorname=:vendorname and v.paymentdate between :fromdate and :todate")
+	 @Query(value = "select v From VendorInvoice v where v.vendorname=:vendorname and v.paymentdate between date(:fromdate) and date(:todate)")
 		public List<VendorInvoice> findInvoiceBetweenDateForLedgerForm(@Param("fromdate") String fromdate,
 				@Param("todate") String todate,@Param("vendorname") String vendorname);
 	 
@@ -36,11 +36,11 @@ public interface VendorInvoiceRepository extends JpaRepository<VendorInvoice, Lo
 	 
 	 //vendorinvoice datetimevendorname
 	 
-	 @Query(value = "select v From VendorInvoice v where  v.vendorname=:vendorname and v.paymentdate between :fromdate and :todate")
+	 @Query(value = "select v From VendorInvoice v where  v.vendorname=:vendorname and v.paymentdate between date(:fromdate) and date(:todate)")
 		public List<VendorInvoice> findVendorInvoiceByVenddatename(@Param("vendorname") String vendorname,@Param("fromdate") String fromdate,
 				@Param("todate") String todate);
 		
-		@Query(value = "select v From VendorInvoice v where  v.paymentdate between :fromdate and :todate")
+		@Query(value = "select v From VendorInvoice v where  v.paymentdate between date(:fromdate) and date(:todate)")
 		public List<VendorInvoice> findVendInvoiceByFromDateToDate(@Param("fromdate") String fromdate,
 				@Param("todate") String todate);
 		

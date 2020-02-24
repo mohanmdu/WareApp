@@ -36,7 +36,7 @@ public interface VendorPaymentRepository extends JpaRepository<Vendorpayment, Lo
 	 public List<Vendorpayment> findAllVendorCheque();	 
 	 
 	 
-	 @Query(value = "select v From Vendorpayment v where v.status='Pending' and v.vendorname=:vendorname and v.instrumentdate between :fromdate and :todate")
+	 @Query(value = "select v From Vendorpayment v where v.status='Pending' and v.vendorname=:vendorname and v.instrumentdate between date(:fromdate) and date(:todate)")
 		public List<Vendorpayment> findInvoiceBetweenDateForLedgerForm(@Param("fromdate") String fromdate,
 				@Param("todate") String todate,@Param("vendorname") String vendorname);
 
