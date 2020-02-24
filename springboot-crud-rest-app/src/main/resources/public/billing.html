@@ -412,7 +412,7 @@
 					<tr><td colspan="1"><label>Trip Rate/Spot Rate Freight charge</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venPrintData.tripRate}}</label></td></tr>
 					<tr><td colspan="1"><label>Sub Total</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venPrintData.tripRate}}</label></td></tr>
 					<tr><td colspan="1"><label>Discount</label></td><td colspan="1"><label></label></td><td colspan="1"><!-- <label>{{venPrintData.totaldiscount}}</label> --></td></tr>
-					<tr><td colspan="1"><label>Advance/Leakage</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venPrintData.advLeak}}</label></td></tr>
+					<!-- <tr><td colspan="1"><label>Advance/Leakage</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venPrintData.advLeak}}</label></td></tr> -->
 					<tr><td colspan="1"><label>Sub Total(Rs)</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venPrintData.netamount}}</label></td></tr>
 					<tr><td colspan="1"><label>CGST</label></td><td colspan="1"><label></label></td><td colspan="1"><label>0</label></td></tr>
 					<tr><td colspan="1"><label>SGST</label></td><td colspan="1"><label></label></td><td colspan="1"><label>0</label></td></tr>
@@ -765,7 +765,7 @@
 					<td colspan="1"><label>{{item.taxpercentage}}</label></td>
 					<td colspan="1"><label>{{item.cgst}}</label></td>
 					<td colspan="1"><label>{{item.sgst}}</label></td>
-					<td colspan="1"><label>{{item.igst}}</label></td>
+					<td colspan="1"><label>{{item.igst | number:2}}</label></td>
 					<td colspan="1"><label>{{item.total}}</label></td>
 					</tr>
 					</table >
@@ -1003,7 +1003,7 @@
 					<tr><td colspan="1"><label>Trip Rate/Spot Rate Freight charge</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venviewData.tripRate}}</label></td></tr>
 					<tr><td colspan="1"><label>Sub Total</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venviewData.tripRate}}</label></td></tr>
 					<tr><td colspan="1"><label>Discount</label></td><td colspan="1"><label></label></td><td colspan="1"><!-- <label>{{venviewData.totaldiscount}}</label> --></td></tr>
-					<tr><td colspan="1"><label>Advance/Leakage</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venviewData.advLeak}}</label></td></tr>
+					<!-- <tr><td colspan="1"><label>Advance/Leakage</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venviewData.advLeak}}</label></td></tr> -->
 					<tr><td colspan="1"><label>Sub Total(Rs)</label></td><td colspan="1"><label></label></td><td colspan="1"><label>{{venviewData.netamount}}</label></td></tr>
 					<tr><td colspan="1"><label>CGST</label></td><td colspan="1"><label></label></td><td colspan="1"><label>0</label></td></tr>
 					<tr><td colspan="1"><label>SGST</label></td><td colspan="1"><label></label></td><td colspan="1"><label>0</label></td></tr>
@@ -1140,7 +1140,7 @@
 									<td><label>{{cus.noOfCase}}</label></td>
 									<td><label>{{cus.diffKM}}</label>	</td>
 									<td><label>{{cus.perkmchargecustomer}}</label></td>
-									<td><label>{{cus.advance}}</label></td>
+									<td><!-- <label>{{cus.advance}}</label> --></td>
 									<td><!-- <label>{{cus.discount}}</label> --></td>
 									<td><label>{{cus.freightAmtCust}}</label></td>
 								</tr>
